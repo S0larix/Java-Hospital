@@ -1,1 +1,11 @@
 Yolo swag 
+
+generique: classe mere
+personne: hertite de generique, classe mere
+malade: classe fille de personne
+docteur: classe fille de personne
+infirmier: classe fille de personne
+autre: classe fille de personne
+service: classe fille de generique
+chambre: classe fille de generique
+
