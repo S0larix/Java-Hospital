@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Hôpital" company="" webLink="http://" view-date="2015-04-08" view-index="0" gantt-divider-location="564" resource-divider-location="300" version="2.0" locale="fr">
+<?xml version="1.0" encoding="UTF-8"?><project name="Hôpital" company="" webLink="http://" view-date="2015-04-10" view-index="0" gantt-divider-location="564" resource-divider-location="300" version="2.0" locale="fr">
     <description/>
-    <view zooming-state="default:2" id="gantt-chart">
+    <view zooming-state="default:1" id="gantt-chart">
         <field id="tpd3" name="Nom" width="50" order="0"/>
         <field id="tpd4" name="Date de début" width="24" order="1"/>
         <field id="tpd5" name="Date de fin" width="25" order="2"/>
     </view>
     <view id="resource-table">
-        <field id="0" name="Nom" width="56" order="0"/>
-        <field id="1" name="Rôle par défaut" width="43" order="1"/>
+        <field id="0" name="Nom" width="50" order="0"/>
+        <field id="1" name="Rôle par défaut" width="50" order="1"/>
     </view>
     <!-- -->
     <calendars>
@@ -35,13 +35,30 @@
             <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
-        <task id="0" name="Découverte du sujet" color="#8cb6ce" meeting="false" start="2015-04-10" duration="1" complete="0" expand="true">
+        <task id="0" name="Découverte du sujet en séance de TP" color="#8cb6ce" meeting="false" start="2015-04-13" duration="1" complete="0" expand="true">
             <notes><![CDATA[Tous les membres présents.]]></notes>
         </task>
-        <task id="3" name="Prendre connaissance des documents à disposition" color="#8cb6ce" meeting="false" start="2015-04-10" duration="1" complete="0" expand="true">
+        <task id="3" name="Prendre connaissance des documents à disposition" color="#8cb6ce" meeting="false" start="2015-04-13" duration="1" complete="0" expand="true">
             <notes><![CDATA[Nous prenons connaissances des fichiers mis à disposition par le professeur, les classes à utiliser, etc...]]></notes>
         </task>
-        <task id="6" name="Début de la conception" color="#8cb6ce" meeting="false" start="2015-04-15" duration="1" complete="0" expand="true"/>
+        <task id="6" name="Début de la conception" color="#ff9900" meeting="false" start="2015-04-13" duration="2" complete="0" expand="true">
+            <task id="9" name="Echange de points de vue sur la conception" color="#ff9900" meeting="false" start="2015-04-13" duration="2" complete="0" expand="true"/>
+            <task id="10" name="Répartition du travail" color="#ff9900" meeting="false" start="2015-04-13" duration="1" complete="0" expand="true"/>
+        </task>
+        <task id="33" name="Rapport de conception" color="#3333ff" meeting="false" start="2015-04-16" duration="7" complete="0" expand="true">
+            <task id="24" name="Rédaction du rapport de conception en parallèle" color="#ff3333" shape="0,1,1,0,1,1,1,1,1,1,1,1,0,1,1,0" meeting="false" start="2015-04-16" duration="7" complete="0" expand="true"/>
+            <task id="32" name="Définition des classes pour chaque module" color="#ff3333" meeting="false" start="2015-04-17" duration="2" complete="0" expand="true"/>
+            <task id="36" name="Création des organigrammes pour chaque module" color="#ff3333" meeting="false" start="2015-04-21" duration="3" complete="0" expand="true"/>
+        </task>
+        <task id="48" name="Réalisation du code" color="#33cc00" shape="1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1" meeting="false" start="2015-04-24" duration="6" complete="0" expand="true">
+            <task id="51" name="Création de l'interface graphique" color="#33cc00" meeting="false" start="2015-04-24" duration="2" complete="0" expand="true"/>
+            <task id="54" name="Implémentation des classes" color="#33cc00" meeting="false" start="2015-04-28" duration="2" complete="0" expand="true"/>
+            <task id="55" name="Gestion de la connexion à la base de données" color="#33cc00" meeting="false" start="2015-04-27" duration="4" complete="0" expand="true"/>
+            <task id="56" name="Création du module de Reporting" color="#33cc00" meeting="false" start="2015-04-29" duration="3" complete="0" expand="true"/>
+        </task>
+        <task id="58" name="Fusion des différents modules" color="#00ccff" meeting="false" start="2015-05-04" duration="2" complete="0" expand="true"/>
+        <task id="59" name="Tests" color="#ff9999" shape="0,1,1,0,0,1,1,0,0,1,1,0,0,1,1,0" meeting="false" start="2015-05-05" duration="4" complete="0" priority="4" expand="true"/>
+        <task id="60" name="Rédaction du rapport final" color="#660066" meeting="false" start="2015-05-06" duration="3" complete="0" expand="true"/>
     </tasks>
     <resources/>
     <allocations/>
