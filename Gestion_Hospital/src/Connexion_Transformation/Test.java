@@ -15,10 +15,12 @@ public class Test {
         Transformation trans= new Transformation();
         trans.methodechiante();
         //System.out.println(trans.liste.size());
-        for(int i=0;i<trans.liste.size();i++){
-            System.out.println(trans.liste.get(i));
-        
+        for (String liste : trans.liste) {
+            System.out.println(liste);
         }
+        //test_reqête
         System.exit(0);
     }
+    
+    
 }
