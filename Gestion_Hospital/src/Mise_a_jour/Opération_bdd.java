@@ -12,27 +12,27 @@ import java.util.ArrayList;
  *
  * @author Lisa
  */
-public class Opération_bdd {
+/*public class Opération_bdd {
     public ArrayList <generique> ajouter_entité()
     {
         ArrayList <generique> tab;
         generique gen;
         //on demande à l'utilisateur de saisir les infos de l'entité
-        gen=demander_utilisateur();
+        //gen=demande_utilisateur();
         //
         
-        return tab;
+       // return tab;
     }
     
     public ArrayList <generique> supprimer_entité()
     {
         ArrayList <generique> tab;
-        return tab;
+      //  return tab;
     }
     
     public ArrayList <generique> modifier_entité()
     {
         ArrayList <generique> tab;
-        return tab;
+      //  return tab;
     }
-}
+}*/

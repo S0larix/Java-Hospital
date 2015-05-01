@@ -136,7 +136,7 @@ public class Connexion {
      * Methode qui retourne l'ArrayList des champs de la requete en parametre
      */
     public ArrayList remplirChampsRequete(String requete) throws SQLException {
-        // récupération de l'ordre de la requete
+        // récupération de l'ordre de la requete//execution requête
         rset = stmt.executeQuery(requete);
 
         // récupération du résultat de l'ordre
