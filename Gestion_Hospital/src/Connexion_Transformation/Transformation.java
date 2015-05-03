@@ -5,7 +5,7 @@
  */
 package Connexion_Transformation;
 
-import Classes.generique;
+import Classes.*;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import jdbc2014.Connexion;
@@ -39,7 +39,6 @@ public class Transformation {
                 e.printStackTrace();
             }
        
-       
        try {
 
                 // recuperer la liste des champs de la table
@@ -60,12 +59,21 @@ public class Transformation {
    }
 //new Connexion(loginECE, mdpECE, loginBDD, mdpBDD);
    
-   public ArrayList<generique> test_requete (){
-         /*
+   public void test_requete (){ //renplie l'ArrayList<generique> de la classe attendu avec la requête rendu
+       /* 
         if()//on teste la requête pour savoir quel sont les classes demandés
         {
             liste_generique=new ArrayList<chambre>();
             //...
+            for (String s : liste) {
+               // System.out.println(liste);
+                //décomposition de la réponse en fonction de la question (dépend de l'interface graphique)
+                
+                //remplissage de la classse
+                chambre tmp = new chambre(,,,);
+                liste_generique.add(tmp);
+                
+            }
         }
         if()
         {
@@ -87,7 +95,17 @@ public class Transformation {
           liste_generique=new ArrayList<service>();
           //...
         }
-        return
-        */  
+       */
     }
+   
+   public String creer_requête(){
+       String requete = "select";
+       //créer la requête à partir de la GUI
+       /*if()
+       requete=requete+" from "+;
+       if()
+       */
+       return requete;
+   }
+   
 }

@@ -10,8 +10,60 @@ package Classes;
  * @author Clément
  */
 public class infirmier extends employe{
-    private int numero;
     private int code_service;
     private boolean rotation;//jour: vrai nuit:false
     private int salaire;
+    
+    public infirmier(int numero,int code_service,boolean rotation,int salaire,String nom, String prenom,String tel,String adresse){
+        this.setNumero(numero);
+        this.code_service=code_service;
+        this.rotation=rotation;
+        this.salaire=salaire;
+        this.setNom(nom);
+        this.setPrenom(prenom);
+        this.setTel(tel);
+        this.setAdresse(adresse);
+    }
+
+    /**
+     * @return the code_service
+     */
+    public int getCode_service() {
+        return code_service;
+    }
+
+    /**
+     * @param code_service the code_service to set
+     */
+    public void setCode_service(int code_service) {
+        this.code_service = code_service;
+    }
+
+    /**
+     * @return the rotation
+     */
+    public boolean isRotation() {
+        return rotation;
+    }
+
+    /**
+     * @param rotation the rotation to set
+     */
+    public void setRotation(boolean rotation) {
+        this.rotation = rotation;
+    }
+
+    /**
+     * @return the salaire
+     */
+    public int getSalaire() {
+        return salaire;
+    }
+
+    /**
+     * @param salaire the salaire to set
+     */
+    public void setSalaire(int salaire) {
+        this.salaire = salaire;
+    }
 }
