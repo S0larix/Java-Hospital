@@ -59,12 +59,14 @@ public class Transformation {
    }
 //new Connexion(loginECE, mdpECE, loginBDD, mdpBDD);
    
-   public void test_requete (){ //renplie l'ArrayList<generique> de la classe attendu avec la requête rendu
-       /*
+   /*public void test_requete (){ //renplie l'ArrayList<generique> de la classe attendu avec la requête rendu
+       
         if(checkbox_chambre.isSelected())//on teste la requête pour savoir quel sont les classes demandés
         {
+            //chambre séléctionnée
             liste_generique=new ArrayList<chambre>();
-            //...
+            //on crée un arraylist pour stocker le résultat
+            //on initialise les attributs de la classe à false
              boolean if_service=false;
              boolean if_chambre=false;
              boolean if_surveillant=false;
@@ -74,7 +76,7 @@ public class Transformation {
              String tmp_surveillant;
              int tmp_lits;
              
-             //tester les checkbox de la GUI
+             //si checkbox supplémentaires, passer les booléan à true
             if(code_service_box.isSelected())  
                 if_service=true;
             if(no_chambre_box.isSelected())
@@ -85,25 +87,27 @@ public class Transformation {
                 if_lits=true;
             
             
-            //pour chaque string rendu, on va remplir la classe correspondante de la requête
+            //pour chaque champ rempli d'une string, on remplit la classe correspondnte
             for (String s : liste) {
                // System.out.println(liste);
                 //décomposition de la réponse en fonction de la question (dépend de l'interface graphique)
+                //on enlève les espaces de la string, et on "coupe" à chaque virgule(séparation des attributs)
                 String[] str=s.trim().split(",");
+                
                 for(int i=0;i<str.length;i++){
-                    if(if_service=true){
+                    if(if_service==true){
                         tmp_service=str[i];
                         if_service=false;
                     }
-                    if(if_chambre=true){
+                    if(if_chambre==true){
                         tmp_chambre=Integer.parseInt(str[i]);
                         if_chambre=false;
                     }
-                    if(if_surveillant=true){
+                    if(if_surveillant==true){
                         tmp_surveillant=str[i];
                         if_surveillant=false;
                     }
-                    if(if_lits=true){
+                    if(if_lits==true){
                         tmp_lits=Integer.parseInt(str[i]);
                         if_lits=false;
                     }
@@ -138,17 +142,84 @@ public class Transformation {
           liste_generique=new ArrayList<service>();
           //...
         }
-        */
+        
     }
    
    public String creer_requête(){
-       String requete = "select";
+       String requete = "select ";
+       String select_text;
+       int compteur;
+       String from_text;
+       String where_text;
        //créer la requête à partir de la GUI
-       /*if()
+       //si on a selectionné une table, on ajoute son nom au FROM de la requête
+       if(doctor_check){
+           from_text="employe e,doctor d";
+           where_text="d.numero=e.numero";
+       }
+       if(malade_check){
+           from_text="malade m";
+       }
+       if(infirmier_check){
+           from_text="employe e, infirmier i, service s";
+           where_text=where_text+"i.numero=e.numero AND s.code=i.code";
+       }
+       if(chambre_check) from_text="chambre c";
+       if(service_check) from_text="service s";
+       
+       //selection des attributs
+       if(nom_check){
+           select_text=select_text+"nom,";
+           compteur++;
+       }
+       if(prenom_check){
+           select_text=select_text+"prenom,";
+           compteur++;
+       }
+       if(tel_check){
+           select_text=select_text+"tel,";
+           compteur++;
+       }
+       if(adresse_check){
+           select_text=select_text+"adresse,";
+           compteur++;
+       }
+       if(numero_check){
+           select_text=select_text+"numero,";
+           compteur++;
+       }
+       if(mutuelle_check){
+           select_text=select_text+"mutuelle,";
+           compteur++;
+       }
+       if(code_check){
+           select_text=select_text+"code,";
+           compteur++;
+       }
+       if(nom_service_check){
+           select_text=select_text+"nom",
+           compteur++;
+       }
+       if(batiment_check){
+           select_text=select_text+"batiment,";
+           compteur++;
+       }
+       if(directeur_check){
+           select_text=select_text+"directeur";
+           compteur++;
+       }
+       if(code_service_check){
+           select_text=select_text+"code";
+           compteur++;
+       }
+       if
+       //enlever la dernière virgule à la partie SELECT
+       select_text=select_text.substring(0,select_text.length()-1);
+       //ajouter les from
        requete=requete+" from "+;
        if()
-       */
+       
        return requete;
    }
-   
+   */
 }
