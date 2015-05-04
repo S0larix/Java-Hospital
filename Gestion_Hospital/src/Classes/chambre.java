@@ -11,11 +11,11 @@ package Classes;
  */
 public class chambre extends generique{
     private int no_chambre;
-    private int code_service;
+    private String code_service;
     private String surveillant;
     private int nb_lits;
     
-    public chambre(int chambre,int service,String surveil,int lits){
+    public chambre(int chambre,String service,String surveil,int lits){
         this.no_chambre=chambre;
         this.code_service =service;
         this.surveillant=surveil;
@@ -39,14 +39,14 @@ public class chambre extends generique{
     /**
      * @return the code_service
      */
-    public int getCode_service() {
+    public String getCode_service() {
         return code_service;
     }
 
     /**
      * @param code_service the code_service to set
      */
-    public void setCode_service(int code_service) {
+    public void setCode_service(String code_service) {
         this.code_service = code_service;
     }
 
