@@ -7,28 +7,14 @@ package Classes;
 
 /**
  *
- * @author Clément
+ * @author Jérôme
  */
-public class employe extends generique{
-    private int numero;
+public class personne extends generique{
     private String nom;
     private String prenom;
     private String tel;
     private String adresse;
-
-    /**
-     * @return the numero
-     */
-    public int getNumero() {
-        return numero;
-    }
-
-    /**
-     * @param numero the numero to set
-     */
-    public void setNumero(int numero) {
-        this.numero = numero;
-    }
+    private int numero;
 
     /**
      * @return the nom
@@ -84,6 +70,20 @@ public class employe extends generique{
      */
     public void setAdresse(String adresse) {
         this.adresse = adresse;
+    }
+
+    /**
+     * @return the numero
+     */
+    public int getNumero() {
+        return numero;
+    }
+
+    /**
+     * @param numero the numero to set
+     */
+    public void setNumero(int numero) {
+        this.numero = numero;
     }
     
 }

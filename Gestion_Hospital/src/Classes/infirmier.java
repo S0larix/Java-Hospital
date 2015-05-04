@@ -9,7 +9,7 @@ package Classes;
  *
  * @author Clément
  */
-public class infirmier extends employe{
+public class infirmier extends personne{
     private int code_service;
     private boolean rotation;//jour: vrai nuit:false
     private int salaire;

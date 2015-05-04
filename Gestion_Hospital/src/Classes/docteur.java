@@ -9,7 +9,7 @@ package Classes;
  *
  * @author Clément
  */
-public class docteur extends employe{
+public class docteur extends personne{
     private String specialite;
     
     public docteur(int numero,String specialite,String nom, String prenom,String tel,String adresse){
