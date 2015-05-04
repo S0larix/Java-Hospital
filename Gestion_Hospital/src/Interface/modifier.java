@@ -9,12 +9,12 @@ package Interface;
  *
  * @author Lisa
  */
-public class ajouter extends javax.swing.JFrame {
+public class modifier extends javax.swing.JFrame {
 
     /**
      * Creates new form ajouter
      */
-    public ajouter() {
+    public modifier() {
         initComponents();
     }
 
@@ -54,7 +54,7 @@ public class ajouter extends javax.swing.JFrame {
         setResizable(false);
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Mise à jour de la base - ajout");
+        jLabel1.setText("Mise à jour de la base - modifier");
         jLabel1.setAutoscrolls(true);
         jLabel1.setPreferredSize(new java.awt.Dimension(168, 42));
 
@@ -108,7 +108,7 @@ public class ajouter extends javax.swing.JFrame {
         jLabel7.setText("Champ 6");
 
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("jLabel1");
+        jLabel8.setText("Modifier les champs");
 
         jTextField1.setText("jTextField1");
 
@@ -223,20 +223,21 @@ public class ajouter extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ajouter.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(modifier.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ajouter.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(modifier.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ajouter.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(modifier.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ajouter.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(modifier.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ajouter().setVisible(true);
+                new modifier().setVisible(true);
             }
         });
     }
