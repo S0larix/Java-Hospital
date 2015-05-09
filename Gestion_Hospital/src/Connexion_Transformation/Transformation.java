@@ -144,11 +144,11 @@ public class Transformation {
         }
         
     }
-   
+   */
    public String creer_requête(){
-       String requete = "select ";
+       String requete;
        String select_text;
-       int compteur;
+       int compteur=0;
        String from_text;
        String where_text;
        //créer la requête à partir de la GUI
@@ -197,7 +197,7 @@ public class Transformation {
            compteur++;
        }
        if(nom_service_check){
-           select_text=select_text+"nom",
+           select_text=select_text+"nom";
            compteur++;
        }
        if(batiment_check){
@@ -212,14 +212,12 @@ public class Transformation {
            select_text=select_text+"code";
            compteur++;
        }
-       if
        //enlever la dernière virgule à la partie SELECT
        select_text=select_text.substring(0,select_text.length()-1);
        //ajouter les from
-       requete=requete+" from "+;
-       if()
-       
+       requete=requete+select_text+" from "+from_text+" where "+where_text;
+       //rendre la requete 
        return requete;
    }
-   */
+   
 }
