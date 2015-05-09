@@ -64,7 +64,7 @@ public class Transformation {
        
         if(checkbox_chambre.isSelected())//on teste la requête pour savoir quel sont les classes demandés
         {
-            //chambre séléctionnée
+            //chambre séléctionnéeg
             liste_generique=new ArrayList<chambre>();
             //on crée un arraylist pour stocker le résultat
             //on initialise les attributs de la classe à false
