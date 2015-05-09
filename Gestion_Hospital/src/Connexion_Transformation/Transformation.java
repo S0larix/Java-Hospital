@@ -8,6 +8,7 @@ package Connexion_Transformation;
 import Classes.*;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import jdbc2014.Connexion;
 
 /**
@@ -59,7 +60,7 @@ public class Transformation {
    }
 //new Connexion(loginECE, mdpECE, loginBDD, mdpBDD);
    
-   /*public void test_requete (){ //renplie l'ArrayList<generique> de la classe attendu avec la requête rendu
+   public void test_requete (){ //renplie l'ArrayList<generique> de la classe attendu avec la requête rendu
        
         if(checkbox_chambre.isSelected())//on teste la requête pour savoir quel sont les classes demandés
         {
@@ -92,7 +93,7 @@ public class Transformation {
                // System.out.println(liste);
                 //décomposition de la réponse en fonction de la question (dépend de l'interface graphique)
                 //on enlève les espaces de la string, et on "coupe" à chaque virgule(séparation des attributs)
-                String[] str=s.trim().split(",");
+                String[] str=s.split(",");
                 
                 for(int i=0;i<str.length;i++){
                     if(if_service==true){
@@ -144,18 +145,19 @@ public class Transformation {
         }
         
     }
-   */
+   
    public String creer_requête(){
-       String requete;
-       String select_text;
+       String requete="";
+       String select_text="";
        int compteur=0;
-       String from_text;
-       String where_text;
+       String from_text="";
+       String where_text="";
        //créer la requête à partir de la GUI
        //si on a selectionné une table, on ajoute son nom au FROM de la requête
+       //selection de la table
        if(doctor_check){
            from_text="employe e,doctor d";
-           where_text="d.numero=e.numero";
+           where_text=where_text+"d.numero=e.numero";
        }
        if(malade_check){
            from_text="malade m";
@@ -164,8 +166,10 @@ public class Transformation {
            from_text="employe e, infirmier i, service s";
            where_text=where_text+"i.numero=e.numero AND s.code=i.code";
        }
-       if(chambre_check) from_text="chambre c";
-       if(service_check) from_text="service s";
+       if(chambre_check) 
+           from_text="chambre c";
+       if(service_check) 
+           from_text="service s";
        
        //selection des attributs
        if(nom_check){
@@ -197,7 +201,7 @@ public class Transformation {
            compteur++;
        }
        if(nom_service_check){
-           select_text=select_text+"nom";
+           select_text=select_text+"nom,";
            compteur++;
        }
        if(batiment_check){
@@ -205,15 +209,30 @@ public class Transformation {
            compteur++;
        }
        if(directeur_check){
-           select_text=select_text+"directeur";
+           select_text=select_text+"directeur,";
            compteur++;
        }
        if(code_service_check){
-           select_text=select_text+"code";
+           select_text=select_text+"code,";
            compteur++;
        }
-       //enlever la dernière virgule à la partie SELECT
-       select_text=select_text.substring(0,select_text.length()-1);
+       if(numero_chambre_check){
+           select_text=select_text+"no_chambre,";
+           compteur++;  
+       }
+       if(surveillant_check){
+           select_text=select_text+"surveillant,";
+           compteur++;
+       }
+       if(nb_lits_check){
+           select_text=select_text+"nb_lits,";
+           compteur++;
+       }
+       if(compteur!=0)
+            //enlever la dernière virgule à la partie SELECT
+            select_text=select_text.substring(0,select_text.length()-1);
+       else
+           JOptionPane.showMessageDialog(null, "Sélectionnez au moins un attribut!");
        //ajouter les from
        requete=requete+select_text+" from "+from_text+" where "+where_text;
        //rendre la requete 
