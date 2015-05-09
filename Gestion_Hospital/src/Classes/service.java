@@ -9,7 +9,7 @@ package Classes;
  *
  * @author Clément
  */
-public class service extends generique {
+public class service {
     private int code;
     private String nom;
     private String batiemnt;

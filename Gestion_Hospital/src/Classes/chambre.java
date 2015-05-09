@@ -9,7 +9,7 @@ package Classes;
  *
  * @author Clément
  */
-public class chambre extends generique{
+public class chambre {
     private int no_chambre;
     private String code_service;
     private String surveillant;

@@ -9,7 +9,7 @@ package Classes;
  *
  * @author Jérôme
  */
-public class personne extends generique{
+public class personne {
     private String nom;
     private String prenom;
     private String tel;

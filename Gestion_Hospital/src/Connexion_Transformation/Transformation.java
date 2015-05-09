@@ -22,7 +22,7 @@ public class Transformation {
    String loginBDD="ducrocq-rw";
    String mdpBDD="KlrIT05A@";
    ArrayList<String> liste;
-   ArrayList<generique> liste_generique;
+   ArrayList liste_generique;
    public Connexion conn;
 
    public void methodechiante(){
