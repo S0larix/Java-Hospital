@@ -6,6 +6,7 @@
 package Interface;
 
 import Classes.*;
+import Connexion_Transformation.Question_reponse;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -48,7 +49,6 @@ public class SousMenutri extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         MenuDeroulantClass = new javax.swing.JComboBox();
         BoutonValidationClasseTri = new javax.swing.JButton();
-        MenuDeroulantTri = new javax.swing.JComboBox();
         jScrollPane1 = new javax.swing.JScrollPane();
         ResultatRequete = new javax.swing.JTextArea();
         BoutonNouvelleRecherche = new javax.swing.JButton();
@@ -85,7 +85,7 @@ public class SousMenutri extends javax.swing.JFrame {
         jLabel1.setText("SousMenuTri");
         jLabel1.setPreferredSize(new java.awt.Dimension(336, 84));
 
-        MenuDeroulantClass.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Service", "Malade", "Infirmier", "Docteur", "Chambre", "Hospitalisation", " " }));
+        MenuDeroulantClass.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Service", "Malade", "Infirmier", "Docteur", "Chambre", "Hospitalisation" }));
         MenuDeroulantClass.setPreferredSize(new java.awt.Dimension(414, 42));
         MenuDeroulantClass.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -105,20 +105,17 @@ public class SousMenutri extends javax.swing.JFrame {
             }
         });
 
-        MenuDeroulantTri.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        MenuDeroulantTri.setPreferredSize(new java.awt.Dimension(414, 42));
-        MenuDeroulantTri.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenuDeroulantTriActionPerformed(evt);
-            }
-        });
-
         ResultatRequete.setColumns(20);
         ResultatRequete.setRows(5);
         jScrollPane1.setViewportView(ResultatRequete);
 
-        BoutonNouvelleRecherche.setText("Nouvelle recherche");
+        BoutonNouvelleRecherche.setText("Recherche");
         BoutonNouvelleRecherche.setPreferredSize(new java.awt.Dimension(168, 30));
+        BoutonNouvelleRecherche.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BoutonNouvelleRechercheActionPerformed(evt);
+            }
+        });
 
         BoutonRetourRecherche.setText("Retour Menu recherche");
         BoutonRetourRecherche.addActionListener(new java.awt.event.ActionListener() {
@@ -414,9 +411,7 @@ public class SousMenutri extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(MenuDeroulantClass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(90, 90, 90)
-                                .addComponent(BoutonValidationClasseTri)
-                                .addGap(85, 85, 85)
-                                .addComponent(MenuDeroulantTri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(BoutonValidationClasseTri)))))
                 .addContainerGap(114, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -431,8 +426,7 @@ public class SousMenutri extends javax.swing.JFrame {
                 .addGap(87, 87, 87)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(MenuDeroulantClass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BoutonValidationClasseTri)
-                    .addComponent(MenuDeroulantTri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BoutonValidationClasseTri))
                 .addGap(29, 29, 29)
                 .addComponent(jLayeredPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
                 .addGap(43, 43, 43)
@@ -445,14 +439,10 @@ public class SousMenutri extends javax.swing.JFrame {
                 .addContainerGap(70, Short.MAX_VALUE))
         );
 
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {BoutonValidationClasseTri, MenuDeroulantClass, MenuDeroulantTri});
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {BoutonValidationClasseTri, MenuDeroulantClass});
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void MenuDeroulantTriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuDeroulantTriActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_MenuDeroulantTriActionPerformed
 
     private void NomCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomCheckActionPerformed
         // TODO add your handling code here:
@@ -535,7 +525,7 @@ public class SousMenutri extends javax.swing.JFrame {
                 CodeServiceCheck.setVisible(true);
                 BatimentCheck.setVisible(true);
                 DirecteurCheck.setVisible(true);
-        
+                
             break;
             case 1 : //malade
                     NumeroCheck.setVisible(true);
@@ -588,6 +578,26 @@ public class SousMenutri extends javax.swing.JFrame {
         
             break;
         }
+        //décocher les checkbox
+        PrenomCheck.setSelected(false);
+        NombreLitCheck.setSelected(false);
+        CodeCheck.setSelected(false);
+        CodeServiceCheck.setSelected(false);
+        NumeroCheck.setSelected(false);
+        BatimentCheck.setSelected(false);
+        NomCheck.setSelected(false);
+        TelephoneCheck.setSelected(false);
+        DirecteurCheck.setSelected(false);
+        SurveillantCheck.setSelected(false);
+        SpecialiteCheck.setSelected(false);
+        NomServiceCheck.setSelected(false);
+        AdresseCheck.setSelected(false);
+        MutuelleCheck.setSelected(false);
+        RotationCheck.setSelected(false);
+        SalaireCheck.setSelected(false);
+        NumeroLitCheck.setSelected(false);
+        NumeroChambreCheck.setSelected(false);
+        
     }//GEN-LAST:event_MenuDeroulantClassActionPerformed
 
     private void NumeroLitCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NumeroLitCheckActionPerformed
@@ -656,6 +666,16 @@ public class SousMenutri extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_NumeroChambreCheckActionPerformed
 
+    private void BoutonNouvelleRechercheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonNouvelleRechercheActionPerformed
+        // TODO add your handling code here:
+        String requete;
+        ArrayList<String> reponseBDD;
+        requete=creer_requête();
+        //System.out.println(requete);
+        Question_reponse q_r = new Question_reponse();
+        reponseBDD = q_r.methodechiante(LoginECE,PasswordECE,LoginBDD,PasswordBDD,requete);
+    }//GEN-LAST:event_BoutonNouvelleRechercheActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -702,7 +722,6 @@ public class SousMenutri extends javax.swing.JFrame {
     private javax.swing.JCheckBox CodeServiceCheck;
     private javax.swing.JCheckBox DirecteurCheck;
     private javax.swing.JComboBox MenuDeroulantClass;
-    private javax.swing.JComboBox MenuDeroulantTri;
     private javax.swing.JCheckBox MutuelleCheck;
     private javax.swing.JCheckBox NomCheck;
     private javax.swing.JCheckBox NomServiceCheck;
@@ -722,43 +741,6 @@ public class SousMenutri extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 
-
-
-   public void methodechiante(){
-
-      
-       try {
-                try {
-                    // tentative de connexion si les 4 attributs sont remplis
-                    conn = new Connexion(LoginECE, PasswordECE, LoginBDD,PasswordBDD);
-                } catch (ClassNotFoundException cnfe) {
-                    System.out.println("Connexion echouee : probleme de classe");
-                    cnfe.printStackTrace();
-                }
-            } catch (SQLException e) {
-                System.out.println("Connexion echouee : probleme SQL");
-                e.printStackTrace();
-            }
-       
-       try {
-
-                // recuperer la liste des champs de la table
-                liste = conn.remplirChampsRequete("SELECT * from docteur");
-
-                // effacer les champs de la fenetre
-                
-
-                // ajouter la liste des champs dans la fenetre
-               
-
-                // se positionner sur le premier champ
-                
-            } catch (SQLException e) {
-                System.out.println("Echec SQL");
-                e.printStackTrace();
-            }
-   }
-//new Connexion(loginECE, mdpECE, loginBDD, mdpBDD);
    
    public void test_requete (){ //renplie l'ArrayList<generique> de la classe attendu avec la requête rendu
               //////POUR TABLE CHAMBRE/////////////
@@ -804,7 +786,7 @@ public class SousMenutri extends javax.swing.JFrame {
             }
         }
         ///////POUR TABLE DOCTEUR/////////////
-        if(IndexCb==4)
+        if(IndexCb==3)
         {
             liste_generique=new ArrayList<docteur>();
              //...
@@ -859,7 +841,7 @@ public class SousMenutri extends javax.swing.JFrame {
         }
        
         //////POUR TABLE INFIRMIER/////////////
-        if(IndexCb==3)
+        if(IndexCb==2)
         {
             liste_generique=new ArrayList<infirmier>();
              //...
@@ -926,7 +908,7 @@ public class SousMenutri extends javax.swing.JFrame {
             //Fin des tests pour la table infirmier
         }
         //////POUR TABLE MALADE/////////////
-        if(IndexCb==2)
+        if(IndexCb==1)
         {
             liste_generique=new ArrayList<malade>();
              //...
@@ -984,7 +966,7 @@ public class SousMenutri extends javax.swing.JFrame {
         
     }
         //////POUR TABLE SERVICE/////////////
-        if(IndexCb==1)
+        if(IndexCb==0)
         {
             liste_generique=new ArrayList<service>();
              //...
@@ -1027,7 +1009,7 @@ public class SousMenutri extends javax.swing.JFrame {
             }
         }
         //////POUR TABLE CHAMBRE/////////////
-        if(IndexCb==5)
+        if(IndexCb==4)
         {
             liste_generique=new ArrayList<chambre>();
              //...
@@ -1070,7 +1052,7 @@ public class SousMenutri extends javax.swing.JFrame {
             }
         }
         ///TABLE HOSPITALISATION////
-        if(IndexCb==6)
+        if(IndexCb==5)
         {
             liste_generique=new ArrayList<hospitalisation>();
              //...
@@ -1115,7 +1097,7 @@ public class SousMenutri extends javax.swing.JFrame {
    }
    
    public String creer_requête(){
-       String requete="";
+       String requete="select ";
        String select_text="";
        int compteur=0;
        String from_text="";
@@ -1124,22 +1106,22 @@ public class SousMenutri extends javax.swing.JFrame {
        //créer la requête à partir de la GUI
        //si on a selectionné une table, on ajoute son nom au FROM de la requête
        //selection de la table
-       if(IndexCb==4){
+       if(IndexCb==3){
            from_text="employe e,doctor d";
            where_text="d.numero=e.numero";
        }
-       if(IndexCb==2){
+       if(IndexCb==1){
            from_text="malade m";
        }
-       if(IndexCb==3){
+       if(IndexCb==2){
            from_text="employe e, infirmier i, service s";
            where_text="i.numero=e.numero AND s.code=i.code";
        }
-       if(IndexCb==5) 
+       if(IndexCb==4) 
            from_text="chambre c";
-       if(IndexCb==1) 
+       if(IndexCb==0) 
            from_text="service s";
-       if(IndexCb==6){
+       if(IndexCb==5){
            from_text="service s, malade m, chambre c, hospitalisation h";
            where_text="h.numero=m.numero AND h.numero=c.numero AND h.numero=s.numero";
            compteur++;
@@ -1189,7 +1171,7 @@ public class SousMenutri extends javax.swing.JFrame {
            select_text=select_text+"code,";
            compteur++;
        }
-       if(NumeroCheck.isSelected()){
+       if(NumeroChambreCheck.isSelected()){
            select_text=select_text+"no_chambre,";
            compteur++;  
        }

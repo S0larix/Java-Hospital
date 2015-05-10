@@ -67,7 +67,7 @@ public class SousMenuRequete extends javax.swing.JFrame {
         SousMenuReq.setText("Sous Menu requête");
         SousMenuReq.setPreferredSize(new java.awt.Dimension(336, 84));
 
-        ListeDeroulanteRequete.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mutuelles des malades", "Spécialisation des médecins", " " }));
+        ListeDeroulanteRequete.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mutuelles des malades", "Spécialisation des médecins" }));
         ListeDeroulanteRequete.setPreferredSize(new java.awt.Dimension(420, 42));
 
         BoutonOk.setText("OK");
@@ -219,6 +219,7 @@ public class SousMenuRequete extends javax.swing.JFrame {
             }
 
         }
+        //pour la requête 2
         else
         {
             reponse = trf.methodechiante(LoginECE,PasswordECE,LoginBDD,PasswordBDD,

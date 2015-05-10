@@ -45,14 +45,6 @@ public class Question_reponse {
                 
                 // recuperer la liste des champs de la table
                 liste = conn.remplirChampsRequete(requete);
-
-                // effacer les champs de la fenetre
-                
-
-                // ajouter la liste des champs dans la fenetre
-               
-
-                // se positionner sur le premier champ
                 
             } catch (SQLException e) {
                 System.out.println("Echec SQL");
