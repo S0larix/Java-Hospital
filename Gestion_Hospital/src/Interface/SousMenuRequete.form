@@ -40,9 +40,7 @@
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="BoutonNouvelleRecherche" linkSize="2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-                          <Component id="BoutonRetourRecherche" linkSize="2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="182" max="-2" attributes="0"/>
                           <Component id="BoutonRetourPrinc" linkSize="2" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -70,7 +68,6 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="BoutonNouvelleRecherche" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="BoutonRetourRecherche" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="BoutonRetourPrinc" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="50" max="32767" attributes="0"/>
@@ -111,21 +108,13 @@
     </Component>
     <Component class="javax.swing.JButton" name="BoutonNouvelleRecherche">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Nouvelle recherche"/>
+        <Property name="text" type="java.lang.String" value="Cr&#xe9;er Chart"/>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[168, 30]"/>
         </Property>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BoutonNouvelleRechercheActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="BoutonRetourRecherche">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Retour Menu recherche"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BoutonRetourRechercheActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="BoutonRetourPrinc">

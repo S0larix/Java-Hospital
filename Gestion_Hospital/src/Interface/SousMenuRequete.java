@@ -30,10 +30,10 @@ public class SousMenuRequete extends javax.swing.JFrame {
     private  String LoginBDD;
     private  String PasswordBDD;*/
     
-   String LoginECE="raibaud";
-   String PasswordECE="L33Tsup@h4";
-   String LoginBDD="raibaud-rw";
-   String PasswordBDD="L33Tsup@h4";
+   String LoginECE="ducrocq";
+   String PasswordECE="KlrIT05A@";
+   String LoginBDD="ducrocq-rw";
+   String PasswordBDD="KlrIT05A@";
     
     public SousMenuRequete(String LoginECE, String PasswordECE, String LoginBDD, String PasswordBDD) {
         
@@ -57,7 +57,6 @@ public class SousMenuRequete extends javax.swing.JFrame {
         ListeDeroulanteRequete = new javax.swing.JComboBox();
         BoutonOk = new javax.swing.JButton();
         BoutonNouvelleRecherche = new javax.swing.JButton();
-        BoutonRetourRecherche = new javax.swing.JButton();
         BoutonRetourPrinc = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
 
@@ -73,18 +72,11 @@ public class SousMenuRequete extends javax.swing.JFrame {
         BoutonOk.setText("OK");
         BoutonOk.setPreferredSize(new java.awt.Dimension(49, 42));
 
-        BoutonNouvelleRecherche.setText("Nouvelle recherche");
+        BoutonNouvelleRecherche.setText("Créer Chart");
         BoutonNouvelleRecherche.setPreferredSize(new java.awt.Dimension(168, 30));
         BoutonNouvelleRecherche.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BoutonNouvelleRechercheActionPerformed(evt);
-            }
-        });
-
-        BoutonRetourRecherche.setText("Retour Menu recherche");
-        BoutonRetourRecherche.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BoutonRetourRechercheActionPerformed(evt);
             }
         });
 
@@ -126,9 +118,7 @@ public class SousMenuRequete extends javax.swing.JFrame {
                         .addGroup(layout.createSequentialGroup()
                             .addContainerGap()
                             .addComponent(BoutonNouvelleRecherche, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(7, 7, 7)
-                            .addComponent(BoutonRetourRecherche)
-                            .addGap(7, 7, 7)
+                            .addGap(182, 182, 182)
                             .addComponent(BoutonRetourPrinc)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(102, 102, 102)
@@ -136,7 +126,7 @@ public class SousMenuRequete extends javax.swing.JFrame {
                 .addGap(128, 128, 128))
         );
 
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {BoutonNouvelleRecherche, BoutonRetourPrinc, BoutonRetourRecherche});
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {BoutonNouvelleRecherche, BoutonRetourPrinc});
 
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -152,24 +142,16 @@ public class SousMenuRequete extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BoutonNouvelleRecherche, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BoutonRetourRecherche)
                     .addComponent(BoutonRetourPrinc))
                 .addContainerGap(50, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {BoutonOk, ListeDeroulanteRequete});
 
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {BoutonNouvelleRecherche, BoutonRetourPrinc, BoutonRetourRecherche});
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {BoutonNouvelleRecherche, BoutonRetourPrinc});
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void BoutonRetourRechercheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonRetourRechercheActionPerformed
-        // TODO add your handling code here:
-         this.dispose();
-        MenuRecherche menu_recherche = new MenuRecherche(LoginECE,PasswordECE,LoginBDD,PasswordBDD);
-        menu_recherche.setVisible(true);
-    }//GEN-LAST:event_BoutonRetourRechercheActionPerformed
 
     private void BoutonRetourPrincActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonRetourPrincActionPerformed
         // TODO add your handling code here:
@@ -304,7 +286,6 @@ public class SousMenuRequete extends javax.swing.JFrame {
     private javax.swing.JButton BoutonNouvelleRecherche;
     private javax.swing.JButton BoutonOk;
     private javax.swing.JButton BoutonRetourPrinc;
-    private javax.swing.JButton BoutonRetourRecherche;
     private javax.swing.JComboBox ListeDeroulanteRequete;
     private javax.swing.JLabel SousMenuReq;
     private javax.swing.JPanel jPanel1;

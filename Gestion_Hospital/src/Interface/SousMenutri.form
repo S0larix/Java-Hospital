@@ -35,9 +35,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="380" max="-2" attributes="0"/>
                       <Component id="BoutonNouvelleRecherche" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-                      <Component id="BoutonRetourRecherche" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="181" max="-2" attributes="0"/>
                       <Component id="BoutonRetourPrinc" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -78,7 +76,6 @@
               <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="BoutonNouvelleRecherche" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="BoutonRetourRecherche" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="BoutonRetourPrinc" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="70" max="32767" attributes="0"/>
@@ -149,14 +146,6 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BoutonNouvelleRechercheActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="BoutonRetourRecherche">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Retour Menu recherche"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BoutonRetourRechercheActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="BoutonRetourPrinc">

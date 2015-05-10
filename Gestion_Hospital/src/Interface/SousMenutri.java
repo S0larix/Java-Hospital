@@ -52,7 +52,6 @@ public class SousMenutri extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         ResultatRequete = new javax.swing.JTextArea();
         BoutonNouvelleRecherche = new javax.swing.JButton();
-        BoutonRetourRecherche = new javax.swing.JButton();
         BoutonRetourPrinc = new javax.swing.JButton();
         jLayeredPane1 = new javax.swing.JLayeredPane();
         NomCheck = new javax.swing.JCheckBox();
@@ -114,13 +113,6 @@ public class SousMenutri extends javax.swing.JFrame {
         BoutonNouvelleRecherche.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BoutonNouvelleRechercheActionPerformed(evt);
-            }
-        });
-
-        BoutonRetourRecherche.setText("Retour Menu recherche");
-        BoutonRetourRecherche.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BoutonRetourRechercheActionPerformed(evt);
             }
         });
 
@@ -400,9 +392,7 @@ public class SousMenutri extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(380, 380, 380)
                         .addComponent(BoutonNouvelleRecherche, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(7, 7, 7)
-                        .addComponent(BoutonRetourRecherche)
-                        .addGap(7, 7, 7)
+                        .addGap(181, 181, 181)
                         .addComponent(BoutonRetourPrinc))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(114, 114, 114)
@@ -434,7 +424,6 @@ public class SousMenutri extends javax.swing.JFrame {
                 .addGap(48, 48, 48)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BoutonNouvelleRecherche, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BoutonRetourRecherche)
                     .addComponent(BoutonRetourPrinc))
                 .addContainerGap(70, Short.MAX_VALUE))
         );
@@ -611,13 +600,6 @@ public class SousMenutri extends javax.swing.JFrame {
         menu_princ.setVisible(true);
     }//GEN-LAST:event_BoutonRetourPrincActionPerformed
 
-    private void BoutonRetourRechercheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonRetourRechercheActionPerformed
-        // TODO add your handling code here:
-           this.dispose();
-        MenuRecherche menu_recherche = new MenuRecherche(LoginECE,PasswordECE,LoginBDD,PasswordBDD);
-        menu_recherche.setVisible(true);
-    }//GEN-LAST:event_BoutonRetourRechercheActionPerformed
-
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         // TODO add your handling code here:
         PrenomCheck.setVisible(false);
@@ -716,7 +698,6 @@ public class SousMenutri extends javax.swing.JFrame {
     private javax.swing.JCheckBox BatimentCheck;
     private javax.swing.JButton BoutonNouvelleRecherche;
     private javax.swing.JButton BoutonRetourPrinc;
-    private javax.swing.JButton BoutonRetourRecherche;
     private javax.swing.JButton BoutonValidationClasseTri;
     private javax.swing.JCheckBox CodeCheck;
     private javax.swing.JCheckBox CodeServiceCheck;
@@ -742,7 +723,7 @@ public class SousMenutri extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
    
-   public void test_requete (){ //renplie l'ArrayList<generique> de la classe attendu avec la requête rendu
+   public void test_requete (){ //renplie l'ArrayList de la classe attendu avec la requête rendu
               //////POUR TABLE CHAMBRE/////////////
        int IndexCb = MenuDeroulantClass.getSelectedIndex();
         if(IndexCb == 4)//on teste la requête pour savoir quel sont les classes demandées
@@ -1088,7 +1069,7 @@ public class SousMenutri extends javax.swing.JFrame {
                    i++;
                 }
                 //remplissage de la classse et ajout à l'ArrayList
-               //>>>>>>>>>>>>>>>>>>>>ICI>>>>>>>>>>>>> hospitalisation tmp = new hospitalisation(tmp_code_service,tmp_no_malade,tmp_no_chambre, tmp_lit);
+               //>>>>>ICI>>>>>hospitalisation tmp = new hospitalisation(tmp_code_service,tmp_no_malade,tmp_no_chambre, tmp_lit);
                 liste_generique.add(tmp);
                 
             }

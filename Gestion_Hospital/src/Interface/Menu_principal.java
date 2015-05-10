@@ -132,6 +132,9 @@ public class Menu_principal extends javax.swing.JFrame {
 
     private void BoutonReportingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonReportingActionPerformed
         // TODO add your handling code here:
+        this.dispose();
+        SousMenuRequete menu_requete = new SousMenuRequete(LoginECE,PasswordECE,LoginBDD,PasswordBDD);
+        menu_requete.setVisible(true);
     }//GEN-LAST:event_BoutonReportingActionPerformed
 
     private void BoutonMajActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonMajActionPerformed
@@ -145,8 +148,8 @@ public class Menu_principal extends javax.swing.JFrame {
     private void BoutonRechercheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonRechercheActionPerformed
         // TODO add your handling code here:
          this.dispose();
-        MenuRecherche menu_recherche = new MenuRecherche(LoginECE,PasswordECE,LoginBDD,PasswordBDD);
-        menu_recherche.setVisible(true);
+        SousMenutri menu_tri = new SousMenutri(LoginECE,PasswordECE,LoginBDD,PasswordBDD);
+        menu_tri.setVisible(true);
     }//GEN-LAST:event_BoutonRechercheActionPerformed
 
 
