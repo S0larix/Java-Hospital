@@ -164,6 +164,7 @@ public class Mise_a_jour extends javax.swing.JFrame implements ActionListener{
             
         }else if(e.getSource()==supprimer)
         {
+            
             try {
                 suppr= new supprimer("ducrocq", "KlrIT05A@", "ducrocq-rw", "KlrIT05A@");
             } catch (SQLException ex) {
