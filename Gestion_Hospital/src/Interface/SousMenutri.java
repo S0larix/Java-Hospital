@@ -724,7 +724,7 @@ public class SousMenutri extends javax.swing.JFrame {
        try {
                 try {
                     // tentative de connexion si les 4 attributs sont remplis
-                    conn = new Connexion(loginECE, mdpECE, loginBDD,mdpBDD);
+                    conn = new Connexion(LoginECE, PasswordECE, LoginBDD,PasswordBDD);
                 } catch (ClassNotFoundException cnfe) {
                     System.out.println("Connexion echouee : probleme de classe");
                     cnfe.printStackTrace();
@@ -756,16 +756,17 @@ public class SousMenutri extends javax.swing.JFrame {
    
    public void test_requete (){ //renplie l'ArrayList<generique> de la classe attendu avec la requête rendu
               //////POUR TABLE CHAMBRE/////////////
-        if(checkbox_chambre.isSelected())//on teste la requête pour savoir quel sont les classes demandées
+       int IndexCb = MenuDeroulantClass.getSelectedIndex();
+        if(IndexCb == 4)//on teste la requête pour savoir quel sont les classes demandées
         {
             //chambre séléctionné
             //on crée un arraylist pour stocker le résultat
             liste_generique=new ArrayList<chambre>();
             //on initialise les attributs temporaires
-             String tmp_service;
-             int tmp_chambre;
-             String tmp_surveillant;
-             int tmp_lits;
+             String tmp_code_service="";
+             int tmp_no_chambre=0;
+             int tmp_surveillant=0;
+             int tmp_nb_lits=0;
             
             //pour chaque champ rempli d'une string, on remplit la classe correspondnte
             for (String s : liste) {
@@ -775,41 +776,39 @@ public class SousMenutri extends javax.swing.JFrame {
                 
                 int i=0;
                 if(CodeServiceCheck.isSelected()){
-                     tmp_service=str[i];
+                     tmp_code_service=str[i];
                      i++;
                 }
                 if(NumeroCheck.isSelected()){
-                     tmp_chambre=Integer.parseInt(str[i]);
+                     tmp_no_chambre=Integer.parseInt(str[i]);
                     i++;
                 }
                 if(SurveillantCheck.isSelected()){
-                    tmp_surveillant=str[i];
+                    tmp_surveillant=Integer.parseInt(str[i]);
                     i++;
                 }
                 if(NombreLitCheck.isSelected()){
-                    tmp_lits=Integer.parseInt(str[i]);
+                    tmp_nb_lits=Integer.parseInt(str[i]);
                     i++;
                 }
                     
                 //remplissage de la classse et ajout à l'ArrayList
-                chambre tmp = new chambre(tmp_chambre,tmp_service,tmp_surveillant,tmp_lits);
+                chambre tmp = new chambre(tmp_code_service,tmp_no_chambre,tmp_surveillant,tmp_nb_lits);
                 liste_generique.add(tmp);
-                
             }
         }
-        
         ///////POUR TABLE DOCTEUR/////////////
-        if((check_box_docteur).isSelected())
+        if(IndexCb==4)
         {
             liste_generique=new ArrayList<docteur>();
              //...
         
-            int tmp_numero;
-            String tmp_specialite;
-            String tmp_nom;
-            String tmp_prenom;
-            String tmp_tel;
-            String tmp_adresse;
+            int tmp_numero=0;
+            String tmp_specialite="";
+            String tmp_nom="";
+            String tmp_prenom="";
+            String tmp_tel="";
+            String tmp_adresse="";
             
             //pour chaque champ rempli d'une string, on remplit la classe correspondnte
             for (String s : liste) {
@@ -854,8 +853,260 @@ public class SousMenutri extends javax.swing.JFrame {
         }
        
         //////POUR TABLE INFIRMIER/////////////
+        if(IndexCb==3)
+        {
+            liste_generique=new ArrayList<infirmier>();
+             //...
+        
+            int tmp_numero=0;
+            String tmp_code_service="";
+            String tmp_nom="";
+            String tmp_prenom="";
+            String tmp_tel="";
+            String tmp_adresse="";
+            boolean tmp_rotation=false;
+            int tmp_salaire=0;
+            
+            //pour chaque champ rempli d'une string, on remplit la classe correspondnte
+            for (String s : liste) {
+                //décomposition de la réponse en fonction de la question (dépend de l'interface graphique)
+                //et on "coupe" à chaque virgule(séparation des attributs)
+                String[] str=s.split(",");
+                
+                int i=0;
+               
+                if(NumeroCheck.isSelected()){
+                    tmp_numero=Integer.parseInt(str[i]);
+                    i++;
+                }
+                if(CodeServiceCheck.isSelected()){
+                   tmp_code_service=str[i];
+                   i++;
+                }
+                if(NomCheck.isSelected()){
+                   tmp_nom=str[i];
+                   i++;
+                }
+                if(PrenomCheck.isSelected()){
+                   tmp_prenom=str[i];
+                   i++;
+                }
+                if(AdresseCheck.isSelected()){
+                  tmp_adresse=str[i];
+                   i++;
+                }
+                if(TelephoneCheck.isSelected()){
+                   tmp_tel=str[i];
+                   i++;
+                }
+                if(RotationCheck.isSelected()){
+                    if(str[i].equals("NUIT")){
+                    tmp_rotation=false;
+                    }
+                    else tmp_rotation=true;
+                    i++;
+                }
+                if(SalaireCheck.isSelected()){
+                    tmp_salaire=Integer.parseInt(str[i]);
+                    i++;
+                }
+                
+                    
+                //remplissage de la classse et ajout à l'ArrayList
+                infirmier tmp = new infirmier(tmp_numero,tmp_code_service,tmp_rotation,tmp_salaire,tmp_nom,tmp_prenom,tmp_tel,tmp_adresse);
+                liste_generique.add(tmp);
+                
+            }
+            //Fin des tests pour la table infirmier
+        }
+        //////POUR TABLE MALADE/////////////
+        if(IndexCb==2)
+        {
+            liste_generique=new ArrayList<malade>();
+             //...
+        
+            int tmp_numero=0;
+           
+            String tmp_nom="";
+            String tmp_prenom="";
+            String tmp_tel="";
+            String tmp_adresse="";
+            String tmp_mutuelle="";
+            
+            //pour chaque champ rempli d'une string, on remplit la classe correspondnte
+            for (String s : liste) {
+                //décomposition de la réponse en fonction de la question (dépend de l'interface graphique)
+                //et on "coupe" à chaque virgule(séparation des attributs)
+                String[] str=s.split(",");
+                
+                int i=0;
+               
+                if(NumeroCheck.isSelected()){
+                    tmp_numero=Integer.parseInt(str[i]);
+                    i++;
+                }
+                
+                if(NomCheck.isSelected()){
+                   tmp_nom=str[i];
+                   i++;
+                }
+                if(PrenomCheck.isSelected()){
+                   tmp_prenom=str[i];
+                   i++;
+                }
+                if(AdresseCheck.isSelected()){
+                  tmp_adresse=str[i];
+                   i++;
+                }
+                if(TelephoneCheck.isSelected()){
+                   tmp_tel=str[i];
+                   i++;
+                }
+                
+                if(MutuelleCheck.isSelected()){
+                    tmp_mutuelle=str[i];
+                    i++;
+                }
+                
+                    
+                //remplissage de la classse et ajout à l'ArrayList
+                malade tmp = new malade(tmp_numero,tmp_nom,tmp_prenom,tmp_tel,tmp_adresse,tmp_mutuelle);
+                liste_generique.add(tmp);
+                
+            }
+        //fin remplissage MALADE
         
     }
+        //////POUR TABLE SERVICE/////////////
+        if(IndexCb==1)
+        {
+            liste_generique=new ArrayList<service>();
+             //...
+        
+           
+            String tmp_code="";
+            String tmp_nom="";
+            String tmp_batiment="";
+            int tmp_directeur=0;
+            
+            
+            //pour chaque champ rempli d'une string, on remplit la classe correspondnte
+            for (String s : liste) {
+                //décomposition de la réponse en fonction de la question (dépend de l'interface graphique)
+                //et on "coupe" à chaque virgule(séparation des attributs)
+                String[] str=s.split(",");
+                
+                int i=0;
+               
+                if(CodeCheck.isSelected()){
+                    tmp_code=str[i];
+                    i++;
+                }
+                if(NomCheck.isSelected()){
+                    tmp_nom=str[i];
+                    i++;
+                }
+                if(BatimentCheck.isSelected()){
+                   tmp_batiment=str[i];
+                   i++;
+                }
+                if(DirecteurCheck.isSelected()){
+                   tmp_directeur=Integer.parseInt(str[i]);
+                   i++;
+                }
+                //remplissage de la classse et ajout à l'ArrayList
+                service tmp = new service(tmp_code,tmp_nom,tmp_batiment,tmp_directeur);
+                liste_generique.add(tmp);
+                
+            }
+        }
+        //////POUR TABLE CHAMBRE/////////////
+        if(IndexCb==5)
+        {
+            liste_generique=new ArrayList<chambre>();
+             //...
+        
+           
+            String tmp_code_service="";
+            int tmp_no_chambre=0;
+            int tmp_surveillant=0;
+            int tmp_nb_lits=0;
+            
+            
+            //pour chaque champ rempli d'une string, on remplit la classe correspondnte
+            for (String s : liste) {
+                //décomposition de la réponse en fonction de la question (dépend de l'interface graphique)
+                //et on "coupe" à chaque virgule(séparation des attributs)
+                String[] str=s.split(",");
+                
+                int i=0;
+               
+                if(CodeServiceCheck.isSelected()){
+                    tmp_code_service=str[i];
+                    i++;
+                }
+                if(NomCheck.isSelected()){
+                    tmp_no_chambre=Integer.parseInt(str[i]);
+                    i++;
+                }
+                if(SurveillantCheck.isSelected()){
+                   tmp_surveillant=Integer.parseInt(str[i]);
+                   i++;
+                }
+                if(NombreLitCheck.isSelected()){
+                   tmp_nb_lits=Integer.parseInt(str[i]);
+                   i++;
+                }
+                //remplissage de la classse et ajout à l'ArrayList
+                chambre tmp = new chambre(tmp_code_service,tmp_no_chambre,tmp_surveillant,tmp_nb_lits);
+                liste_generique.add(tmp);
+                
+            }
+        }
+        ///TABLE HOSPITALISATION////
+        if(IndexCb==6)
+        {
+            liste_generique=new ArrayList<hospitalisation>();
+             //...
+        
+            String tmp_code_service="";
+            int tmp_no_malade=0;
+            int tmp_no_chambre=0;
+            int tmp_lit=0;
+            
+            
+            //pour chaque champ rempli d'une string, on remplit la classe correspondnte
+            for (String s : liste) {
+                //décomposition de la réponse en fonction de la question (dépend de l'interface graphique)
+                //et on "coupe" à chaque virgule(séparation des attributs)
+                String[] str=s.split(",");
+                
+                int i=0;
+               
+                if(NumeroCheck.isSelected()){
+                    tmp_no_malade=Integer.parseInt(str[i]);;;
+                    i++;
+                }
+                if(NumeroChambreCheck.isSelected()){
+                    tmp_no_chambre=Integer.parseInt(str[i]);
+                    i++;
+                }
+                if(CodeServiceCheck.isSelected()){
+                   tmp_code_service=str[i];
+                   i++;
+                }
+                if(NumeroLitCheck.isSelected()){
+                   tmp_lit=Integer.parseInt(str[i]);;
+                   i++;
+                }
+                //remplissage de la classse et ajout à l'ArrayList
+               //>>>>>>>>>>>>>>>>>>>>ICI>>>>>>>>>>>>> hospitalisation tmp = new hospitalisation(tmp_code_service,tmp_no_malade,tmp_no_chambre, tmp_lit);
+                liste_generique.add(tmp);
+                
+            }
+               ///FIN TABLE HOSPITALISATION 
+        }
+   }
    
    public String creer_requête(){
        String requete="";
@@ -863,25 +1114,26 @@ public class SousMenutri extends javax.swing.JFrame {
        int compteur=0;
        String from_text="";
        String where_text="";
+       int IndexCb = MenuDeroulantClass.getSelectedIndex();
        //créer la requête à partir de la GUI
        //si on a selectionné une table, on ajoute son nom au FROM de la requête
        //selection de la table
-       if(doctor_check){
+       if(IndexCb==4){
            from_text="employe e,doctor d";
            where_text="d.numero=e.numero";
        }
-       if(malade_check){
+       if(IndexCb==2){
            from_text="malade m";
        }
-       if(infirmier_check){
+       if(IndexCb==3){
            from_text="employe e, infirmier i, service s";
            where_text="i.numero=e.numero AND s.code=i.code";
        }
-       if(chambre_check) 
+       if(IndexCb==5) 
            from_text="chambre c";
-       if(service_check) 
+       if(IndexCb==1) 
            from_text="service s";
-       if(hospitalisation_check){
+       if(IndexCb==6){
            from_text="service s, malade m, chambre c, hospitalisation h";
            where_text="h.numero=m.numero AND h.numero=c.numero AND h.numero=s.numero";
            compteur++;

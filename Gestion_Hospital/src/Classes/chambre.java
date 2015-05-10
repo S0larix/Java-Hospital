@@ -12,10 +12,10 @@ package Classes;
 public class chambre {
     private int no_chambre;
     private String code_service;
-    private String surveillant;
+    private int surveillant;
     private int nb_lits;
     
-    public chambre(int chambre,String service,String surveil,int lits){
+    public chambre(String service,int chambre,int surveil,int lits){
         this.no_chambre=chambre;
         this.code_service =service;
         this.surveillant=surveil;
@@ -53,14 +53,14 @@ public class chambre {
     /**
      * @return the surveillant
      */
-    public String getSurveillant() {
+    public int getSurveillant() {
         return surveillant;
     }
 
     /**
      * @param surveillant the surveillant to set
      */
-    public void setSurveillant(String surveillant) {
+    public void setSurveillant(int surveillant) {
         this.surveillant = surveillant;
     }
 

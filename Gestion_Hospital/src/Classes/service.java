@@ -10,12 +10,12 @@ package Classes;
  * @author Clément
  */
 public class service {
-    private int code;
+    private String code;
     private String nom;
     private String batiment;
-    private String directeur;
+    private int directeur;
     
-    public service(int code,String nom, String batiment,String directeur){
+    public service(String code,String nom, String batiment,int directeur){
         this.code=code;
         this.nom=nom;
         this.batiment=batiment;
@@ -25,14 +25,14 @@ public class service {
     /**
      * @return the code
      */
-    public int getCode() {
+    public String getCode() {
         return code;
     }
 
     /**
      * @param code the code to set
      */
-    public void setCode(int code) {
+    public void setCode(String code) {
         this.code = code;
     }
 
@@ -53,28 +53,28 @@ public class service {
     /**
      * @return the batiemnt
      */
-    public String getBatiemnt() {
-        return batiemnt;
+    public String getBatiment() {
+        return batiment;
     }
 
     /**
-     * @param batiemnt the batiemnt to set
+     * @param batiment the batiemnt to set
      */
-    public void setBatiemnt(String batiemnt) {
-        this.batiemnt = batiemnt;
+    public void setBatiment(String batiment) {
+        this.batiment = batiment;
     }
 
     /**
      * @return the directeur
      */
-    public String getDirecteur() {
+    public int getDirecteur() {
         return directeur;
     }
 
     /**
      * @param directeur the directeur to set
      */
-    public void setDirecteur(String directeur) {
+    public void setDirecteur(int directeur) {
         this.directeur = directeur;
     }
     
