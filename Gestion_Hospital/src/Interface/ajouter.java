@@ -33,10 +33,10 @@ public class ajouter extends javax.swing.JFrame implements ActionListener {
     
     public ajouter(String nomECE, String mdpECE, String nomBDD, String mdpBDD) throws SQLException {
         initComponents();
-         this.LoginECE = nomECE;
-         this.PasswordECE = mdpECE;
-         this.LoginBDD= nomBDD;
-         this.PasswordBDD = mdpBDD;
+        this.LoginECE = nomECE;
+        this.PasswordECE = mdpECE;
+        this.LoginBDD= nomBDD;
+        this.PasswordBDD = mdpBDD;
         this.table.addActionListener(this);
         this.ajout.addActionListener(this);
         this.a1.setVisible(false);

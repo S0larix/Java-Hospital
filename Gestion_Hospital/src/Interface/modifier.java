@@ -25,8 +25,18 @@ public class modifier extends javax.swing.JFrame implements ActionListener {
     /**
      * Creates new form ajouter
      */
+    private  String LoginECE;
+    private  String PasswordECE;
+    private  String LoginBDD;
+    private  String PasswordBDD;
+    
+    
     public modifier(String nomECE, String mdpECE, String nomBDD, String mdpBDD) throws SQLException {
         initComponents();
+        this.LoginECE = nomECE;
+        this.PasswordECE = mdpECE;
+        this.LoginBDD= nomBDD;
+        this.PasswordBDD = mdpBDD;
         this.table.addActionListener(this);
         this.modif2.addActionListener(this);
         this.aa.addActionListener(this);
