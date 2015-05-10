@@ -17,14 +17,20 @@ import jdbc2014.Connexion;
  */
 public class SousMenutri extends javax.swing.JFrame {
 
-    /**
-     * Creates new form SousMenutri
-     */
+    private  String ServeurBase;
+    private  String NomBase;
+    private  String Login;
+    private  String Password;
     ArrayList<String> liste;
-   ArrayList liste_generique;
+    ArrayList liste_generique;
    public Connexion conn;
    
-    public SousMenutri() {
+    public SousMenutri(String ServeurBase, String NomBase, String Login, String Password) {
+       
+        this.ServeurBase = ServeurBase;
+        this.NomBase = NomBase;
+        this.Login= Login;
+        this.Password = Password;
         initComponents();
      
   
@@ -674,7 +680,7 @@ public class SousMenutri extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SousMenutri().setVisible(true);
+                new SousMenutri("tu","est","un","boulet").setVisible(true);
             }
         });
     }
