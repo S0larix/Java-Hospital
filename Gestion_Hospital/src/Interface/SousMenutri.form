@@ -23,61 +23,68 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="472" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="jScrollPane1" alignment="0" min="-2" pref="1052" max="-2" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace pref="114" max="32767" attributes="0"/>
+                      <Component id="MenuDeroulantClass" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="CodeServiceCheck" alignment="0" min="-2" pref="573" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="NomCheck" min="-2" pref="56" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="PrenomCheck" min="-2" pref="72" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="TelephoneCheck" min="-2" pref="88" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="AdresseCheck" min="-2" pref="80" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
+                              <Component id="MutuelleCheck" min="-2" pref="79" max="-2" attributes="0"/>
+                          </Group>
                           <Group type="102" attributes="0">
-                              <Component id="MenuDeroulantClass" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                              <Component id="CodeCheck" min="-2" pref="61" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="BatimentCheck" min="-2" pref="80" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                              <Component id="DirecteurCheck" min="-2" pref="80" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
+                              <Component id="NomServiceCheck" min="-2" pref="102" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                              <Component id="NumeroLitCheck" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
                               <Component id="BoutonValidationClasseTri" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-                              <Component id="MenuDeroulantTri" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="jScrollPane1" alignment="0" min="-2" pref="1052" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="NomCheck" linkSize="2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="PrenomCheck" linkSize="2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="TelephoneCheck" linkSize="2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="AdresseCheck" linkSize="2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="NumeroCheck" linkSize="2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="MutuelleCheck" linkSize="2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="CodeCheck" linkSize="2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="NomServiceCheck" linkSize="2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="BatimentCheck" linkSize="2" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="DirecteurCheck" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="CodeServiceCheck" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jCheckBox12" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jCheckBox13" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jCheckBox14" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jCheckBox15" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jCheckBox16" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="MenuDeroulantTri" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="200" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Component id="NumeroCheck" min="-2" pref="73" max="-2" attributes="0"/>
+                                          <Component id="RotationCheck" min="-2" pref="38" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="SalaireCheck" min="-2" pref="40" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="SpecialiteCheck" min="-2" pref="37" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="NombreLitCheck" min="-2" pref="35" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                                      <Component id="SurveillantCheck" min="-2" pref="44" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
                           </Group>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="114" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="256" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="472" max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -95,43 +102,64 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="MenuDeroulantClass" linkSize="1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="BoutonValidationClasseTri" linkSize="1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="MenuDeroulantTri" linkSize="1" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="MenuDeroulantClass" linkSize="1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="BoutonValidationClasseTri" linkSize="1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="MenuDeroulantTri" linkSize="1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="CodeServiceCheck" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="NumeroCheck" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="NomCheck" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="PrenomCheck" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="TelephoneCheck" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="AdresseCheck" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="MutuelleCheck" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="RotationCheck" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="SalaireCheck" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="SpecialiteCheck" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="NombreLitCheck" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="SurveillantCheck" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                              <Component id="CodeCheck" linkSize="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="NomServiceCheck" linkSize="3" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                      <Component id="DirecteurCheck" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="BatimentCheck" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="220" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="BoutonNouvelleRecherche" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="BoutonRetourRecherche" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="BoutonRetourPrinc" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="71" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="NumeroLitCheck" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="345" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="NomCheck" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="PrenomCheck" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="TelephoneCheck" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="AdresseCheck" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="NumeroCheck" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="MutuelleCheck" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="CodeCheck" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="NomServiceCheck" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="BatimentCheck" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="CodeServiceCheck" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="DirecteurCheck" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jCheckBox12" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jCheckBox13" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jCheckBox14" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jCheckBox15" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jCheckBox16" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-              <Component id="jScrollPane1" min="-2" pref="220" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="BoutonNouvelleRecherche" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="BoutonRetourRecherche" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="BoutonRetourPrinc" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace pref="61" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -149,11 +177,14 @@
     <Component class="javax.swing.JComboBox" name="MenuDeroulantClass">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="Item 1"/>
-            <StringItem index="1" value="Item 2"/>
-            <StringItem index="2" value="Item 3"/>
-            <StringItem index="3" value="Item 4"/>
+          <StringArray count="7">
+            <StringItem index="0" value="Service"/>
+            <StringItem index="1" value="Malade"/>
+            <StringItem index="2" value="Infirmier"/>
+            <StringItem index="3" value="Docteur"/>
+            <StringItem index="4" value="Chambre"/>
+            <StringItem index="5" value="Hospitalisation"/>
+            <StringItem index="6" value=" "/>
           </StringArray>
         </Property>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -161,7 +192,7 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="componentAdded" listener="java.awt.event.ContainerListener" parameters="java.awt.event.ContainerEvent" handler="MenuDeroulantClassComponentAdded"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenuDeroulantClassActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="BoutonValidationClasseTri">
@@ -269,13 +300,26 @@
     </Component>
     <Component class="javax.swing.JCheckBox" name="NomServiceCheck">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Nom"/>
+        <Property name="text" type="java.lang.String" value="Nom Service"/>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[112, 25]"/>
         </Property>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NomServiceCheckActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="CodeServiceCheck">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Code Service"/>
+        <Property name="horizontalAlignment" type="int" value="2"/>
+        <Property name="horizontalTextPosition" type="int" value="4"/>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[112, 25]"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CodeServiceCheckActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JCheckBox" name="BatimentCheck">
@@ -302,20 +346,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DirecteurCheckActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="CodeServiceCheck">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Code"/>
-        <Property name="horizontalAlignment" type="int" value="2"/>
-        <Property name="horizontalTextPosition" type="int" value="4"/>
-        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[112, 25]"/>
-        </Property>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CodeServiceCheckActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox12">
+    <Component class="javax.swing.JCheckBox" name="RotationCheck">
       <Properties>
         <Property name="text" type="java.lang.String" value="1"/>
         <Property name="horizontalAlignment" type="int" value="2"/>
@@ -325,10 +356,10 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox12ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RotationCheckActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox13">
+    <Component class="javax.swing.JCheckBox" name="SalaireCheck">
       <Properties>
         <Property name="text" type="java.lang.String" value="2"/>
         <Property name="horizontalAlignment" type="int" value="2"/>
@@ -338,10 +369,10 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox13ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SalaireCheckActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox14">
+    <Component class="javax.swing.JCheckBox" name="SpecialiteCheck">
       <Properties>
         <Property name="text" type="java.lang.String" value="3"/>
         <Property name="horizontalAlignment" type="int" value="2"/>
@@ -351,10 +382,10 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox14ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SpecialiteCheckActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox15">
+    <Component class="javax.swing.JCheckBox" name="NombreLitCheck">
       <Properties>
         <Property name="text" type="java.lang.String" value="4"/>
         <Property name="horizontalAlignment" type="int" value="2"/>
@@ -364,10 +395,10 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox15ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NombreLitCheckActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox16">
+    <Component class="javax.swing.JCheckBox" name="SurveillantCheck">
       <Properties>
         <Property name="text" type="java.lang.String" value="5"/>
         <Property name="horizontalAlignment" type="int" value="2"/>
@@ -377,7 +408,7 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox16ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SurveillantCheckActionPerformed"/>
       </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
@@ -418,6 +449,11 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BoutonRetourPrincActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="NumeroLitCheck">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jCheckBox1"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>
