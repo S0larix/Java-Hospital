@@ -49,7 +49,7 @@ public class MenuRecherche extends javax.swing.JFrame {
         Recherche = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         BoutonTri = new javax.swing.JButton();
-        BoutonRecherchePref = new javax.swing.JButton();
+        BoutonReporting = new javax.swing.JButton();
         BoutonRetourMenu = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -60,18 +60,23 @@ public class MenuRecherche extends javax.swing.JFrame {
 
         jPanel1.setLayout(new java.awt.GridLayout(3, 1, 0, 140));
 
-        BoutonTri.setText("Tri croissant / alphabétique");
-        jPanel1.add(BoutonTri);
-
-        BoutonRecherchePref.setText("Recherches prédéfinies");
-        BoutonRecherchePref.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        BoutonRecherchePref.setPreferredSize(new java.awt.Dimension(168, 42));
-        BoutonRecherchePref.addActionListener(new java.awt.event.ActionListener() {
+        BoutonTri.setText("Tri Requete");
+        BoutonTri.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BoutonRecherchePrefActionPerformed(evt);
+                BoutonTriActionPerformed(evt);
             }
         });
-        jPanel1.add(BoutonRecherchePref);
+        jPanel1.add(BoutonTri);
+
+        BoutonReporting.setText("Reporting");
+        BoutonReporting.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        BoutonReporting.setPreferredSize(new java.awt.Dimension(168, 42));
+        BoutonReporting.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BoutonReportingActionPerformed(evt);
+            }
+        });
+        jPanel1.add(BoutonReporting);
 
         BoutonRetourMenu.setText("Retour menu");
         BoutonRetourMenu.addActionListener(new java.awt.event.ActionListener() {
@@ -116,18 +121,25 @@ public class MenuRecherche extends javax.swing.JFrame {
         menu_princ.setVisible(true);
     }//GEN-LAST:event_BoutonRetourMenuActionPerformed
 
-    private void BoutonRecherchePrefActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonRecherchePrefActionPerformed
+    private void BoutonReportingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonReportingActionPerformed
         // TODO add your handling code here:
         System.out.println("PETIT FDP TU VAS MARCHER");
         this.dispose();
         SousMenuRequete sous_menu_requete = new SousMenuRequete(LoginECE,PasswordECE,LoginBDD,PasswordBDD);
         sous_menu_requete.setVisible(true);
-    }//GEN-LAST:event_BoutonRecherchePrefActionPerformed
+    }//GEN-LAST:event_BoutonReportingActionPerformed
+
+    private void BoutonTriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonTriActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        SousMenutri sous_menu_tri = new SousMenutri(LoginECE,PasswordECE,LoginBDD,PasswordBDD);
+        sous_menu_tri.setVisible(true);
+    }//GEN-LAST:event_BoutonTriActionPerformed
 
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BoutonRecherchePref;
+    private javax.swing.JButton BoutonReporting;
     private javax.swing.JButton BoutonRetourMenu;
     private javax.swing.JButton BoutonTri;
     private javax.swing.JLabel Recherche;

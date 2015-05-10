@@ -596,10 +596,16 @@ public class SousMenutri extends javax.swing.JFrame {
 
     private void BoutonRetourPrincActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonRetourPrincActionPerformed
         // TODO add your handling code here:
+          this.dispose();
+        Menu_principal menu_princ = new Menu_principal(LoginECE,PasswordECE,LoginBDD,PasswordBDD);
+        menu_princ.setVisible(true);
     }//GEN-LAST:event_BoutonRetourPrincActionPerformed
 
     private void BoutonRetourRechercheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonRetourRechercheActionPerformed
         // TODO add your handling code here:
+           this.dispose();
+        MenuRecherche menu_recherche = new MenuRecherche(LoginECE,PasswordECE,LoginBDD,PasswordBDD);
+        menu_recherche.setVisible(true);
     }//GEN-LAST:event_BoutonRetourRechercheActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
