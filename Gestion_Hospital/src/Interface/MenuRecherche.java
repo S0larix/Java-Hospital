@@ -27,7 +27,8 @@ public class MenuRecherche extends javax.swing.JFrame {
 
         
        
-    public MenuRecherche(String LoginECE, String PasswordECE, String LoginBDD, String PasswordBDD) {
+    public MenuRecherche(String LoginECE, String PasswordECE, String LoginBDD, String PasswordBDD)
+    {
         
         this.LoginECE = LoginECE;
         this.PasswordECE = PasswordECE;
@@ -65,6 +66,11 @@ public class MenuRecherche extends javax.swing.JFrame {
         BoutonRecherchePref.setText("Recherches prédéfinies");
         BoutonRecherchePref.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         BoutonRecherchePref.setPreferredSize(new java.awt.Dimension(168, 42));
+        BoutonRecherchePref.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BoutonRecherchePrefActionPerformed(evt);
+            }
+        });
         jPanel1.add(BoutonRecherchePref);
 
         BoutonRetourMenu.setText("Retour menu");
@@ -104,10 +110,19 @@ public class MenuRecherche extends javax.swing.JFrame {
 
     private void BoutonRetourMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonRetourMenuActionPerformed
         // TODO add your handling code here:
+        System.out.println("PETIT FDP TU VAS MARCHER");
         this.dispose();
         Menu_principal menu_princ = new Menu_principal(LoginECE,PasswordECE,LoginBDD,PasswordBDD);
         menu_princ.setVisible(true);
     }//GEN-LAST:event_BoutonRetourMenuActionPerformed
+
+    private void BoutonRecherchePrefActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonRecherchePrefActionPerformed
+        // TODO add your handling code here:
+        System.out.println("PETIT FDP TU VAS MARCHER");
+        this.dispose();
+        SousMenuRequete sous_menu_requete = new SousMenuRequete(LoginECE,PasswordECE,LoginBDD,PasswordBDD);
+        sous_menu_requete.setVisible(true);
+    }//GEN-LAST:event_BoutonRecherchePrefActionPerformed
 
 
 
