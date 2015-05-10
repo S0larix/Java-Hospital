@@ -514,12 +514,14 @@ public class SousMenutri extends javax.swing.JFrame {
         System.out.print(IndexCb);
         switch(IndexCb)
         {
+            case 0 : //service
                 NomServiceCheck.setVisible(true);
                 CodeServiceCheck.setVisible(true);
                 BatimentCheck.setVisible(true);
                 DirecteurCheck.setVisible(true);
         
             break;
+            case 1 : //malade
                     NumeroCheck.setVisible(true);
                     NomCheck.setVisible(true);
                     PrenomCheck.setVisible(true);
@@ -528,6 +530,7 @@ public class SousMenutri extends javax.swing.JFrame {
                     
                     
             break;
+            case 2 : // infirmier
                     NumeroCheck.setVisible(true);
                     CodeServiceCheck.setVisible(true);
                     RotationCheck.setVisible(true);
@@ -537,6 +540,7 @@ public class SousMenutri extends javax.swing.JFrame {
                     TelephoneCheck.setVisible(true);
                     AdresseCheck.setVisible(true);
             break;
+            case 3 : // Docteur
                     NumeroCheck.setVisible(true);
                     SpecialiteCheck.setVisible(true);
                     NomCheck.setVisible(true);
@@ -545,6 +549,7 @@ public class SousMenutri extends javax.swing.JFrame {
                     AdresseCheck.setVisible(true);
         
             break;
+            case 4 : // Chambre
                     
                     NumeroChambreCheck.setVisible(true);
                     CodeServiceCheck.setVisible(true);
@@ -552,6 +557,7 @@ public class SousMenutri extends javax.swing.JFrame {
                     NombreLitCheck.setVisible(true);
                     
             break;
+            case 5 : //hospitalisation
                     NumeroCheck.setVisible(true);
                     NomCheck.setVisible(true);
                     PrenomCheck.setVisible(true);
