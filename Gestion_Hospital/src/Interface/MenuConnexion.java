@@ -87,7 +87,7 @@ public class MenuConnexion extends javax.swing.JFrame {
                     .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BoutonConnexion)
                     .addComponent(BoutonQuitter))
-                .addContainerGap(472, Short.MAX_VALUE))
+                .addContainerGap(471, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {BoutonConnexion, BoutonQuitter, Login, NomBase, Password, ServeurBase});
