@@ -24,6 +24,7 @@ public class Transformation {
    ArrayList<String> liste;
    ArrayList liste_generique;
    public Connexion conn;
+   
 
    public void methodechiante(){
       
@@ -61,17 +62,17 @@ public class Transformation {
 //new Connexion(loginECE, mdpECE, loginBDD, mdpBDD);
    
    public void test_requete (){ //renplie l'ArrayList<generique> de la classe attendu avec la requête rendu
-       
-        if(checkbox_chambre.isSelected())//on teste la requête pour savoir quel sont les classes demandés
+       //////POUR TABLE CHAMBRE/////////////
+        if(checkbox_chambre.isSelected())//on teste la requête pour savoir quel sont les classes demandées
         {
             //chambre séléctionnéeg
             liste_generique=new ArrayList<chambre>();
             //on crée un arraylist pour stocker le résultat
             //on initialise les attributs de la classe à false
-             boolean if_service=false;
-             boolean if_chambre=false;
-             boolean if_surveillant=false;
-             boolean if_lits=false;
+             boolean test_service=false;
+             boolean test_chambre=false;
+             boolean test_surveillant=false;
+             boolean test_lits=false;
              String tmp_service;
              int tmp_chambre;
              String tmp_surveillant;
@@ -79,13 +80,13 @@ public class Transformation {
              
              //si checkbox supplémentaires, passer les booléan à true
             if(code_service_box.isSelected())  
-                if_service=true;
+                test_service=true;
             if(no_chambre_box.isSelected())
-                if_chambre=true;
+                test_chambre=true;
             if(surveillant_box.isSelected())
-                if_surveillant=true;
+                test_surveillant=true;
             if(nb_lits_box.isSelected())
-                if_lits=true;
+                test_lits=true;
             
             
             //pour chaque champ rempli d'une string, on remplit la classe correspondnte
@@ -96,21 +97,21 @@ public class Transformation {
                 String[] str=s.split(",");
                 
                 for(int i=0;i<str.length;i++){
-                    if(if_service==true){
+                    if(test_service==true){
                         tmp_service=str[i];
-                        if_service=false;
+                        test_service=false;
                     }
-                    if(if_chambre==true){
+                    if(test_chambre==true){
                         tmp_chambre=Integer.parseInt(str[i]);
-                        if_chambre=false;
+                        test_chambre=false;
                     }
-                    if(if_surveillant==true){
+                    if(test_surveillant==true){
                         tmp_surveillant=str[i];
-                        if_surveillant=false;
+                        test_surveillant=false;
                     }
-                    if(if_lits==true){
+                    if(test_lits==true){
                         tmp_lits=Integer.parseInt(str[i]);
-                        if_lits=false;
+                        test_lits=false;
                     }
                         
                 }
@@ -121,27 +122,155 @@ public class Transformation {
                 
             }
         }
-        //Faut copier le modèle au dessus pour tout le reste
-       //a la limite, créer une fonction pour chaque test genre test_chambre,test_docteur...
-        if()
+        ///////POUR TABLE DOCTEUR/////////////
+        if((check_box_docteur).isSelected)
         {
             liste_generique=new ArrayList<docteur>();
              //...
+        
+            boolean test_specialite=false;
+            boolean test_nom=false;
+            boolean test_prenom=false;
+            boolean test_tel=false;
+            boolean test_adresse=false;
+            
+            if(specialite_box).isSelected(){
+                test_specialite=true;
+             }
+            if(nom_docteur_box).isSelected(){
+                test_nom=true;
+             }
+            if(prenom_docteur_box).isSelected(){
+                test_prenom=true;
+                }
+            if(tel_docteur_box).isSelected(){
+                test_tel=true;
+            }
+            if(adresse_docteur_box).isSelected(){
+                test_adresse=true;
+            }
+            //pour chaque champ rempli d'une string, on remplit la classe correspondnte
+            for (String s : liste) {
+               // System.out.println(liste);
+               //décomposition de la réponse en fonction de la question (dépend de l'interface graphique)
+               //on enlève les espaces de la string, et on "coupe" à chaque virgule(séparation des attributs)
+                String[] str=s.split(",");
+                
+                for(int i=0;i<str.length;i++){
+                    if(test_specialite==true){
+                        tmp_service=str[i];
+                        test_service=false;
+                    }
+                    if(test_chambre==true){
+                        tmp_chambre=Integer.parseInt(str[i]);
+                        test_chambre=false;
+                    }
+                    if(test_surveillant==true){
+                        tmp_surveillant=str[i];
+                        test_surveillant=false;
+                    }
+                    if(test_lits==true){
+                        tmp_lits=Integer.parseInt(str[i]);
+                        test_lits=false;
+                    }
+                        
+                }
+                    
+                //remplissage de la classse et ajout à l'ArrayList
+                chambre tmp = new chambre(tmp_chambre,tmp_service,tmp_surveillant,tmp_lits);
+                liste_generique.add(tmp);
+            //Fin des tests pour la table docteur
         }
-        if()
+       
+        //////POUR TABLE INFIRMIER/////////////
+        
+        if((check_box_infirmier).isSelected())
         {
             liste_generique=new ArrayList<infirmier>();
              //...
+            boolean test_code_service=false;
+            boolean test_rotation=false;//jour: vrai nuit:false
+            boolean test_salaire=false;
+            boolean test_nom=false;
+            boolean test_prenom=false;
+            boolean test_tel=false;
+            boolean test_adresse=false;
+            
+            if((code_service_box)).isSelected(){
+                if_code_service=true;
         }
-        if()
+            if((rotation_box).isSelected){
+                if_rotation=true;
+            }
+            if((salaire_box).isSelected){
+                if_salaire=true;
+            }
+            if((nom_box).isSelected){
+                if_nom=true;
+            }
+            if((prenom_box).isSelected){
+                if_prenom=true;
+            }
+            if((tel_box).isSelected){
+                if_tel=true;
+            }
+            if((adresse_box).isSelected){
+                if_adresse=true;
+            }
+        }
+        
+        //////POUR TABLE MALADE/////////////
+        
+        if((malade_check_box).isSelected())
         {
            liste_generique=new ArrayList<malade>();
             //...
+        
+        boolean test_nom=false;
+        boolean test_prenom=false;
+        boolean test_tel=false;
+        boolean test_adresse=false;
+        boolean test_mutuelle=false;
+        
+        if((nom_box).isSelected()){
+            test_nom=true;
         }
-        if()
+        if((prenom_box).isSelected()){
+            test_prenom=true;
+        }
+        if((tel_box).isSelected()){
+            test_tel=true;
+        }
+        if((adresse_box).isSelected()){
+           test_adresse=true; 
+        }
+        if((mutuelle_box).isSelected()){
+            test_mutuelle=true;
+        }
+        }
+        
+        //////POUR TABLE SERVICE/////////////
+        if((check_box_service).isSelected())
         {
           liste_generique=new ArrayList<service>();
           //...
+          boolean code=false;
+          boolean nom=false;
+          boolean batiment=false;
+          boolean directeur=false;
+          
+          if((code_box).isSelected()){
+            test_code=true;
+        }
+          if((nom_box).isSelected()){
+              test_nom=true;
+          }
+          if((batiment_box).isSelected){
+              test_batiment=true;
+          }
+          if((directeur_box).isSelected()){
+              test_directeur=true;
+          }
         }
         
     }
@@ -170,7 +299,11 @@ public class Transformation {
            from_text="chambre c";
        if(service_check) 
            from_text="service s";
-       
+       if(hospitalisation_check){
+           from_text="service s, malade m, chambre c, hospitalisation h";
+           where_text=where_text+"h.numero=m.numero AND h.numero=c.numero AND h.numero=s.numero";
+           compteur++;
+       }
        //selection des attributs
        if(nom_check){
            select_text=select_text+"nom,";
@@ -228,13 +361,15 @@ public class Transformation {
            select_text=select_text+"nb_lits,";
            compteur++;
        }
-       if(compteur!=0)
+       if(compteur!=0){
             //enlever la dernière virgule à la partie SELECT
             select_text=select_text.substring(0,select_text.length()-1);
-       else
-           JOptionPane.showMessageDialog(null, "Sélectionnez au moins un attribut!");
-       //ajouter les from
-       requete=requete+select_text+" from "+from_text+" where "+where_text;
+            //ajouter les from
+             requete=requete+select_text+" from "+from_text+" where "+where_text;
+        }
+       //afficher un message d'alerte
+       else JOptionPane.showMessageDialog(null, "Sélectionnez au moins un attribut!");
+      
        //rendre la requete 
        return requete;
    }
