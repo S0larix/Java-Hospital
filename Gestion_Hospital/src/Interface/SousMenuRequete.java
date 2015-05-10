@@ -8,9 +8,13 @@ package Interface;
 import Connexion_Transformation.Question_reponse;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
+import jdbc2014.Connexion;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
@@ -30,17 +34,25 @@ public class SousMenuRequete extends javax.swing.JFrame {
     private  String LoginBDD;
     private  String PasswordBDD;*/
     
-   private String LoginECE="ducrocq";
-   private String PasswordECE="KlrIT05A@";
-   private String LoginBDD="ducrocq-rw";
-   private String PasswordBDD="KlrIT05A@";
+   private String LoginECE;
+   private String PasswordECE;
+   private String LoginBDD;
+   private String PasswordBDD;
+   private Connexion connect;
     
-    public SousMenuRequete(String LoginECE, String PasswordECE, String LoginBDD, String PasswordBDD) {
+    public SousMenuRequete(String LoginECE, String PasswordECE, String LoginBDD, String PasswordBDD)  {
         
         this.LoginECE = LoginECE;
         this.PasswordECE = PasswordECE;
         this.LoginBDD= LoginBDD;
         this.PasswordBDD = PasswordBDD;
+          try {
+            connect = new Connexion(LoginECE, PasswordECE, LoginBDD, PasswordBDD);
+        } catch (SQLException ex) { 
+           Logger.getLogger(SousMenuRequete.class.getName()).log(Level.SEVERE, null, ex);
+       } catch (ClassNotFoundException ex) {
+           Logger.getLogger(SousMenuRequete.class.getName()).log(Level.SEVERE, null, ex);
+       } 
         initComponents();
     }
 
@@ -158,6 +170,13 @@ public class SousMenuRequete extends javax.swing.JFrame {
          this.dispose();
         Menu_principal menu_princ = new Menu_principal(LoginECE,PasswordECE,LoginBDD,PasswordBDD);
         menu_princ.setVisible(true);
+           try {    
+            connect.Disconnect();
+        } catch (Throwable ex) {
+            Logger.getLogger(ajouter.class.getName()).log(Level.SEVERE, null, ex);
+        }        
+          
+       
     }//GEN-LAST:event_BoutonRetourPrincActionPerformed
 
     private void BoutonNouvelleRechercheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonNouvelleRechercheActionPerformed
