@@ -20,62 +20,43 @@ import jdbc2014.*;
  *
  * @author Lisa
  */
-public class modifier {
+public class suppr{
 
     private Connexion conect;
 
-    public void modifier() throws SQLException {
+    public void suppr() throws SQLException {
         String table = null;
         ArrayList<String> champs, resultat;
         Scanner sc = new Scanner(System.in);
-        String requete = "UPDATE ", mot, modif;
+        String requete = "DELETE FROM ", mot;
 
         try {
             conect = new Connexion("ducrocq", "KlrIT05A@", "ducrocq-rw", "KlrIT05A@");
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ajouter.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(suppr.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        System.out.println("Ajouter à quoi ?");
+        System.out.println("SUPPRIMER quoi ?");
         while (table == null) {
             table = sc.nextLine();
         }
-
         resultat = conect.remplirChampsRequete("SELECT * FROM " + table);
-
         for (int i = 0; i < resultat.size(); i++) {
             System.out.println(resultat.get(i));
         }
 
-        modif = sc.nextLine();
+        System.out.println("Saisir suppr");
 
-        requete = requete + " " + table + " " + "SET ";
+        requete = requete + " " + table + " " + "WHERE ";
 
         champs = conect.remplirChampsTable(table);
 
         for (int i = 0; i < champs.size(); i++) {
+            requete = requete + champs.get(i) + "=";
+
             System.out.println(champs.get(i));
 
             mot = sc.nextLine();
-            requete = requete + champs.get(i) + "=";
-
-                requete = requete + "'" + mot + "'";
-
-
-            if (i != (champs.size() - 1)) {
-                requete = requete + ",";
-            }
-        }
-
-        requete = requete + " WHERE ";
-
-        System.out.println("Saisir l'id de la saisie a modifier");
-
-        for (int i = 0; i < champs.size(); i++) {
-            System.out.println(champs.get(i));
-
-            mot = sc.nextLine();
-            requete = requete + champs.get(i) + "=";
 
             requete = requete + "'" + mot + "'";
 
@@ -83,7 +64,9 @@ public class modifier {
                 requete = requete + " AND ";
             }
         }
+
         requete = requete + ";";
+
         System.out.println(requete);
 
         conect.executeUpdate(requete);
@@ -93,5 +76,4 @@ public class modifier {
             System.out.println(resultat.get(i));
         }
     }
-
 }

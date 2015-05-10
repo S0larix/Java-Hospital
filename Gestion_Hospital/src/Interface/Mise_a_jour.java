@@ -11,6 +11,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.*;
 import java.awt.event.*;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Lisa
@@ -136,6 +140,8 @@ public class Mise_a_jour extends javax.swing.JFrame implements ActionListener{
             }
         });
     }
+    
+
     private ajouter ajout;
     private supprimer suppr;
     private modifier modif;
@@ -150,14 +156,26 @@ public class Mise_a_jour extends javax.swing.JFrame implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==ajouter)
         {
-            ajout=new ajouter();
+            try {
+                ajout=new ajouter("ducrocq", "KlrIT05A@", "ducrocq-rw", "KlrIT05A@");
+            } catch (SQLException ex) {
+                Logger.getLogger(Mise_a_jour.class.getName()).log(Level.SEVERE, null, ex);
+            }
             
         }else if(e.getSource()==supprimer)
         {
-            suppr= new supprimer();
+            try {
+                suppr= new supprimer("ducrocq", "KlrIT05A@", "ducrocq-rw", "KlrIT05A@");
+            } catch (SQLException ex) {
+                Logger.getLogger(Mise_a_jour.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }else if(e.getSource()==modifier)
         {
-            modif=new modifier();
+            try {
+                modif=new modifier("ducrocq", "KlrIT05A@", "ducrocq-rw", "KlrIT05A@");
+            } catch (SQLException ex) {
+                Logger.getLogger(Mise_a_jour.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 
