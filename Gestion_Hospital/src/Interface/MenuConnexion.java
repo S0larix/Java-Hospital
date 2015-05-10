@@ -15,6 +15,8 @@ public class MenuConnexion extends javax.swing.JFrame {
      * Creates new form MenuConnexion
      */
     public MenuConnexion() {
+        
+       
         initComponents();
     }
 
@@ -37,6 +39,7 @@ public class MenuConnexion extends javax.swing.JFrame {
         BoutonQuitter = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1280, 720));
 
         Bienvenue.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Bienvenue.setText("Bienvenue");

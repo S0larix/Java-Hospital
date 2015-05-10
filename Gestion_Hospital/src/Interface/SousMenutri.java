@@ -17,20 +17,20 @@ import jdbc2014.Connexion;
  */
 public class SousMenutri extends javax.swing.JFrame {
 
-    private  String ServeurBase;
-    private  String NomBase;
-    private  String Login;
-    private  String Password;
+    private  String LoginECE;
+    private  String PasswordECE;
+    private  String LoginBDD;
+    private  String PasswordBDD;
     ArrayList<String> liste;
     ArrayList liste_generique;
    public Connexion conn;
    
     public SousMenutri(String ServeurBase, String NomBase, String Login, String Password) {
        
-        this.ServeurBase = ServeurBase;
-        this.NomBase = NomBase;
-        this.Login= Login;
-        this.Password = Password;
+        this.LoginECE = LoginECE;
+        this.PasswordECE = PasswordECE;
+        this.LoginBDD= LoginBDD;
+        this.PasswordBDD = PasswordBDD;
         initComponents();
      
   

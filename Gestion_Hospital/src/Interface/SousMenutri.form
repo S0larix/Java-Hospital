@@ -199,9 +199,6 @@
       <SubComponents>
         <Component class="javax.swing.JCheckBox" name="NomCheck">
           <Properties>
-            <Property name="model" type="javax.swing.ButtonModel" editor="org.netbeans.modules.form.ComponentChooserEditor">
-              <ComponentRef name="default"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Nom"/>
             <Property name="autoscrolls" type="boolean" value="true"/>
             <Property name="focusable" type="boolean" value="false"/>
@@ -217,9 +214,6 @@
         </Component>
         <Component class="javax.swing.JCheckBox" name="PrenomCheck">
           <Properties>
-            <Property name="model" type="javax.swing.ButtonModel" editor="org.netbeans.modules.form.ComponentChooserEditor">
-              <ComponentRef name="default"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Prenom"/>
             <Property name="autoscrolls" type="boolean" value="true"/>
             <Property name="focusable" type="boolean" value="false"/>
@@ -235,9 +229,6 @@
         </Component>
         <Component class="javax.swing.JCheckBox" name="CodeCheck">
           <Properties>
-            <Property name="model" type="javax.swing.ButtonModel" editor="org.netbeans.modules.form.ComponentChooserEditor">
-              <ComponentRef name="default"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Code"/>
             <Property name="autoscrolls" type="boolean" value="true"/>
             <Property name="focusable" type="boolean" value="false"/>
@@ -253,9 +244,6 @@
         </Component>
         <Component class="javax.swing.JCheckBox" name="NumeroCheck">
           <Properties>
-            <Property name="model" type="javax.swing.ButtonModel" editor="org.netbeans.modules.form.ComponentChooserEditor">
-              <ComponentRef name="default"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Numero"/>
             <Property name="autoscrolls" type="boolean" value="true"/>
             <Property name="focusable" type="boolean" value="false"/>
@@ -271,9 +259,6 @@
         </Component>
         <Component class="javax.swing.JCheckBox" name="AdresseCheck">
           <Properties>
-            <Property name="model" type="javax.swing.ButtonModel" editor="org.netbeans.modules.form.ComponentChooserEditor">
-              <ComponentRef name="default"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Adresse"/>
             <Property name="autoscrolls" type="boolean" value="true"/>
             <Property name="focusable" type="boolean" value="false"/>
@@ -289,9 +274,6 @@
         </Component>
         <Component class="javax.swing.JCheckBox" name="MutuelleCheck">
           <Properties>
-            <Property name="model" type="javax.swing.ButtonModel" editor="org.netbeans.modules.form.ComponentChooserEditor">
-              <ComponentRef name="default"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Mutuelle"/>
             <Property name="autoscrolls" type="boolean" value="true"/>
             <Property name="focusable" type="boolean" value="false"/>
@@ -307,9 +289,6 @@
         </Component>
         <Component class="javax.swing.JCheckBox" name="TelephoneCheck">
           <Properties>
-            <Property name="model" type="javax.swing.ButtonModel" editor="org.netbeans.modules.form.ComponentChooserEditor">
-              <ComponentRef name="default"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Telephone"/>
             <Property name="autoscrolls" type="boolean" value="true"/>
             <Property name="focusable" type="boolean" value="false"/>
@@ -325,9 +304,6 @@
         </Component>
         <Component class="javax.swing.JCheckBox" name="NomServiceCheck">
           <Properties>
-            <Property name="model" type="javax.swing.ButtonModel" editor="org.netbeans.modules.form.ComponentChooserEditor">
-              <ComponentRef name="default"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Nom Service"/>
             <Property name="autoscrolls" type="boolean" value="true"/>
             <Property name="focusable" type="boolean" value="false"/>
@@ -343,9 +319,6 @@
         </Component>
         <Component class="javax.swing.JCheckBox" name="CodeServiceCheck">
           <Properties>
-            <Property name="model" type="javax.swing.ButtonModel" editor="org.netbeans.modules.form.ComponentChooserEditor">
-              <ComponentRef name="default"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Code Service"/>
             <Property name="autoscrolls" type="boolean" value="true"/>
             <Property name="focusable" type="boolean" value="false"/>
@@ -367,9 +340,6 @@
         </Component>
         <Component class="javax.swing.JCheckBox" name="BatimentCheck">
           <Properties>
-            <Property name="model" type="javax.swing.ButtonModel" editor="org.netbeans.modules.form.ComponentChooserEditor">
-              <ComponentRef name="default"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Batiment"/>
             <Property name="autoscrolls" type="boolean" value="true"/>
             <Property name="focusable" type="boolean" value="false"/>
@@ -391,9 +361,6 @@
         </Component>
         <Component class="javax.swing.JCheckBox" name="DirecteurCheck">
           <Properties>
-            <Property name="model" type="javax.swing.ButtonModel" editor="org.netbeans.modules.form.ComponentChooserEditor">
-              <ComponentRef name="default"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Directeur"/>
             <Property name="autoscrolls" type="boolean" value="true"/>
             <Property name="focusable" type="boolean" value="false"/>
@@ -415,9 +382,6 @@
         </Component>
         <Component class="javax.swing.JCheckBox" name="SurveillantCheck">
           <Properties>
-            <Property name="model" type="javax.swing.ButtonModel" editor="org.netbeans.modules.form.ComponentChooserEditor">
-              <ComponentRef name="default"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Surveillant"/>
             <Property name="autoscrolls" type="boolean" value="true"/>
             <Property name="focusable" type="boolean" value="false"/>
@@ -439,9 +403,6 @@
         </Component>
         <Component class="javax.swing.JCheckBox" name="SpecialiteCheck">
           <Properties>
-            <Property name="model" type="javax.swing.ButtonModel" editor="org.netbeans.modules.form.ComponentChooserEditor">
-              <ComponentRef name="default"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Specialite"/>
             <Property name="autoscrolls" type="boolean" value="true"/>
             <Property name="focusable" type="boolean" value="false"/>
@@ -463,9 +424,6 @@
         </Component>
         <Component class="javax.swing.JCheckBox" name="SalaireCheck">
           <Properties>
-            <Property name="model" type="javax.swing.ButtonModel" editor="org.netbeans.modules.form.ComponentChooserEditor">
-              <ComponentRef name="default"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Salaire"/>
             <Property name="autoscrolls" type="boolean" value="true"/>
             <Property name="focusable" type="boolean" value="false"/>
@@ -487,9 +445,6 @@
         </Component>
         <Component class="javax.swing.JCheckBox" name="RotationCheck">
           <Properties>
-            <Property name="model" type="javax.swing.ButtonModel" editor="org.netbeans.modules.form.ComponentChooserEditor">
-              <ComponentRef name="default"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Rotation"/>
             <Property name="autoscrolls" type="boolean" value="true"/>
             <Property name="focusable" type="boolean" value="false"/>
@@ -511,9 +466,6 @@
         </Component>
         <Component class="javax.swing.JCheckBox" name="NombreLitCheck">
           <Properties>
-            <Property name="model" type="javax.swing.ButtonModel" editor="org.netbeans.modules.form.ComponentChooserEditor">
-              <ComponentRef name="default"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Nombre Lit"/>
             <Property name="autoscrolls" type="boolean" value="true"/>
             <Property name="focusable" type="boolean" value="false"/>
@@ -535,9 +487,6 @@
         </Component>
         <Component class="javax.swing.JCheckBox" name="NumeroLitCheck">
           <Properties>
-            <Property name="model" type="javax.swing.ButtonModel" editor="org.netbeans.modules.form.ComponentChooserEditor">
-              <ComponentRef name="default"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Numero Lit"/>
             <Property name="autoscrolls" type="boolean" value="true"/>
             <Property name="focusable" type="boolean" value="false"/>
@@ -559,9 +508,6 @@
         </Component>
         <Component class="javax.swing.JCheckBox" name="NumeroChambreCheck">
           <Properties>
-            <Property name="model" type="javax.swing.ButtonModel" editor="org.netbeans.modules.form.ComponentChooserEditor">
-              <ComponentRef name="default"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Numero Chambre"/>
             <Property name="autoscrolls" type="boolean" value="true"/>
             <Property name="focusable" type="boolean" value="false"/>
