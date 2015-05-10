@@ -25,7 +25,16 @@ public class SousMenuRequete extends javax.swing.JFrame {
     /**
      * Creates new form SousMenuRequete
      */
-    public SousMenuRequete() {
+    private  String LoginECE;
+    private  String PasswordECE;
+    private  String LoginBDD;
+    private  String PasswordBDD;
+    public SousMenuRequete(String LoginECE, String PasswordECE, String LoginBDD, String PasswordBDD) {
+        
+        this.LoginECE = LoginECE;
+        this.PasswordECE = PasswordECE;
+        this.LoginBDD= LoginBDD;
+        this.PasswordBDD = PasswordBDD;
         initComponents();
     }
 
@@ -151,10 +160,16 @@ public class SousMenuRequete extends javax.swing.JFrame {
 
     private void BoutonRetourRechercheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonRetourRechercheActionPerformed
         // TODO add your handling code here:
+         this.dispose();
+        MenuRecherche menu_recherche = new MenuRecherche(LoginECE,PasswordECE,LoginBDD,PasswordBDD);
+        menu_recherche.setVisible(true);
     }//GEN-LAST:event_BoutonRetourRechercheActionPerformed
 
     private void BoutonRetourPrincActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonRetourPrincActionPerformed
         // TODO add your handling code here:
+         this.dispose();
+        Menu_principal menu_princ = new Menu_principal(LoginECE,PasswordECE,LoginBDD,PasswordBDD);
+        menu_princ.setVisible(true);
     }//GEN-LAST:event_BoutonRetourPrincActionPerformed
 
     private void BoutonNouvelleRechercheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonNouvelleRechercheActionPerformed
@@ -208,7 +223,7 @@ public class SousMenuRequete extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SousMenuRequete().setVisible(true);
+                new SousMenuRequete("tu","es","un","boulet").setVisible(true);
             }
         });
     }

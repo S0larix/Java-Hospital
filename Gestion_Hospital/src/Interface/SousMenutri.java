@@ -25,7 +25,7 @@ public class SousMenutri extends javax.swing.JFrame {
     ArrayList liste_generique;
    public Connexion conn;
    
-    public SousMenutri(String ServeurBase, String NomBase, String Login, String Password) {
+    public SousMenutri(String LoginECE, String PasswordECE, String LoginBDD, String PasswordBDD) {
        
         this.LoginECE = LoginECE;
         this.PasswordECE = PasswordECE;
