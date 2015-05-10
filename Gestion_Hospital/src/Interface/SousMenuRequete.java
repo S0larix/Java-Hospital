@@ -172,16 +172,18 @@ public class SousMenuRequete extends javax.swing.JFrame {
         if(ListeDeroulanteRequete.getSelectedIndex()==0){
             intitule_requete=ListeDeroulanteRequete.getSelectedItem().toString();
             //requête sur la BD
-            reponse = trf.methodechiante(LoginECE,PasswordECE,LoginBDD,PasswordBDD,
+            reponse = trf.methodechiante("ducrocq","KlrIT05A@","ducrocq-rw","KlrIT05A@",
                     "select mutuelle from malade ");
             
-            ArrayList<String> dif_mutuelle = null;
-            dif_mutuelle.add(reponse.get(0));
+
+            ArrayList<String> dif_mutuelle = new ArrayList<String>();
+         
             //on trouve les différentes mutuelles
+           
             for(String s:reponse){
-                    for(int i=1;i<dif_mutuelle.size();i++)
+                    for(int i=0;i<dif_mutuelle.size();i++)
                     {
-                        if(s.equals(dif_mutuelle.get(i)));
+                        if(s.equals(dif_mutuelle.get(i)))System.out.println(s);
                         else
                             dif_mutuelle.add(s);
                     }
