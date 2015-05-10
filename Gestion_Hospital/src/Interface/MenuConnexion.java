@@ -7,7 +7,7 @@ package Interface;
 
 /**
  *
- * @author Florian
+ * @author Florian 
  */
 public class MenuConnexion extends javax.swing.JFrame {
 
@@ -28,10 +28,11 @@ public class MenuConnexion extends javax.swing.JFrame {
     private void initComponents() {
 
         Bienvenue = new javax.swing.JLabel();
-        ServeurBase = new javax.swing.JTextField();
-        NomBase = new javax.swing.JTextField();
-        Login = new javax.swing.JTextField();
-        Password = new javax.swing.JPasswordField();
+        jPanel1 = new javax.swing.JPanel();
+        LoginECE = new javax.swing.JTextField();
+        PasswordECE = new javax.swing.JPasswordField();
+        LoginBBD = new javax.swing.JTextField();
+        PasswordBBD = new javax.swing.JPasswordField();
         BoutonConnexion = new javax.swing.JButton();
         BoutonQuitter = new javax.swing.JButton();
 
@@ -41,23 +42,29 @@ public class MenuConnexion extends javax.swing.JFrame {
         Bienvenue.setText("Bienvenue");
         Bienvenue.setPreferredSize(new java.awt.Dimension(336, 84));
 
-        ServeurBase.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        ServeurBase.setText("Serveur base");
-        ServeurBase.setPreferredSize(new java.awt.Dimension(168, 42));
-        ServeurBase.addActionListener(new java.awt.event.ActionListener() {
+        jPanel1.setLayout(new java.awt.GridLayout(6, 0, 0, 49));
+
+        LoginECE.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        LoginECE.setText("Login ECE");
+        LoginECE.setPreferredSize(new java.awt.Dimension(168, 42));
+        LoginECE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ServeurBaseActionPerformed(evt);
+                LoginECEActionPerformed(evt);
             }
         });
+        jPanel1.add(LoginECE);
 
-        NomBase.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        NomBase.setText("Nom base");
+        PasswordECE.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        PasswordECE.setText("jPasswordField1");
+        jPanel1.add(PasswordECE);
 
-        Login.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        Login.setText("Login");
+        LoginBBD.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        LoginBBD.setText("Login BBD");
+        jPanel1.add(LoginBBD);
 
-        Password.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        Password.setText("jPasswordField1");
+        PasswordBBD.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        PasswordBBD.setText("jPasswordField1");
+        jPanel1.add(PasswordBBD);
 
         BoutonConnexion.setText("Connexion");
         BoutonConnexion.addActionListener(new java.awt.event.ActionListener() {
@@ -65,6 +72,7 @@ public class MenuConnexion extends javax.swing.JFrame {
                 BoutonConnexionActionPerformed(evt);
             }
         });
+        jPanel1.add(BoutonConnexion);
 
         BoutonQuitter.setText("Quitter");
         BoutonQuitter.addActionListener(new java.awt.event.ActionListener() {
@@ -72,6 +80,7 @@ public class MenuConnexion extends javax.swing.JFrame {
                 BoutonQuitterActionPerformed(evt);
             }
         });
+        jPanel1.add(BoutonQuitter);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -81,64 +90,44 @@ public class MenuConnexion extends javax.swing.JFrame {
                 .addGap(472, 472, 472)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(Bienvenue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ServeurBase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NomBase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BoutonConnexion)
-                    .addComponent(BoutonQuitter))
-                .addContainerGap(472, Short.MAX_VALUE))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {BoutonConnexion, BoutonQuitter, Login, NomBase, Password, ServeurBase});
-
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(10, 10, 10)
                 .addComponent(Bienvenue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(49, 49, 49)
-                .addComponent(ServeurBase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49)
-                .addComponent(NomBase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49)
-                .addComponent(Login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45)
-                .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49)
-                .addComponent(BoutonConnexion)
-                .addGap(49, 49, 49)
-                .addComponent(BoutonQuitter)
-                .addContainerGap(84, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(80, Short.MAX_VALUE))
         );
-
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {BoutonConnexion, BoutonQuitter, Login, NomBase, Password, ServeurBase});
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ServeurBaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ServeurBaseActionPerformed
+    private void LoginECEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginECEActionPerformed
         // TODO add your handling code here:
         
         
-    }//GEN-LAST:event_ServeurBaseActionPerformed
+    }//GEN-LAST:event_LoginECEActionPerformed
 
     private void BoutonConnexionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonConnexionActionPerformed
         // TODO add your handling code here:
-        String ServeurBaseS = new String();
-        String LoginS = new String();
-        String NomBaseS = new String();
-        char PasswordC[] = new char [30];
+        String LoginBBDS = new String();
+        String LoginECES = new String();
+        char PasswordECEC[] = new char [30];
+        char PasswordBBDC[] = new char [30];
        
-        ServeurBaseS = ServeurBase.getText();
-        LoginS = Login.getText();
-        NomBaseS = NomBase.getText();
-        PasswordC = Password.getPassword();
-        String PasswordS = new String(String.valueOf(PasswordC));
-        
+        LoginECES = LoginECE.getText();
+        LoginBBDS = LoginBBD.getText();
+        PasswordBBDC = PasswordBBD.getPassword();
+        PasswordECEC = PasswordECE.getPassword();
+        String PasswordBBDS = new String(String.valueOf(PasswordBBDC));
+        String PasswordECES = new String(String.valueOf(PasswordECEC));
         // utiliser les infos ainsi obtenues pour se connecter à implementer plus tard
         this.dispose();
-        Menu_principal menu_princ = new Menu_principal(ServeurBaseS,NomBaseS,LoginS,PasswordS);
+        Menu_principal menu_princ = new Menu_principal(LoginECES,PasswordECES,LoginBBDS,PasswordBBDS);
         menu_princ.setVisible(true);
    
         
@@ -191,9 +180,10 @@ public class MenuConnexion extends javax.swing.JFrame {
     private javax.swing.JLabel Bienvenue;
     private javax.swing.JButton BoutonConnexion;
     private javax.swing.JButton BoutonQuitter;
-    private javax.swing.JTextField Login;
-    private javax.swing.JTextField NomBase;
-    private javax.swing.JPasswordField Password;
-    private javax.swing.JTextField ServeurBase;
+    private javax.swing.JTextField LoginBBD;
+    private javax.swing.JTextField LoginECE;
+    private javax.swing.JPasswordField PasswordBBD;
+    private javax.swing.JPasswordField PasswordECE;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
