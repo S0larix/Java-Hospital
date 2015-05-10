@@ -16,19 +16,18 @@ import jdbc2014.Connexion;
  *
  * @author Jérôme
  */
-public class Transformation {
+public class Question_reponse {
    
-   String loginECE="ducrocq";
+   /*String loginECE="ducrocq";
    String mdpECE="KlrIT05A@";
    String loginBDD="ducrocq-rw";
-   String mdpBDD="KlrIT05A@";
-   ArrayList<String> liste;
-   ArrayList liste_generique;
+   String mdpBDD="KlrIT05A@";*/
    public Connexion conn;
    
 
-   public void methodechiante(){
+   public ArrayList<String> methodechiante(String loginECE,String mdpECE,String loginBDD,String mdpBDD,String requete){
       
+       ArrayList<String> liste = new ArrayList<String>();
        try {
                 try {
                     // tentative de connexion si les 4 attributs sont remplis
@@ -43,9 +42,9 @@ public class Transformation {
             }
        
        try {
-
+                
                 // recuperer la liste des champs de la table
-                liste = conn.remplirChampsRequete("SELECT * from docteur");
+                liste = conn.remplirChampsRequete(requete);
 
                 // effacer les champs de la fenetre
                 
@@ -59,5 +58,6 @@ public class Transformation {
                 System.out.println("Echec SQL");
                 e.printStackTrace();
             }
+       return liste;
    }
 }
