@@ -283,7 +283,7 @@ public class ajouter extends javax.swing.JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        String requete = "INSERT INTO ", mot = null, stable;
+        String requete = "INSERT INTO ", mot = null, mots;
         ArrayList<String> champs = null, resultat = null;
         String[] tab;
         char a[];
@@ -373,26 +373,25 @@ public class ajouter extends javax.swing.JFrame implements ActionListener {
             } catch (SQLException ex) {
                 Logger.getLogger(ajouter.class.getName()).log(Level.SEVERE, null, ex);
             }
-            mot="Vérification:\n";
-            for(int i=0; i<champs.size(); i++)
-            {
-                mot=mot+champs.toString()+"\n";
-            }
-            for(int i=0; i<resultat.size(); i++)
-            {
-                mot=mot+resultat.toString()+"\n";
-            }
+            mots="Vérification:\n";
+
             
-            a=mot.toCharArray();
-            mot="Vérification:\n";
+            mots=mots+champs.toString()+"\n";
+            
+           
+            mots=mots+resultat.toString()+"\n";
+            
+            
+            a=mots.toCharArray();
             
             for(int i=0; i<a.length; i++)
             {
                 if(a[i]==',' || a[i]=='[' || a[i]==']' || a[i]==';')
                 {
-                    a[i]=' ';
-                }
-                mot=mot+a[i];
+                     mot=mots+a[i];
+                     mot=mot.substring(0, mot.length()-1);
+                     mot=mot+" ";
+                }else mot=mots+a[i];
             }
             
             

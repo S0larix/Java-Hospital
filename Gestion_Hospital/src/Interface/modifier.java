@@ -378,7 +378,7 @@ private String fin;
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        String mot = "";
+        String mot = "", mots;
         ArrayList<String> champs = null, resultat = null;
         String[] tab;
         char a[];
@@ -444,23 +444,27 @@ private String fin;
             }
         }
 
-        mot = "Modification:\n";
+                   mots="Vérification:\n";
 
-        mot = mot + champs.toString() + "\n";
-
-        for (int i = 0; i < resultat.size(); i++) {
-            mot = mot + resultat.toString() + "\n";
-        }
-
-        a = mot.toCharArray();
-
-        for (int i = 0; i < a.length; i++) {
-            if (a[i] == ',' || a[i] == '[' || a[i] == ']' || a[i] == ';') {
-                a[i] = ' ';
+            
+            mots=mots+champs.toString()+"\n";
+            
+           
+            mots=mots+resultat.toString()+"\n";
+            
+            
+            a=mots.toCharArray();
+            
+            for(int i=0; i<a.length; i++)
+            {
+                if(a[i]==',' || a[i]=='[' || a[i]==']' || a[i]==';')
+                {
+                     mot=mots+a[i];
+                     mot=mot.substring(0, mot.length()-1);
+                     mot=mot+" ";
+                }else mot=mots+a[i];
             }
-            mot = mot + a[i];
-        }
-
+            
         modifi.setText(mot);
         if (e.getSource() == aa) {
             m.setText("Saisir les nouvelles valeures");
@@ -525,22 +529,27 @@ private String fin;
         } catch (SQLException ex) {
             Logger.getLogger(ajouter.class.getName()).log(Level.SEVERE, null, ex);
         }
-        mot = "Vérification:\n";
-        for (int i = 0; i < champs.size(); i++) {
-            mot = mot + champs.toString() + "\n";
-        }
-        for (int i = 0; i < resultat.size(); i++) {
-            mot = mot + resultat.toString() + "\n";
-        }
+                   mots="Vérification:\n";
 
-        a = mot.toCharArray();
-
-        for (int i = 0; i < a.length; i++) {
-            if (a[i] == ',' || a[i] == '[' || a[i] == ']' || a[i] == ';') {
-                a[i] = ' ';
+            
+            mots=mots+champs.toString()+"\n";
+            
+           
+            mots=mots+resultat.toString()+"\n";
+            
+            
+            a=mots.toCharArray();
+            
+            for(int i=0; i<a.length; i++)
+            {
+                if(a[i]==',' || a[i]=='[' || a[i]==']' || a[i]==';')
+                {
+                     mot=mots+a[i];
+                     mot=mot.substring(0, mot.length()-1);
+                     mot=mot+" ";
+                }else mot=mots+a[i];
             }
-            mot = mot + a[i];
-        }
+            
 
         modifi.setText(mot);
 

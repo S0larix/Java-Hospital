@@ -656,7 +656,7 @@ public class SousMenutri extends javax.swing.JFrame {
 
     private void BoutonNouvelleRechercheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonNouvelleRechercheActionPerformed
         // TODO add your handling code here:
-        String requete, mot;
+        String requete, mot = null, mots;
         char[] a;
         ArrayList<String> reponseBDD = null;
         requete=creer_requête();
@@ -675,25 +675,26 @@ public class SousMenutri extends javax.swing.JFrame {
         }
         
         
-                    mot="Vérification:\n";
+                    mots="Vérification:\n";
             
-            for(int i=0; i<reponseBDD.size(); i++)
-            {
-                mot=mot+reponseBDD.toString()+"\n";
-            }
+           
+                mots=mots+reponseBDD.toString()+"\n";
             
-            a=mot.toCharArray();
-            mot="Vérification:\n";
+            
+            a=mots.toCharArray();
             
             for(int i=0; i<a.length; i++)
             {
                 if(a[i]==',' || a[i]=='[' || a[i]==']' || a[i]==';')
                 {
-                    a[i]=' ';
-                }
-                mot=mot+a[i];
+                     mot=mots+a[i];
+                     mot=mot.substring(0, mot.length()-1);
+                     mot=mot+" ";
+                }else mot=mots+a[i];
             }
+            
         ResultatRequete.setText(mot);
+        
         reponseBDD = q_r.methodechiante(LoginECE,PasswordECE,LoginBDD,PasswordBDD,requete);
     }//GEN-LAST:event_BoutonNouvelleRechercheActionPerformed
 
