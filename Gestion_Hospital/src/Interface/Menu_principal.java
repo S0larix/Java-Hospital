@@ -14,7 +14,7 @@ public class Menu_principal extends javax.swing.JFrame {
     /**
      * Creates new form Menu_principal
      */
-    private  String ServeurBase;
+    private  String LoginECE;
     private  String NomBase;
     private  String Login;
     private  String Password;
