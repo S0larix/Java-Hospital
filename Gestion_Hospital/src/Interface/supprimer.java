@@ -25,8 +25,18 @@ public class supprimer extends javax.swing.JFrame implements ActionListener {
     /**
      * Creates new form ajouter
      */
+    private  String LoginECE;
+    private  String PasswordECE;
+    private  String LoginBDD;
+    private  String PasswordBDD;
+    
+    
     public supprimer(String nomECE, String mdpECE, String nomBDD, String mdpBDD) throws SQLException {
         initComponents();
+         this.LoginECE = nomECE;
+         this.PasswordECE = mdpECE;
+         this.LoginBDD= nomBDD;
+         this.PasswordBDD = mdpBDD;
         this.table.addActionListener(this);
         this.suppr.addActionListener(this);
         this.a1.setVisible(false);
@@ -268,15 +278,14 @@ public class supprimer extends javax.swing.JFrame implements ActionListener {
             Logger.getLogger(ajouter.class.getName()).log(Level.SEVERE, null, ex);
         }
         mot = "Suppression:\n";
-        for (int i = 0; i < champs.size(); i++) {
+
             mot = mot + champs.toString() + "\n";
-        }
+        
         for (int i = 0; i < resultat.size(); i++) {
             mot = mot + resultat.toString() + "\n";
         }
 
         a = mot.toCharArray();
-        mot = "Suppression:\n";
 
         for (int i = 0; i < a.length; i++) {
             if (a[i] == ',' || a[i] == '[' || a[i] == ']' || a[i] == ';') {
