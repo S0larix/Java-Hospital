@@ -1069,7 +1069,7 @@ public class SousMenutri extends javax.swing.JFrame {
                    i++;
                 }
                 //remplissage de la classse et ajout à l'ArrayList
-               //>>>>>ICI>>>>>hospitalisation tmp = new hospitalisation(tmp_code_service,tmp_no_malade,tmp_no_chambre, tmp_lit);
+               hospitalisation tmp = new hospitalisation(tmp_code_service,tmp_no_malade,tmp_no_chambre, tmp_lit);
                 liste_generique.add(tmp);
                 
             }
