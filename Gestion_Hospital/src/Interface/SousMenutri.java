@@ -16,6 +16,8 @@ public class SousMenutri extends javax.swing.JFrame {
      */
     public SousMenutri() {
         initComponents();
+     
+  
     }
 
     /**
@@ -31,30 +33,37 @@ public class SousMenutri extends javax.swing.JFrame {
         MenuDeroulantClass = new javax.swing.JComboBox();
         BoutonValidationClasseTri = new javax.swing.JButton();
         MenuDeroulantTri = new javax.swing.JComboBox();
-        NomCheck = new javax.swing.JCheckBox();
-        PrenomCheck = new javax.swing.JCheckBox();
-        TelephoneCheck = new javax.swing.JCheckBox();
-        AdresseCheck = new javax.swing.JCheckBox();
-        NumeroCheck = new javax.swing.JCheckBox();
-        MutuelleCheck = new javax.swing.JCheckBox();
-        CodeCheck = new javax.swing.JCheckBox();
-        NomServiceCheck = new javax.swing.JCheckBox();
-        CodeServiceCheck = new javax.swing.JCheckBox();
-        BatimentCheck = new javax.swing.JCheckBox();
-        DirecteurCheck = new javax.swing.JCheckBox();
-        RotationCheck = new javax.swing.JCheckBox();
-        SalaireCheck = new javax.swing.JCheckBox();
-        SpecialiteCheck = new javax.swing.JCheckBox();
-        NombreLitCheck = new javax.swing.JCheckBox();
-        SurveillantCheck = new javax.swing.JCheckBox();
         jScrollPane1 = new javax.swing.JScrollPane();
         ResultatRequete = new javax.swing.JTextArea();
         BoutonNouvelleRecherche = new javax.swing.JButton();
         BoutonRetourRecherche = new javax.swing.JButton();
         BoutonRetourPrinc = new javax.swing.JButton();
+        jLayeredPane1 = new javax.swing.JLayeredPane();
+        NomCheck = new javax.swing.JCheckBox();
+        PrenomCheck = new javax.swing.JCheckBox();
+        CodeCheck = new javax.swing.JCheckBox();
+        NumeroCheck = new javax.swing.JCheckBox();
+        AdresseCheck = new javax.swing.JCheckBox();
+        MutuelleCheck = new javax.swing.JCheckBox();
+        TelephoneCheck = new javax.swing.JCheckBox();
+        NomServiceCheck = new javax.swing.JCheckBox();
+        CodeServiceCheck = new javax.swing.JCheckBox();
+        BatimentCheck = new javax.swing.JCheckBox();
+        DirecteurCheck = new javax.swing.JCheckBox();
+        SurveillantCheck = new javax.swing.JCheckBox();
+        SpecialiteCheck = new javax.swing.JCheckBox();
+        SalaireCheck = new javax.swing.JCheckBox();
+        RotationCheck = new javax.swing.JCheckBox();
+        NombreLitCheck = new javax.swing.JCheckBox();
         NumeroLitCheck = new javax.swing.JCheckBox();
+        NumeroChambreCheck = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("SousMenuTri");
@@ -62,6 +71,11 @@ public class SousMenutri extends javax.swing.JFrame {
 
         MenuDeroulantClass.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Service", "Malade", "Infirmier", "Docteur", "Chambre", "Hospitalisation", " " }));
         MenuDeroulantClass.setPreferredSize(new java.awt.Dimension(414, 42));
+        MenuDeroulantClass.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MenuDeroulantClassMouseClicked(evt);
+            }
+        });
         MenuDeroulantClass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MenuDeroulantClassActionPerformed(evt);
@@ -80,148 +94,6 @@ public class SousMenutri extends javax.swing.JFrame {
         MenuDeroulantTri.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MenuDeroulantTriActionPerformed(evt);
-            }
-        });
-
-        NomCheck.setText("Nom");
-        NomCheck.setPreferredSize(new java.awt.Dimension(112, 25));
-        NomCheck.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NomCheckActionPerformed(evt);
-            }
-        });
-
-        PrenomCheck.setText("Prenom");
-        PrenomCheck.setPreferredSize(new java.awt.Dimension(112, 25));
-        PrenomCheck.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PrenomCheckActionPerformed(evt);
-            }
-        });
-
-        TelephoneCheck.setText("Telephone");
-        TelephoneCheck.setPreferredSize(new java.awt.Dimension(112, 25));
-        TelephoneCheck.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TelephoneCheckActionPerformed(evt);
-            }
-        });
-
-        AdresseCheck.setText("Adresse");
-        AdresseCheck.setPreferredSize(new java.awt.Dimension(112, 25));
-        AdresseCheck.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AdresseCheckActionPerformed(evt);
-            }
-        });
-
-        NumeroCheck.setText("Numero");
-        NumeroCheck.setPreferredSize(new java.awt.Dimension(112, 25));
-        NumeroCheck.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NumeroCheckActionPerformed(evt);
-            }
-        });
-
-        MutuelleCheck.setText("Mutuelle");
-        MutuelleCheck.setPreferredSize(new java.awt.Dimension(112, 25));
-        MutuelleCheck.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MutuelleCheckActionPerformed(evt);
-            }
-        });
-
-        CodeCheck.setText("Code");
-        CodeCheck.setPreferredSize(new java.awt.Dimension(112, 25));
-        CodeCheck.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CodeCheckActionPerformed(evt);
-            }
-        });
-
-        NomServiceCheck.setText("Nom Service");
-        NomServiceCheck.setPreferredSize(new java.awt.Dimension(112, 25));
-        NomServiceCheck.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NomServiceCheckActionPerformed(evt);
-            }
-        });
-
-        CodeServiceCheck.setText("Code Service");
-        CodeServiceCheck.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        CodeServiceCheck.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        CodeServiceCheck.setPreferredSize(new java.awt.Dimension(112, 25));
-        CodeServiceCheck.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CodeServiceCheckActionPerformed(evt);
-            }
-        });
-
-        BatimentCheck.setText("Batiment");
-        BatimentCheck.setPreferredSize(new java.awt.Dimension(112, 25));
-        BatimentCheck.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BatimentCheckActionPerformed(evt);
-            }
-        });
-
-        DirecteurCheck.setText("Directeur");
-        DirecteurCheck.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        DirecteurCheck.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        DirecteurCheck.setPreferredSize(new java.awt.Dimension(112, 25));
-        DirecteurCheck.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DirecteurCheckActionPerformed(evt);
-            }
-        });
-
-        RotationCheck.setText("1");
-        RotationCheck.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        RotationCheck.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        RotationCheck.setPreferredSize(new java.awt.Dimension(112, 25));
-        RotationCheck.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RotationCheckActionPerformed(evt);
-            }
-        });
-
-        SalaireCheck.setText("2");
-        SalaireCheck.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        SalaireCheck.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        SalaireCheck.setPreferredSize(new java.awt.Dimension(112, 25));
-        SalaireCheck.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SalaireCheckActionPerformed(evt);
-            }
-        });
-
-        SpecialiteCheck.setText("3");
-        SpecialiteCheck.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        SpecialiteCheck.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        SpecialiteCheck.setPreferredSize(new java.awt.Dimension(112, 25));
-        SpecialiteCheck.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SpecialiteCheckActionPerformed(evt);
-            }
-        });
-
-        NombreLitCheck.setText("4");
-        NombreLitCheck.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        NombreLitCheck.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        NombreLitCheck.setPreferredSize(new java.awt.Dimension(112, 25));
-        NombreLitCheck.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NombreLitCheckActionPerformed(evt);
-            }
-        });
-
-        SurveillantCheck.setText("5");
-        SurveillantCheck.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        SurveillantCheck.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        SurveillantCheck.setPreferredSize(new java.awt.Dimension(112, 25));
-        SurveillantCheck.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SurveillantCheckActionPerformed(evt);
             }
         });
 
@@ -246,131 +118,318 @@ public class SousMenutri extends javax.swing.JFrame {
             }
         });
 
-        NumeroLitCheck.setText("jCheckBox1");
+        jLayeredPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jLayeredPane1.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
+
+        NomCheck.setText("Nom");
+        NomCheck.setAutoscrolls(true);
+        NomCheck.setFocusable(false);
+        NomCheck.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        NomCheck.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        NomCheck.setPreferredSize(new java.awt.Dimension(109, 25));
+        NomCheck.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NomCheckActionPerformed(evt);
+            }
+        });
+        jLayeredPane1.add(NomCheck);
+
+        PrenomCheck.setText("Prenom");
+        PrenomCheck.setAutoscrolls(true);
+        PrenomCheck.setFocusable(false);
+        PrenomCheck.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        PrenomCheck.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        PrenomCheck.setPreferredSize(new java.awt.Dimension(109, 25));
+        PrenomCheck.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PrenomCheckActionPerformed(evt);
+            }
+        });
+        jLayeredPane1.add(PrenomCheck);
+
+        CodeCheck.setText("Code");
+        CodeCheck.setAutoscrolls(true);
+        CodeCheck.setFocusable(false);
+        CodeCheck.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        CodeCheck.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        CodeCheck.setPreferredSize(new java.awt.Dimension(109, 25));
+        CodeCheck.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CodeCheckActionPerformed(evt);
+            }
+        });
+        jLayeredPane1.add(CodeCheck);
+
+        NumeroCheck.setText("Numero");
+        NumeroCheck.setAutoscrolls(true);
+        NumeroCheck.setFocusable(false);
+        NumeroCheck.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        NumeroCheck.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        NumeroCheck.setPreferredSize(new java.awt.Dimension(109, 25));
+        NumeroCheck.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NumeroCheckActionPerformed(evt);
+            }
+        });
+        jLayeredPane1.add(NumeroCheck);
+
+        AdresseCheck.setText("Adresse");
+        AdresseCheck.setAutoscrolls(true);
+        AdresseCheck.setFocusable(false);
+        AdresseCheck.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        AdresseCheck.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        AdresseCheck.setPreferredSize(new java.awt.Dimension(109, 25));
+        AdresseCheck.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AdresseCheckActionPerformed(evt);
+            }
+        });
+        jLayeredPane1.add(AdresseCheck);
+
+        MutuelleCheck.setText("Mutuelle");
+        MutuelleCheck.setAutoscrolls(true);
+        MutuelleCheck.setFocusable(false);
+        MutuelleCheck.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        MutuelleCheck.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        MutuelleCheck.setPreferredSize(new java.awt.Dimension(109, 25));
+        MutuelleCheck.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MutuelleCheckActionPerformed(evt);
+            }
+        });
+        jLayeredPane1.add(MutuelleCheck);
+
+        TelephoneCheck.setText("Telephone");
+        TelephoneCheck.setAutoscrolls(true);
+        TelephoneCheck.setFocusable(false);
+        TelephoneCheck.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        TelephoneCheck.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        TelephoneCheck.setPreferredSize(new java.awt.Dimension(109, 25));
+        TelephoneCheck.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TelephoneCheckActionPerformed(evt);
+            }
+        });
+        jLayeredPane1.add(TelephoneCheck);
+
+        NomServiceCheck.setText("Nom Service");
+        NomServiceCheck.setAutoscrolls(true);
+        NomServiceCheck.setFocusable(false);
+        NomServiceCheck.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        NomServiceCheck.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        NomServiceCheck.setPreferredSize(new java.awt.Dimension(109, 25));
+        NomServiceCheck.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NomServiceCheckActionPerformed(evt);
+            }
+        });
+        jLayeredPane1.add(NomServiceCheck);
+
+        CodeServiceCheck.setText("Code Service");
+        CodeServiceCheck.setAutoscrolls(true);
+        CodeServiceCheck.setFocusable(false);
+        CodeServiceCheck.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        CodeServiceCheck.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        CodeServiceCheck.setMaximumSize(new java.awt.Dimension(109, 25));
+        CodeServiceCheck.setMinimumSize(new java.awt.Dimension(109, 25));
+        CodeServiceCheck.setPreferredSize(new java.awt.Dimension(109, 25));
+        CodeServiceCheck.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CodeServiceCheckActionPerformed(evt);
+            }
+        });
+        jLayeredPane1.add(CodeServiceCheck);
+
+        BatimentCheck.setText("Batiment");
+        BatimentCheck.setAutoscrolls(true);
+        BatimentCheck.setFocusable(false);
+        BatimentCheck.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        BatimentCheck.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        BatimentCheck.setMaximumSize(new java.awt.Dimension(109, 25));
+        BatimentCheck.setMinimumSize(new java.awt.Dimension(109, 25));
+        BatimentCheck.setPreferredSize(new java.awt.Dimension(109, 25));
+        BatimentCheck.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BatimentCheckActionPerformed(evt);
+            }
+        });
+        jLayeredPane1.add(BatimentCheck);
+
+        DirecteurCheck.setText("Directeur");
+        DirecteurCheck.setAutoscrolls(true);
+        DirecteurCheck.setFocusable(false);
+        DirecteurCheck.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        DirecteurCheck.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        DirecteurCheck.setMaximumSize(new java.awt.Dimension(109, 25));
+        DirecteurCheck.setMinimumSize(new java.awt.Dimension(109, 25));
+        DirecteurCheck.setPreferredSize(new java.awt.Dimension(109, 25));
+        DirecteurCheck.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DirecteurCheckActionPerformed(evt);
+            }
+        });
+        jLayeredPane1.add(DirecteurCheck);
+
+        SurveillantCheck.setText("Surveillant");
+        SurveillantCheck.setAutoscrolls(true);
+        SurveillantCheck.setFocusable(false);
+        SurveillantCheck.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        SurveillantCheck.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        SurveillantCheck.setMaximumSize(new java.awt.Dimension(109, 25));
+        SurveillantCheck.setMinimumSize(new java.awt.Dimension(109, 25));
+        SurveillantCheck.setPreferredSize(new java.awt.Dimension(109, 25));
+        SurveillantCheck.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SurveillantCheckActionPerformed(evt);
+            }
+        });
+        jLayeredPane1.add(SurveillantCheck);
+
+        SpecialiteCheck.setText("Specialite");
+        SpecialiteCheck.setAutoscrolls(true);
+        SpecialiteCheck.setFocusable(false);
+        SpecialiteCheck.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        SpecialiteCheck.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        SpecialiteCheck.setMaximumSize(new java.awt.Dimension(109, 25));
+        SpecialiteCheck.setMinimumSize(new java.awt.Dimension(109, 25));
+        SpecialiteCheck.setPreferredSize(new java.awt.Dimension(109, 25));
+        SpecialiteCheck.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SpecialiteCheckActionPerformed(evt);
+            }
+        });
+        jLayeredPane1.add(SpecialiteCheck);
+
+        SalaireCheck.setText("Salaire");
+        SalaireCheck.setAutoscrolls(true);
+        SalaireCheck.setFocusable(false);
+        SalaireCheck.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        SalaireCheck.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        SalaireCheck.setMaximumSize(new java.awt.Dimension(109, 25));
+        SalaireCheck.setMinimumSize(new java.awt.Dimension(109, 25));
+        SalaireCheck.setPreferredSize(new java.awt.Dimension(109, 25));
+        SalaireCheck.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SalaireCheckActionPerformed(evt);
+            }
+        });
+        jLayeredPane1.add(SalaireCheck);
+
+        RotationCheck.setText("Rotation");
+        RotationCheck.setAutoscrolls(true);
+        RotationCheck.setFocusable(false);
+        RotationCheck.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        RotationCheck.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        RotationCheck.setMaximumSize(new java.awt.Dimension(109, 25));
+        RotationCheck.setMinimumSize(new java.awt.Dimension(109, 25));
+        RotationCheck.setPreferredSize(new java.awt.Dimension(109, 25));
+        RotationCheck.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RotationCheckActionPerformed(evt);
+            }
+        });
+        jLayeredPane1.add(RotationCheck);
+
+        NombreLitCheck.setText("Nombre Lit");
+        NombreLitCheck.setAutoscrolls(true);
+        NombreLitCheck.setFocusable(false);
+        NombreLitCheck.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        NombreLitCheck.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        NombreLitCheck.setMaximumSize(new java.awt.Dimension(109, 25));
+        NombreLitCheck.setMinimumSize(new java.awt.Dimension(109, 25));
+        NombreLitCheck.setPreferredSize(new java.awt.Dimension(109, 25));
+        NombreLitCheck.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NombreLitCheckActionPerformed(evt);
+            }
+        });
+        jLayeredPane1.add(NombreLitCheck);
+
+        NumeroLitCheck.setText("Numero Lit");
+        NumeroLitCheck.setAutoscrolls(true);
+        NumeroLitCheck.setFocusable(false);
+        NumeroLitCheck.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        NumeroLitCheck.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        NumeroLitCheck.setMaximumSize(new java.awt.Dimension(109, 25));
+        NumeroLitCheck.setMinimumSize(new java.awt.Dimension(109, 25));
+        NumeroLitCheck.setPreferredSize(new java.awt.Dimension(109, 25));
+        NumeroLitCheck.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NumeroLitCheckActionPerformed(evt);
+            }
+        });
+        jLayeredPane1.add(NumeroLitCheck);
+
+        NumeroChambreCheck.setText("Numero Chambre");
+        NumeroChambreCheck.setAutoscrolls(true);
+        NumeroChambreCheck.setFocusable(false);
+        NumeroChambreCheck.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        NumeroChambreCheck.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        NumeroChambreCheck.setMaximumSize(new java.awt.Dimension(109, 25));
+        NumeroChambreCheck.setMinimumSize(new java.awt.Dimension(109, 25));
+        NumeroChambreCheck.setPreferredSize(new java.awt.Dimension(130, 25));
+        NumeroChambreCheck.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NumeroChambreCheckActionPerformed(evt);
+            }
+        });
+        jLayeredPane1.add(NumeroChambreCheck);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1052, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(MenuDeroulantClass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(49, 49, 49)
+                        .addGap(472, 472, 472)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(380, 380, 380)
+                        .addComponent(BoutonNouvelleRecherche, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(7, 7, 7)
+                        .addComponent(BoutonRetourRecherche)
+                        .addGap(7, 7, 7)
+                        .addComponent(BoutonRetourPrinc))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(114, 114, 114)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(CodeServiceCheck, javax.swing.GroupLayout.PREFERRED_SIZE, 573, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1052, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(NomCheck, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(PrenomCheck, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(TelephoneCheck, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(AdresseCheck, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(73, 73, 73)
-                                .addComponent(MutuelleCheck, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(CodeCheck, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(BatimentCheck, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(22, 22, 22)
-                                .addComponent(DirecteurCheck, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(72, 72, 72)
-                                .addComponent(NomServiceCheck, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(55, 55, 55)
-                                .addComponent(NumeroLitCheck))
-                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(MenuDeroulantClass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(90, 90, 90)
                                 .addComponent(BoutonValidationClasseTri)
-                                .addGap(49, 49, 49)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(MenuDeroulantTri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(200, 200, 200)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(NumeroCheck, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(RotationCheck, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(SalaireCheck, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(SpecialiteCheck, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(NombreLitCheck, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(30, 30, 30)
-                                        .addComponent(SurveillantCheck, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                .addGap(256, 256, 256))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(472, 472, 472)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(85, 85, 85)
+                                .addComponent(MenuDeroulantTri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(114, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(BoutonNouvelleRecherche, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(7, 7, 7)
-                .addComponent(BoutonRetourRecherche)
-                .addGap(7, 7, 7)
-                .addComponent(BoutonRetourPrinc)
-                .addGap(386, 386, 386))
+                .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1060, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(10, 10, 10)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(89, 89, 89)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(MenuDeroulantClass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BoutonValidationClasseTri)
-                            .addComponent(MenuDeroulantTri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(CodeServiceCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(NumeroCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(17, 17, 17)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(NomCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(PrenomCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TelephoneCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(AdresseCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(MutuelleCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(RotationCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(SalaireCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(SpecialiteCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(NombreLitCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(SurveillantCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(28, 28, 28)
-                                .addComponent(CodeCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(NomServiceCheck, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(DirecteurCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(BatimentCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(BoutonNouvelleRecherche, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BoutonRetourRecherche)
-                            .addComponent(BoutonRetourPrinc))
-                        .addContainerGap(71, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(NumeroLitCheck)
-                        .addGap(345, 345, 345))))
+                .addGap(87, 87, 87)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(MenuDeroulantClass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BoutonValidationClasseTri)
+                    .addComponent(MenuDeroulantTri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addComponent(jLayeredPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
+                .addGap(43, 43, 43)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BoutonNouvelleRecherche, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BoutonRetourRecherche)
+                    .addComponent(BoutonRetourPrinc))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {BoutonValidationClasseTri, MenuDeroulantClass, MenuDeroulantTri});
-
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {AdresseCheck, BatimentCheck, CodeCheck, MutuelleCheck, NomCheck, NomServiceCheck, NumeroCheck, PrenomCheck, TelephoneCheck});
-
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {CodeServiceCheck, DirecteurCheck, NombreLitCheck, RotationCheck, SalaireCheck, SpecialiteCheck});
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -443,33 +502,131 @@ public class SousMenutri extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_SurveillantCheckActionPerformed
 
-    private void BoutonRetourRechercheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonRetourRechercheActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BoutonRetourRechercheActionPerformed
-
-    private void BoutonRetourPrincActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonRetourPrincActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BoutonRetourPrincActionPerformed
-
     private void BoutonValidationClasseTriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonValidationClasseTriActionPerformed
         // TODO add your handling code here:
         
-        NomCheck.setVisible(false);
-        PrenomCheck.setVisible(false);
-        TelephoneCheck.setVisible(false);
-        AdresseCheck.setVisible(false);
-        NumeroCheck.setVisible(false);
-        MutuelleCheck.setVisible(false);
-        CodeCheck.setVisible(false);
-        NomCheck.setVisible(false);
     }//GEN-LAST:event_BoutonValidationClasseTriActionPerformed
 
     private void MenuDeroulantClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuDeroulantClassActionPerformed
         
 // TODO add your handling code here:
-        String x = String.valueOf(MenuDeroulantClass.getSelectedItem());
-        System.out.print(x);
+        int IndexCb = MenuDeroulantClass.getSelectedIndex();
+        System.out.print(IndexCb);
+        switch(IndexCb)
+        {
+                NomServiceCheck.setVisible(true);
+                CodeServiceCheck.setVisible(true);
+                BatimentCheck.setVisible(true);
+                DirecteurCheck.setVisible(true);
+        
+            break;
+                    NumeroCheck.setVisible(true);
+                    NomCheck.setVisible(true);
+                    PrenomCheck.setVisible(true);
+                    TelephoneCheck.setVisible(true);
+                    AdresseCheck.setVisible(true);
+                    
+                    
+            break;
+                    NumeroCheck.setVisible(true);
+                    CodeServiceCheck.setVisible(true);
+                    RotationCheck.setVisible(true);
+                    SalaireCheck.setVisible(true);
+                    NomCheck.setVisible(true);
+                    PrenomCheck.setVisible(true);
+                    TelephoneCheck.setVisible(true);
+                    AdresseCheck.setVisible(true);
+            break;
+                    NumeroCheck.setVisible(true);
+                    SpecialiteCheck.setVisible(true);
+                    NomCheck.setVisible(true);
+                    PrenomCheck.setVisible(true);
+                    TelephoneCheck.setVisible(true);
+                    AdresseCheck.setVisible(true);
+        
+            break;
+                    
+                    NumeroChambreCheck.setVisible(true);
+                    CodeServiceCheck.setVisible(true);
+                    SurveillantCheck.setVisible(true);
+                    NombreLitCheck.setVisible(true);
+                    
+            break;
+                    NumeroCheck.setVisible(true);
+                    NomCheck.setVisible(true);
+                    PrenomCheck.setVisible(true);
+                    TelephoneCheck.setVisible(true);
+                    AdresseCheck.setVisible(true);
+                    NumeroChambreCheck.setVisible(true);
+                    CodeServiceCheck.setVisible(true);
+                    SurveillantCheck.setVisible(true);
+                    NombreLitCheck.setVisible(true);
+                    NumeroLitCheck.setVisible(true);
+                    
+        
+            break;
+        }
     }//GEN-LAST:event_MenuDeroulantClassActionPerformed
+
+    private void NumeroLitCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NumeroLitCheckActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NumeroLitCheckActionPerformed
+
+    private void BoutonRetourPrincActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonRetourPrincActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BoutonRetourPrincActionPerformed
+
+    private void BoutonRetourRechercheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonRetourRechercheActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BoutonRetourRechercheActionPerformed
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        // TODO add your handling code here:
+        PrenomCheck.setVisible(false);
+        NombreLitCheck.setVisible(false);
+        CodeCheck.setVisible(false);
+        CodeServiceCheck.setVisible(false);
+        NumeroCheck.setVisible(false);
+        BatimentCheck.setVisible(false);
+        NomCheck.setVisible(false);
+        TelephoneCheck.setVisible(false);
+        DirecteurCheck.setVisible(false);
+        SurveillantCheck.setVisible(false);
+        SpecialiteCheck.setVisible(false);
+        NomServiceCheck.setVisible(false);
+        AdresseCheck.setVisible(false);
+        MutuelleCheck.setVisible(false);
+        RotationCheck.setVisible(false);
+        SalaireCheck.setVisible(false);
+        NumeroLitCheck.setVisible(false);
+        NumeroChambreCheck.setVisible(false);
+    }//GEN-LAST:event_formWindowActivated
+
+    private void MenuDeroulantClassMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuDeroulantClassMouseClicked
+        // TODO add your handling code here:
+        PrenomCheck.setVisible(false);
+        NombreLitCheck.setVisible(false);
+        CodeCheck.setVisible(false);
+        CodeServiceCheck.setVisible(false);
+        NumeroCheck.setVisible(false);
+        BatimentCheck.setVisible(false);
+        NomCheck.setVisible(false);
+        TelephoneCheck.setVisible(false);
+        DirecteurCheck.setVisible(false);
+        SurveillantCheck.setVisible(false);
+        SpecialiteCheck.setVisible(false);
+        NomServiceCheck.setVisible(false);
+        AdresseCheck.setVisible(false);
+        MutuelleCheck.setVisible(false);
+        RotationCheck.setVisible(false);
+        SalaireCheck.setVisible(false);
+        NumeroLitCheck.setVisible(false);
+        NumeroChambreCheck.setVisible(false);
+    }//GEN-LAST:event_MenuDeroulantClassMouseClicked
+
+    private void NumeroChambreCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NumeroChambreCheckActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NumeroChambreCheckActionPerformed
 
     /**
      * @param args the command line arguments
@@ -522,6 +679,7 @@ public class SousMenutri extends javax.swing.JFrame {
     private javax.swing.JCheckBox NomCheck;
     private javax.swing.JCheckBox NomServiceCheck;
     private javax.swing.JCheckBox NombreLitCheck;
+    private javax.swing.JCheckBox NumeroChambreCheck;
     private javax.swing.JCheckBox NumeroCheck;
     private javax.swing.JCheckBox NumeroLitCheck;
     private javax.swing.JCheckBox PrenomCheck;
@@ -532,6 +690,7 @@ public class SousMenutri extends javax.swing.JFrame {
     private javax.swing.JCheckBox SurveillantCheck;
     private javax.swing.JCheckBox TelephoneCheck;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
