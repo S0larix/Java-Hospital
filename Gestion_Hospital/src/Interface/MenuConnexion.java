@@ -31,9 +31,9 @@ public class MenuConnexion extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         LoginBDD = new javax.swing.JTextField();
         PasswordBDD = new javax.swing.JPasswordField();
-        BoutonConnexion = new javax.swing.JButton();
         LoginECE = new javax.swing.JTextField();
         PasswordECE = new javax.swing.JPasswordField();
+        BoutonConnexion = new javax.swing.JButton();
         BoutonQuitter = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -58,14 +58,6 @@ public class MenuConnexion extends javax.swing.JFrame {
         PasswordBDD.setText("jPasswordField1");
         jPanel1.add(PasswordBDD);
 
-        BoutonConnexion.setText("Connexion");
-        BoutonConnexion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BoutonConnexionActionPerformed(evt);
-            }
-        });
-        jPanel1.add(BoutonConnexion);
-
         LoginECE.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         LoginECE.setText("LoginECE");
         jPanel1.add(LoginECE);
@@ -73,6 +65,14 @@ public class MenuConnexion extends javax.swing.JFrame {
         PasswordECE.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         PasswordECE.setText("jPasswordField1");
         jPanel1.add(PasswordECE);
+
+        BoutonConnexion.setText("Connexion");
+        BoutonConnexion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BoutonConnexionActionPerformed(evt);
+            }
+        });
+        jPanel1.add(BoutonConnexion);
 
         BoutonQuitter.setText("Quitter");
         BoutonQuitter.addActionListener(new java.awt.event.ActionListener() {

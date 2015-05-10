@@ -13,8 +13,26 @@ public class MenuRecherche extends javax.swing.JFrame {
 
     /**
      * Creates new form MenuRecherche
+     * 
+     * 
+     * 
      */
-    public MenuRecherche() {
+    
+    private  String LoginECE;
+    private  String PasswordECE;
+    private  String LoginBDD;
+    private  String PasswordBDD;
+    
+    
+
+        
+       
+    public MenuRecherche(String LoginECE, String PasswordECE, String LoginBDD, String PasswordBDD) {
+        
+        this.LoginECE = LoginECE;
+        this.PasswordECE = PasswordECE;
+        this.LoginBDD= LoginBDD;
+        this.PasswordBDD = PasswordBDD;
         initComponents();
     }
 
@@ -28,8 +46,9 @@ public class MenuRecherche extends javax.swing.JFrame {
     private void initComponents() {
 
         Recherche = new javax.swing.JLabel();
-        BoutonRecherchePref = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
         BoutonTri = new javax.swing.JButton();
+        BoutonRecherchePref = new javax.swing.JButton();
         BoutonRetourMenu = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -38,88 +57,65 @@ public class MenuRecherche extends javax.swing.JFrame {
         Recherche.setText("Recherche");
         Recherche.setPreferredSize(new java.awt.Dimension(336, 84));
 
+        jPanel1.setLayout(new java.awt.GridLayout(3, 1, 0, 140));
+
+        BoutonTri.setText("Tri croissant / alphabétique");
+        jPanel1.add(BoutonTri);
+
         BoutonRecherchePref.setText("Recherches prédéfinies");
         BoutonRecherchePref.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         BoutonRecherchePref.setPreferredSize(new java.awt.Dimension(168, 42));
-
-        BoutonTri.setText("Tri croissant / alphabétique");
+        jPanel1.add(BoutonRecherchePref);
 
         BoutonRetourMenu.setText("Retour menu");
+        BoutonRetourMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BoutonRetourMenuActionPerformed(evt);
+            }
+        });
+        jPanel1.add(BoutonRetourMenu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(472, 472, 472)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(Recherche, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BoutonRecherchePref, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BoutonTri)
-                    .addComponent(BoutonRetourMenu))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(472, 472, 472)
+                        .addComponent(Recherche, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(545, 545, 545)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(472, Short.MAX_VALUE))
         );
-
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {BoutonRecherchePref, BoutonRetourMenu, BoutonTri});
-
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(10, 10, 10)
                 .addComponent(Recherche, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(110, 110, 110)
-                .addComponent(BoutonRecherchePref, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(140, 140, 140)
-                .addComponent(BoutonTri)
-                .addGap(140, 140, 140)
-                .addComponent(BoutonRetourMenu)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(110, Short.MAX_VALUE))
         );
-
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {BoutonRecherchePref, BoutonRetourMenu, BoutonTri});
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MenuRecherche.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MenuRecherche.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MenuRecherche.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MenuRecherche.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void BoutonRetourMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonRetourMenuActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        Menu_principal menu_princ = new Menu_principal(LoginECE,PasswordECE,LoginBDD,PasswordBDD);
+        menu_princ.setVisible(true);
+    }//GEN-LAST:event_BoutonRetourMenuActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MenuRecherche().setVisible(true);
-            }
-        });
-    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BoutonRecherchePref;
     private javax.swing.JButton BoutonRetourMenu;
     private javax.swing.JButton BoutonTri;
     private javax.swing.JLabel Recherche;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

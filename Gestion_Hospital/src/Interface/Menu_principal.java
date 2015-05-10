@@ -15,17 +15,17 @@ public class Menu_principal extends javax.swing.JFrame {
      * Creates new form Menu_principal
      */
     private  String LoginECE;
-    private  String NomBase;
-    private  String Login;
-    private  String Password;
+    private  String PasswordECE;
+    private  String LoginBDD;
+    private  String PasswordBDD;
     
     
-    public Menu_principal(String ServeurBase, String NomBase, String Login, String Password) {
+    public Menu_principal(String LoginECE, String PasswordECE, String LoginBDD, String PasswordBDD) {
         
-        this.ServeurBase = ServeurBase;
-        this.NomBase = NomBase;
-        this.Login= Login;
-        this.Password = Password;
+        this.LoginECE = LoginECE;
+        this.PasswordECE = PasswordECE;
+        this.LoginBDD= LoginBDD;
+        this.PasswordBDD = PasswordBDD;
         initComponents();
     }
 
@@ -40,9 +40,9 @@ public class Menu_principal extends javax.swing.JFrame {
 
         GestionHopital = new javax.swing.JLabel();
         BoutonMaj = new javax.swing.JButton();
-        BoutonRecherche = new javax.swing.JButton();
         BoutonReporting = new javax.swing.JButton();
         BoutonQuitter = new javax.swing.JButton();
+        BoutonRecherche = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,15 +58,6 @@ public class Menu_principal extends javax.swing.JFrame {
         BoutonMaj.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BoutonMajActionPerformed(evt);
-            }
-        });
-
-        BoutonRecherche.setText("Recherche dans la base");
-        BoutonRecherche.setActionCommand("recherche");
-        BoutonRecherche.setPreferredSize(new java.awt.Dimension(168, 42));
-        BoutonRecherche.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BoutonRechercheActionPerformed(evt);
             }
         });
 
@@ -86,6 +77,13 @@ public class Menu_principal extends javax.swing.JFrame {
             }
         });
 
+        BoutonRecherche.setText("Bouton Recherche");
+        BoutonRecherche.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BoutonRechercheActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -95,11 +93,14 @@ public class Menu_principal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(GestionHopital, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BoutonMaj, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BoutonRecherche, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BoutonReporting, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BoutonQuitter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BoutonQuitter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BoutonRecherche))
                 .addGap(472, 472, 472))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {BoutonMaj, BoutonRecherche});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -107,14 +108,16 @@ public class Menu_principal extends javax.swing.JFrame {
                 .addComponent(GestionHopital, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
                 .addComponent(BoutonMaj, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(126, 126, 126)
-                .addComponent(BoutonRecherche, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(126, 126, 126)
+                .addGap(111, 111, 111)
+                .addComponent(BoutonRecherche)
+                .addGap(175, 175, 175)
                 .addComponent(BoutonReporting, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(126, 126, 126)
                 .addComponent(BoutonQuitter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {BoutonMaj, BoutonRecherche});
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -131,14 +134,20 @@ public class Menu_principal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_BoutonReportingActionPerformed
 
-    private void BoutonRechercheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonRechercheActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BoutonRechercheActionPerformed
-
     private void BoutonMajActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonMajActionPerformed
         // TODO add your handling code here:
-        System.out.print(this.Password);
+        System.out.println(this.LoginECE);
+        System.out.println(this.PasswordECE);
+        System.out.println(this.LoginBDD);
+        System.out.println(this.PasswordBDD);
     }//GEN-LAST:event_BoutonMajActionPerformed
+
+    private void BoutonRechercheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonRechercheActionPerformed
+        // TODO add your handling code here:
+         this.dispose();
+        MenuRecherche menu_recherche = new MenuRecherche(LoginECE,PasswordECE,LoginBDD,PasswordBDD);
+        menu_recherche.setVisible(true);
+    }//GEN-LAST:event_BoutonRechercheActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
