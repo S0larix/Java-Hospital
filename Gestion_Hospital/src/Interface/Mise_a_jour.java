@@ -24,11 +24,21 @@ public class Mise_a_jour extends javax.swing.JFrame implements ActionListener{
     /**
      * Creates new form Mise_a_jour
      */
-    public Mise_a_jour() {
+           private  String LoginECE;
+           private  String PasswordECE;
+           private  String LoginBDD;
+           private  String PasswordBDD;
+    
+    public Mise_a_jour(String LoginECE,String PasswordECE,String LoginBDD,String PasswordBDD) {
         initComponents();
+           
         this.ajouter.addActionListener(this);
         this.supprimer.addActionListener(this);
         this.modifier.addActionListener(this);
+        this.LoginECE = LoginECE;
+        this.PasswordECE = PasswordECE;
+        this.LoginBDD= LoginBDD;
+        this.PasswordBDD = PasswordBDD;
     }
     
 
@@ -45,6 +55,7 @@ public class Mise_a_jour extends javax.swing.JFrame implements ActionListener{
         ajouter = new javax.swing.JButton();
         supprimer = new javax.swing.JButton();
         modifier = new javax.swing.JButton();
+        BoutonRetourPrinc = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1280, 720));
@@ -72,6 +83,13 @@ public class Mise_a_jour extends javax.swing.JFrame implements ActionListener{
             }
         });
 
+        BoutonRetourPrinc.setText("Retour Menu Principal");
+        BoutonRetourPrinc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BoutonRetourPrincActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -82,9 +100,13 @@ public class Mise_a_jour extends javax.swing.JFrame implements ActionListener{
                     .addComponent(ajouter, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(supprimer, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(modifier, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(modifier, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BoutonRetourPrinc))
                 .addContainerGap(544, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {BoutonRetourPrinc, modifier});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -96,8 +118,12 @@ public class Mise_a_jour extends javax.swing.JFrame implements ActionListener{
                 .addComponent(supprimer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
                 .addComponent(modifier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(405, Short.MAX_VALUE))
+                .addGap(39, 39, 39)
+                .addComponent(BoutonRetourPrinc)
+                .addContainerGap(324, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {BoutonRetourPrinc, modifier});
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -105,6 +131,13 @@ public class Mise_a_jour extends javax.swing.JFrame implements ActionListener{
     private void modifierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifierActionPerformed
         
     }//GEN-LAST:event_modifierActionPerformed
+
+    private void BoutonRetourPrincActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonRetourPrincActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        Menu_principal menu_princ = new Menu_principal(LoginECE,PasswordECE,LoginBDD,PasswordBDD);
+        menu_princ.setVisible(true);
+    }//GEN-LAST:event_BoutonRetourPrincActionPerformed
 
     /**
      * @param args the command line arguments
@@ -136,7 +169,7 @@ public class Mise_a_jour extends javax.swing.JFrame implements ActionListener{
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Mise_a_jour().setVisible(true);
+                new Mise_a_jour("a","a","a","a").setVisible(true);
             }
         });
     }
@@ -146,6 +179,7 @@ public class Mise_a_jour extends javax.swing.JFrame implements ActionListener{
     private supprimer suppr;
     private modifier modif;
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BoutonRetourPrinc;
     private javax.swing.JButton ajouter;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton modifier;

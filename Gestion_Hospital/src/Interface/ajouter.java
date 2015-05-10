@@ -25,8 +25,18 @@ public class ajouter extends javax.swing.JFrame implements ActionListener {
     /**
      * Creates new form ajouter
      */
+    
+    private  String LoginECE;
+    private  String PasswordECE;
+    private  String LoginBDD;
+    private  String PasswordBDD;
+    
     public ajouter(String nomECE, String mdpECE, String nomBDD, String mdpBDD) throws SQLException {
         initComponents();
+         this.LoginECE = nomECE;
+         this.PasswordECE = mdpECE;
+         this.LoginBDD= nomBDD;
+         this.PasswordBDD = mdpBDD;
         this.table.addActionListener(this);
         this.ajout.addActionListener(this);
         this.a1.setVisible(false);
@@ -77,6 +87,8 @@ public class ajouter extends javax.swing.JFrame implements ActionListener {
         p6 = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        BoutonRetourMaj = new javax.swing.JButton();
+        BoutonRetourPrinc = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -128,6 +140,15 @@ public class ajouter extends javax.swing.JFrame implements ActionListener {
         jTextArea1.setRows(5);
         jScrollPane2.setViewportView(jTextArea1);
 
+        BoutonRetourMaj.setText("Menu Maj");
+        BoutonRetourMaj.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BoutonRetourMajActionPerformed(evt);
+            }
+        });
+
+        BoutonRetourPrinc.setText("Menu Principal");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -151,6 +172,10 @@ public class ajouter extends javax.swing.JFrame implements ActionListener {
             .addGroup(layout.createSequentialGroup()
                 .addGap(384, 384, 384)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(BoutonRetourMaj)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(BoutonRetourPrinc))
                     .addComponent(jScrollPane2)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -178,7 +203,7 @@ public class ajouter extends javax.swing.JFrame implements ActionListener {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(41, 41, 41)
                 .addComponent(table, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(a3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -203,7 +228,11 @@ public class ajouter extends javax.swing.JFrame implements ActionListener {
                 .addComponent(ajout)
                 .addGap(43, 43, 43)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BoutonRetourMaj)
+                    .addComponent(BoutonRetourPrinc))
+                .addContainerGap())
         );
 
         pack();
@@ -217,8 +246,22 @@ public class ajouter extends javax.swing.JFrame implements ActionListener {
         // TODO add your handling code here:
     }//GEN-LAST:event_p5ActionPerformed
 
+    private void BoutonRetourMajActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonRetourMajActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        Mise_a_jour mise_a_jour =  new Mise_a_jour(LoginECE,PasswordECE,LoginBDD,PasswordBDD);
+        mise_a_jour.setVisible(true);
+    }//GEN-LAST:event_BoutonRetourMajActionPerformed
+
     private Connexion connect;
+    
+    
+ 
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BoutonRetourMaj;
+    private javax.swing.JButton BoutonRetourPrinc;
     private javax.swing.JLabel a1;
     private javax.swing.JLabel a2;
     private javax.swing.JLabel a3;
@@ -359,3 +402,5 @@ public class ajouter extends javax.swing.JFrame implements ActionListener {
         }
     }
 }
+
+

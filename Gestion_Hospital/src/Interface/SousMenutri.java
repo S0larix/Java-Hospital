@@ -598,6 +598,10 @@ public class SousMenutri extends javax.swing.JFrame {
           this.dispose();
         Menu_principal menu_princ = new Menu_principal(LoginECE,PasswordECE,LoginBDD,PasswordBDD);
         menu_princ.setVisible(true);
+        System.out.println(LoginECE);
+         System.out.println(PasswordECE);
+          System.out.println(LoginBDD);
+           System.out.println(PasswordBDD);
     }//GEN-LAST:event_BoutonRetourPrincActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
