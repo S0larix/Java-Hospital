@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import jdbc2014.Connexion;
+import Interface.SousMenutri;
 
 /**
  *
@@ -79,13 +80,13 @@ public class Transformation {
              int tmp_lits;
              
              //si checkbox supplémentaires, passer les booléan à true
-            if(code_service_box.isSelected())  
+            if(CodeServiceCheck.isSelected())  
                 test_service=true;
-            if(no_chambre_box.isSelected())
+            if(NumeroCheck.isSelected())
                 test_chambre=true;
-            if(surveillant_box.isSelected())
+            if(SurveillantCheck.isSelected())
                 test_surveillant=true;
-            if(nb_lits_box.isSelected())
+            if(NombreLitCheck.isSelected())
                 test_lits=true;
             
             
@@ -134,19 +135,19 @@ public class Transformation {
             boolean test_tel=false;
             boolean test_adresse=false;
             
-            if(specialite_box).isSelected(){
+            if((SpecialiteCheck).isSelected()){
                 test_specialite=true;
              }
-            if(nom_docteur_box).isSelected(){
+            if((NomCheck).isSelected()){
                 test_nom=true;
              }
-            if(prenom_docteur_box).isSelected(){
+            if((PrenomCheck).isSelected()){
                 test_prenom=true;
                 }
-            if(tel_docteur_box).isSelected(){
+            if((TelephoneCheck).isSelected()){
                 test_tel=true;
             }
-            if(adresse_docteur_box).isSelected(){
+            if((AdresseCheck).isSelected()){
                 test_adresse=true;
             }
             //pour chaque champ rempli d'une string, on remplit la classe correspondnte
@@ -175,7 +176,7 @@ public class Transformation {
                     }
                         
                 }
-                    
+            }    
                 //remplissage de la classse et ajout à l'ArrayList
                 chambre tmp = new chambre(tmp_chambre,tmp_service,tmp_surveillant,tmp_lits);
                 liste_generique.add(tmp);
@@ -196,26 +197,26 @@ public class Transformation {
             boolean test_tel=false;
             boolean test_adresse=false;
             
-            if((code_service_box)).isSelected(){
-                if_code_service=true;
+            if((CodeServiceCheck).isSelected()){
+                test_code_service=true;
         }
-            if((rotation_box).isSelected){
-                if_rotation=true;
+            if((RotationCheck).isSelected){
+                test_rotation=true;
             }
-            if((salaire_box).isSelected){
-                if_salaire=true;
+            if((SalaireCheck).isSelected){
+                test_salaire=true;
             }
-            if((nom_box).isSelected){
-                if_nom=true;
+            if((NomCheck).isSelected){
+                test_nom=true;
             }
-            if((prenom_box).isSelected){
-                if_prenom=true;
+            if((PrenomCheck).isSelected){
+                test_prenom=true;
             }
-            if((tel_box).isSelected){
-                if_tel=true;
+            if((TelephoneCheck).isSelected){
+                test_tel=true;
             }
-            if((adresse_box).isSelected){
-                if_adresse=true;
+            if((AdresseCheck).isSelected){
+                test_adresse=true;
             }
         }
         
@@ -232,19 +233,19 @@ public class Transformation {
         boolean test_adresse=false;
         boolean test_mutuelle=false;
         
-        if((nom_box).isSelected()){
+        if((NomCheck).isSelected()){
             test_nom=true;
         }
-        if((prenom_box).isSelected()){
+        if((PrenomCheck).isSelected()){
             test_prenom=true;
         }
-        if((tel_box).isSelected()){
+        if((TelephoneCheck).isSelected()){
             test_tel=true;
         }
-        if((adresse_box).isSelected()){
+        if((AdresseCheck).isSelected()){
            test_adresse=true; 
         }
-        if((mutuelle_box).isSelected()){
+        if((MutuelleCheck).isSelected()){
             test_mutuelle=true;
         }
         }
@@ -254,21 +255,21 @@ public class Transformation {
         {
           liste_generique=new ArrayList<service>();
           //...
-          boolean code=false;
-          boolean nom=false;
-          boolean batiment=false;
-          boolean directeur=false;
+          boolean test_code=false;
+          boolean test_nom=false;
+          boolean test_batiment=false;
+          boolean test_directeur=false;
           
-          if((code_box).isSelected()){
+          if((CodeCheck).isSelected()){
             test_code=true;
         }
-          if((nom_box).isSelected()){
+          if((NomCheck).isSelected()){
               test_nom=true;
           }
-          if((batiment_box).isSelected){
+          if((BatimentCheck).isSelected){
               test_batiment=true;
           }
-          if((directeur_box).isSelected()){
+          if((DirecteurCheck).isSelected()){
               test_directeur=true;
           }
         }
@@ -305,59 +306,59 @@ public class Transformation {
            compteur++;
        }
        //selection des attributs
-       if(nom_check){
+       if(NomCheck){
            select_text=select_text+"nom,";
            compteur++;
        }
-       if(prenom_check){
+       if(PrenomCheck){
            select_text=select_text+"prenom,";
            compteur++;
        }
-       if(tel_check){
+       if(TelephoneCheck){
            select_text=select_text+"tel,";
            compteur++;
        }
-       if(adresse_check){
+       if(AdresseCheck){
            select_text=select_text+"adresse,";
            compteur++;
        }
-       if(numero_check){
+       if(NumeroCheck){
            select_text=select_text+"numero,";
            compteur++;
        }
-       if(mutuelle_check){
+       if(MutuelleCheck){
            select_text=select_text+"mutuelle,";
            compteur++;
        }
-       if(code_check){
+       if(CodeCheck){
            select_text=select_text+"code,";
            compteur++;
        }
-       if(nom_service_check){
+       if(NomServiceCheck){
            select_text=select_text+"nom,";
            compteur++;
        }
-       if(batiment_check){
+       if(BatimentCheck){
            select_text=select_text+"batiment,";
            compteur++;
        }
-       if(directeur_check){
+       if(DirecteurCheck){
            select_text=select_text+"directeur,";
            compteur++;
        }
-       if(code_service_check){
+       if(CodeServiceCheck){
            select_text=select_text+"code,";
            compteur++;
        }
-       if(numero_chambre_check){
+       if(NumeroCheck){
            select_text=select_text+"no_chambre,";
            compteur++;  
        }
-       if(surveillant_check){
+       if(SurveillantCheck){
            select_text=select_text+"surveillant,";
            compteur++;
        }
-       if(nb_lits_check){
+       if(NombreLitCheck){
            select_text=select_text+"nb_lits,";
            compteur++;
        }
