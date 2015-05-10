@@ -10,6 +10,7 @@ package jdbc2014;
  */
 import java.sql.*;
 import java.util.ArrayList;
+import  java.lang.Object;
 
 /*
  * 
@@ -26,6 +27,7 @@ public class Connexion {
     private Statement stmt;
     private ResultSet rset;
     private ResultSetMetaData rsetMeta;
+    private SSHTunnel ssh;
     /**
      * ArrayList public pour les requêtes de sélection
      */
@@ -34,6 +36,7 @@ public class Connexion {
      * ArrayList public pour les requêtes de MAJ
      */
     public ArrayList<String> requetesMaj = new ArrayList<String>(); // liste des requêtes de MAJ
+    
 
     /**
      * Constructeur avec 4 paramètres : username et password ECE, login et password de la BDD
@@ -43,7 +46,7 @@ public class Connexion {
         Class.forName("com.mysql.jdbc.Driver");
 
         // Connexion via le tunnel SSH avec le username et le password ECE
-        SSHTunnel ssh = new SSHTunnel(usernameECE, passwordECE);
+        ssh = new SSHTunnel(usernameECE, passwordECE);
 
         if (ssh.connect()) {
             System.out.println("Connexion reussie");
@@ -175,5 +178,16 @@ public class Connexion {
      */
     public void executeUpdate(String requeteMaj) throws SQLException {
         stmt.executeUpdate(requeteMaj);
+    }
+
+    /**
+     * @return the conn
+     */
+    public Connection getConn() {
+        return conn;
+    }
+    public void Disconnect() throws Throwable
+    {
+        this.ssh.disconnect();
     }
 }

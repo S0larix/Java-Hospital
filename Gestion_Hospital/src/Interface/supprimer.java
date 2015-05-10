@@ -88,6 +88,8 @@ public class supprimer extends javax.swing.JFrame implements ActionListener {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jLabel2 = new javax.swing.JLabel();
+        BoutonRetourPrinc = new javax.swing.JButton();
+        BoutonRetourMaj = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -142,6 +144,20 @@ public class supprimer extends javax.swing.JFrame implements ActionListener {
         jLabel2.setText("Saisir les champs à supprimer");
         jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        BoutonRetourPrinc.setText("Menu Principal");
+        BoutonRetourPrinc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BoutonRetourPrincActionPerformed(evt);
+            }
+        });
+
+        BoutonRetourMaj.setText("Menu Maj");
+        BoutonRetourMaj.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BoutonRetourMajActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -187,6 +203,12 @@ public class supprimer extends javax.swing.JFrame implements ActionListener {
                         .addGap(192, 192, 192)
                         .addComponent(jLabel2)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(149, 149, 149)
+                .addComponent(BoutonRetourMaj)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BoutonRetourPrinc)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -222,7 +244,11 @@ public class supprimer extends javax.swing.JFrame implements ActionListener {
                 .addComponent(suppr)
                 .addGap(43, 43, 43)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BoutonRetourMaj)
+                    .addComponent(BoutonRetourPrinc))
+                .addContainerGap())
         );
 
         pack();
@@ -236,8 +262,34 @@ public class supprimer extends javax.swing.JFrame implements ActionListener {
         // TODO add your handling code here:
     }//GEN-LAST:event_p5ActionPerformed
 
+    private void BoutonRetourPrincActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonRetourPrincActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        Menu_principal menu_princ = new Menu_principal(LoginECE,PasswordECE,LoginBDD,PasswordBDD);
+        menu_princ.setVisible(true);
+        try {
+            connect.Disconnect();
+        } catch (Throwable ex) {
+            Logger.getLogger(ajouter.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_BoutonRetourPrincActionPerformed
+
+    private void BoutonRetourMajActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonRetourMajActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        Mise_a_jour mise_a_jour =  new Mise_a_jour(LoginECE,PasswordECE,LoginBDD,PasswordBDD);
+        mise_a_jour.setVisible(true);
+        try {
+            connect.Disconnect();
+        } catch (Throwable ex) {
+            Logger.getLogger(ajouter.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_BoutonRetourMajActionPerformed
+
     private Connexion connect;
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BoutonRetourMaj;
+    private javax.swing.JButton BoutonRetourPrinc;
     private javax.swing.JLabel a1;
     private javax.swing.JLabel a2;
     private javax.swing.JLabel a3;

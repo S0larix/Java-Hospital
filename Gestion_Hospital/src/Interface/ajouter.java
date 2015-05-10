@@ -15,6 +15,7 @@ import jdbc2014.*;
 import jdbc2014.Connexion;
 import Mise_a_jour.*;
 import javax.swing.JTable;
+import  java.lang.Object;
 
 /**
  *
@@ -148,6 +149,11 @@ public class ajouter extends javax.swing.JFrame implements ActionListener {
         });
 
         BoutonRetourPrinc.setText("Menu Principal");
+        BoutonRetourPrinc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BoutonRetourPrincActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -251,7 +257,26 @@ public class ajouter extends javax.swing.JFrame implements ActionListener {
         this.dispose();
         Mise_a_jour mise_a_jour =  new Mise_a_jour(LoginECE,PasswordECE,LoginBDD,PasswordBDD);
         mise_a_jour.setVisible(true);
+        try {    
+            connect.Disconnect();
+        } catch (Throwable ex) {
+            Logger.getLogger(ajouter.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
+        
     }//GEN-LAST:event_BoutonRetourMajActionPerformed
+
+    private void BoutonRetourPrincActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonRetourPrincActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        Menu_principal menu_princ = new Menu_principal(LoginECE,PasswordECE,LoginBDD,PasswordBDD);
+        menu_princ.setVisible(true);
+           try {    
+            connect.Disconnect();
+        } catch (Throwable ex) {
+            Logger.getLogger(ajouter.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_BoutonRetourPrincActionPerformed
 
     private Connexion connect;
     

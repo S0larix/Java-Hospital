@@ -126,6 +126,12 @@
               </Group>
               <EmptySpace pref="73" max="32767" attributes="0"/>
           </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <Component id="BoutonRetourMaj" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="BoutonRetourPrinc" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="333" max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -181,7 +187,12 @@
               <Component id="aa" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="modif2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="67" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="BoutonRetourMaj" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="BoutonRetourPrinc" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="35" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -372,6 +383,22 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Modification"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="BoutonRetourPrinc">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Menu Principal"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BoutonRetourPrincActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="BoutonRetourMaj">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Menu Maj"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BoutonRetourMajActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

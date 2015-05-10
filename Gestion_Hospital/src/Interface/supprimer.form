@@ -75,6 +75,13 @@
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="149" max="-2" attributes="0"/>
+              <Component id="BoutonRetourMaj" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="BoutonRetourPrinc" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -116,7 +123,12 @@
               <Component id="suppr" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
               <Component id="jScrollPane2" min="-2" pref="320" max="-2" attributes="0"/>
-              <EmptySpace pref="37" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="BoutonRetourMaj" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="BoutonRetourPrinc" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -238,6 +250,22 @@
         <Property name="text" type="java.lang.String" value="Saisir les champs &#xe0; supprimer"/>
         <Property name="horizontalTextPosition" type="int" value="0"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="BoutonRetourPrinc">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Menu Principal"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BoutonRetourPrincActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="BoutonRetourMaj">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Menu Maj"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BoutonRetourMajActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
