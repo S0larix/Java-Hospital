@@ -63,58 +63,40 @@ public class Transformation {
 //new Connexion(loginECE, mdpECE, loginBDD, mdpBDD);
    
    public void test_requete (){ //renplie l'ArrayList<generique> de la classe attendu avec la requête rendu
-       //////POUR TABLE CHAMBRE/////////////
+              //////POUR TABLE CHAMBRE/////////////
         if(checkbox_chambre.isSelected())//on teste la requête pour savoir quel sont les classes demandées
         {
-            //chambre séléctionnéeg
-            liste_generique=new ArrayList<chambre>();
+            //chambre séléctionné
             //on crée un arraylist pour stocker le résultat
-            //on initialise les attributs de la classe à false
-             boolean test_service=false;
-             boolean test_chambre=false;
-             boolean test_surveillant=false;
-             boolean test_lits=false;
+            liste_generique=new ArrayList<chambre>();
+            //on initialise les attributs temporaires
              String tmp_service;
              int tmp_chambre;
              String tmp_surveillant;
              int tmp_lits;
-             
-             //si checkbox supplémentaires, passer les booléan à true
-            if(CodeServiceCheck.isSelected())  
-                test_service=true;
-            if(NumeroCheck.isSelected())
-                test_chambre=true;
-            if(SurveillantCheck.isSelected())
-                test_surveillant=true;
-            if(NombreLitCheck.isSelected())
-                test_lits=true;
-            
             
             //pour chaque champ rempli d'une string, on remplit la classe correspondnte
             for (String s : liste) {
-               // System.out.println(liste);
                 //décomposition de la réponse en fonction de la question (dépend de l'interface graphique)
-                //on enlève les espaces de la string, et on "coupe" à chaque virgule(séparation des attributs)
+                //et on "coupe" à chaque virgule(séparation des attributs)
                 String[] str=s.split(",");
                 
-                for(int i=0;i<str.length;i++){
-                    if(test_service==true){
-                        tmp_service=str[i];
-                        test_service=false;
-                    }
-                    if(test_chambre==true){
-                        tmp_chambre=Integer.parseInt(str[i]);
-                        test_chambre=false;
-                    }
-                    if(test_surveillant==true){
-                        tmp_surveillant=str[i];
-                        test_surveillant=false;
-                    }
-                    if(test_lits==true){
-                        tmp_lits=Integer.parseInt(str[i]);
-                        test_lits=false;
-                    }
-                        
+                int i=0;
+                if(CodeServiceCheck.isSelected()){
+                     tmp_service=str[i];
+                     i++;
+                }
+                if(NumeroCheck.isSelected()){
+                     tmp_chambre=Integer.parseInt(str[i]);
+                    i++;
+                }
+                if(SurveillantCheck.isSelected()){
+                    tmp_surveillant=str[i];
+                    i++;
+                }
+                if(NombreLitCheck.isSelected()){
+                    tmp_lits=Integer.parseInt(str[i]);
+                    i++;
                 }
                     
                 //remplissage de la classse et ajout à l'ArrayList
@@ -123,6 +105,7 @@ public class Transformation {
                 
             }
         }
+        
         ///////POUR TABLE DOCTEUR/////////////
         if((check_box_docteur).isSelected)
         {
