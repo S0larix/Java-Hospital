@@ -25,10 +25,16 @@ public class SousMenuRequete extends javax.swing.JFrame {
     /**
      * Creates new form SousMenuRequete
      */
-    private  String LoginECE;
+    /*private  String LoginECE;
     private  String PasswordECE;
     private  String LoginBDD;
-    private  String PasswordBDD;
+    private  String PasswordBDD;*/
+    
+   String LoginECE="raibaud";
+   String PasswordECE="L33Tsup@h4";
+   String LoginBDD="raibaud-rw";
+   String PasswordBDD="L33Tsup@h4";
+    
     public SousMenuRequete(String LoginECE, String PasswordECE, String LoginBDD, String PasswordBDD) {
         
         this.LoginECE = LoginECE;
@@ -61,7 +67,7 @@ public class SousMenuRequete extends javax.swing.JFrame {
         SousMenuReq.setText("Sous Menu requête");
         SousMenuReq.setPreferredSize(new java.awt.Dimension(336, 84));
 
-        ListeDeroulanteRequete.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        ListeDeroulanteRequete.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mutuelles des malades", "Spécialisation des médecins", " " }));
         ListeDeroulanteRequete.setPreferredSize(new java.awt.Dimension(420, 42));
 
         BoutonOk.setText("OK");
@@ -175,16 +181,81 @@ public class SousMenuRequete extends javax.swing.JFrame {
     private void BoutonNouvelleRechercheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonNouvelleRechercheActionPerformed
         // TODO add your handling code here:        
         ArrayList<String> reponse;
+        int[] resultat;
         Question_reponse trf = new Question_reponse();
-        reponse = trf.methodechiante(loginECE,mdpECE,loginBDD,mdpBDD,"");
-        
         DefaultPieDataset pieDataset = new DefaultPieDataset();
+        String intitule_requete;
         
+        //pour la requête 1
+        if(ListeDeroulanteRequete.getSelectedIndex()==0){
+            intitule_requete=ListeDeroulanteRequete.getSelectedItem().toString();
+            //requête sur la BD
+            reponse = trf.methodechiante(LoginECE,PasswordECE,LoginBDD,PasswordBDD,
+                    "select mutuelle from malade ");
+            
+            ArrayList<String> dif_mutuelle = null;
+            dif_mutuelle.add(reponse.get(0));
+            //on trouve les différentes mutuelles
+            for(String s:reponse){
+                    for(int i=1;i<dif_mutuelle.size();i++)
+                    {
+                        if(s.equals(dif_mutuelle.get(i)));
+                        else
+                            dif_mutuelle.add(s);
+                    }
+            }
+            //on associe le nombre de personne à chaque mutuelle
+            resultat = new int[dif_mutuelle.size()];
+            for(String s:reponse){
+                for(int i=0;i<dif_mutuelle.size();i++){
+                    if(s.equals(dif_mutuelle.get(i)))
+                        resultat[i]++;
+                }
+            }
+            
+            //création de la base du graph
+            for(int i=0;i<dif_mutuelle.size();i++){
+                pieDataset.setValue(dif_mutuelle.get(i), new Integer(resultat[i]));
+            }
+
+        }
+        else
+        {
+            reponse = trf.methodechiante(LoginECE,PasswordECE,LoginBDD,PasswordBDD,
+                    "select specialite from docteur");
+            intitule_requete=ListeDeroulanteRequete.getSelectedItem().toString();
+            ArrayList<String> dif_spe = null;
+            dif_spe.add(reponse.get(0));
+            //on trouve les différentes mutuelles
+            for(String s:reponse){
+                    for(int i=1;i<dif_spe.size();i++)
+                    {
+                        if(s.equals(dif_spe.get(i)));
+                        else
+                            dif_spe.add(s);
+                    }
+            }
+            //on associe le nombre de personne à chaque mutuelle
+            resultat = new int[dif_spe.size()];
+            for(String s:reponse){
+                for(int i=0;i<dif_spe.size();i++){
+                    if(s.equals(dif_spe.get(i)))
+                        resultat[i]++;
+                }
+            }
+            
+            //création de la base du graph
+            for(int i=0;i<dif_spe.size();i++){
+                pieDataset.setValue(dif_spe.get(i), new Integer(resultat[i]));
+            }
+        }
+
         /* pieDataset.setValue("Valeur1", new Integer(27));
         pieDataset.setValue("Valeur2", new Integer(10));
         pieDataset.setValue("Valeur3", new Integer(50));
         pieDataset.setValue("Valeur4", new Integer(5));*/
-        JFreeChart pieChart = ChartFactory.createPieChart("requête à mettre ici",pieDataset, true, true, true);
+        //affichage du graph
+        JFreeChart pieChart = ChartFactory.createPieChart(intitule_requete,pieDataset, true, true, true);
         ChartPanel cPanel = new ChartPanel(pieChart);
         cPanel.setSize(jPanel1.getWidth(), jPanel1.getHeight());
         cPanel.setVisible(true);
@@ -237,8 +308,4 @@ public class SousMenuRequete extends javax.swing.JFrame {
     private javax.swing.JLabel SousMenuReq;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
-   String loginECE;
-   String mdpECE;
-   String loginBDD;
-   String mdpBDD;
 }
