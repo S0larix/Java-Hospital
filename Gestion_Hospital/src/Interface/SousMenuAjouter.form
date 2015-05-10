@@ -3,6 +3,7 @@
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -25,13 +26,15 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <EmptySpace min="-2" pref="472" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="2" attributes="0">
-                  <Component id="Recherche" alignment="2" min="-2" max="-2" attributes="0"/>
-                  <Component id="BoutonRecherchePref" linkSize="1" alignment="2" min="-2" max="-2" attributes="0"/>
-                  <Component id="BoutonTri" linkSize="1" alignment="2" min="-2" max="-2" attributes="0"/>
-                  <Component id="BoutonRetourMenu" linkSize="1" alignment="2" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace pref="472" max="32767" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace pref="396" max="32767" attributes="0"/>
+              <Component id="jComboBox2" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="BoutonValidationClasseTri" min="-2" pref="55" max="-2" attributes="0"/>
+              <EmptySpace pref="397" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -39,46 +42,50 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-              <Component id="Recherche" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
-              <Component id="BoutonRecherchePref" linkSize="2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
-              <Component id="BoutonTri" linkSize="2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
-              <Component id="BoutonRetourMenu" linkSize="2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="110" max="32767" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jComboBox2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="BoutonValidationClasseTri" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="577" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="Recherche">
+    <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="Recherche"/>
+        <Property name="text" type="java.lang.String" value="Menu ajout entr&#xe9;e"/>
+        <Property name="autoscrolls" type="boolean" value="true"/>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[336, 84]"/>
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="BoutonRecherchePref">
+    <Component class="javax.swing.JComboBox" name="jComboBox2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Recherches pr&#xe9;d&#xe9;finies"/>
-        <Property name="horizontalTextPosition" type="int" value="0"/>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="4">
+            <StringItem index="0" value="Item 1"/>
+            <StringItem index="1" value="Item 2"/>
+            <StringItem index="2" value="Item 3"/>
+            <StringItem index="3" value="Item 4"/>
+          </StringArray>
+        </Property>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[168, 42]"/>
+          <Dimension value="[414, 42]"/>
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="BoutonTri">
+    <Component class="javax.swing.JButton" name="BoutonValidationClasseTri">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Tri croissant / alphab&#xe9;tique"/>
+        <Property name="text" type="java.lang.String" value="Ok"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="BoutonRetourMenu">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Retour menu"/>
-      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BoutonValidationClasseTriActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

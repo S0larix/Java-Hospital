@@ -3,6 +3,13 @@
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[1280, 720]"/>
+    </Property>
+    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[1280, 720]"/>
+    </Property>
+    <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -26,9 +33,10 @@
           <Group type="102" attributes="0">
               <EmptySpace min="-2" pref="472" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="2" attributes="0">
-                  <Component id="Recherche" alignment="2" min="-2" max="-2" attributes="0"/>
-                  <Component id="BoutonRecherchePref" linkSize="1" alignment="2" min="-2" max="-2" attributes="0"/>
-                  <Component id="BoutonTri" linkSize="1" alignment="2" min="-2" max="-2" attributes="0"/>
+                  <Component id="BoutonAjout" alignment="2" min="-2" max="-2" attributes="0"/>
+                  <Component id="MenuMiseAJour" alignment="2" min="-2" max="-2" attributes="0"/>
+                  <Component id="BoutonSupprimer" alignment="2" min="-2" max="-2" attributes="0"/>
+                  <Component id="BoutonModifier" linkSize="1" alignment="2" min="-2" max="-2" attributes="0"/>
                   <Component id="BoutonRetourMenu" linkSize="1" alignment="2" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="472" max="32767" attributes="0"/>
@@ -39,40 +47,58 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-              <Component id="Recherche" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
-              <Component id="BoutonRecherchePref" linkSize="2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
-              <Component id="BoutonTri" linkSize="2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
+              <Component id="MenuMiseAJour" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+              <Component id="BoutonAjout" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="126" max="-2" attributes="0"/>
+              <Component id="BoutonSupprimer" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="126" max="-2" attributes="0"/>
+              <Component id="BoutonModifier" linkSize="2" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="126" max="-2" attributes="0"/>
               <Component id="BoutonRetourMenu" linkSize="2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="110" max="32767" attributes="0"/>
+              <EmptySpace pref="38" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="Recherche">
+    <Component class="javax.swing.JLabel" name="MenuMiseAJour">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="Recherche"/>
+        <Property name="text" type="java.lang.String" value="Menu mise &#xe0; jour"/>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[336, 84]"/>
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="BoutonRecherchePref">
+    <Component class="javax.swing.JButton" name="BoutonAjout">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Recherches pr&#xe9;d&#xe9;finies"/>
-        <Property name="horizontalTextPosition" type="int" value="0"/>
+        <Property name="text" type="java.lang.String" value="Ajouter une entr&#xe9;e"/>
+        <Property name="actionCommand" type="java.lang.String" value="Ajouter"/>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[168, 42]"/>
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="BoutonTri">
+    <Component class="javax.swing.JButton" name="BoutonSupprimer">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Tri croissant / alphab&#xe9;tique"/>
+        <Property name="text" type="java.lang.String" value="Supprimer une entr&#xe9;e"/>
+        <Property name="actionCommand" type="java.lang.String" value="Supprimer"/>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[168, 42]"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="BoutonModifier">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Modifier une enti&#xe9;e existante"/>
+        <Property name="actionCommand" type="java.lang.String" value="Modifier"/>
+        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[168, 23]"/>
+        </Property>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[168, 42]"/>
+        </Property>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="BoutonRetourMenu">

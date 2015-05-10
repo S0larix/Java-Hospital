@@ -27,24 +27,24 @@ public class MenuRecherche extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        Recherche = new javax.swing.JLabel();
+        BoutonRecherchePref = new javax.swing.JButton();
+        BoutonTri = new javax.swing.JButton();
+        BoutonRetourMenu = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Recherche");
-        jLabel1.setPreferredSize(new java.awt.Dimension(336, 84));
+        Recherche.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Recherche.setText("Recherche");
+        Recherche.setPreferredSize(new java.awt.Dimension(336, 84));
 
-        jButton1.setText("Recherches prédéfinies");
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton1.setPreferredSize(new java.awt.Dimension(168, 42));
+        BoutonRecherchePref.setText("Recherches prédéfinies");
+        BoutonRecherchePref.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        BoutonRecherchePref.setPreferredSize(new java.awt.Dimension(168, 42));
 
-        jButton2.setText("Tri croissant / alphabétique");
+        BoutonTri.setText("Tri croissant / alphabétique");
 
-        jButton3.setText("Retour menu");
+        BoutonRetourMenu.setText("Retour menu");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -53,30 +53,30 @@ public class MenuRecherche extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(472, 472, 472)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(Recherche, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BoutonRecherchePref, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BoutonTri)
+                    .addComponent(BoutonRetourMenu))
                 .addContainerGap(472, Short.MAX_VALUE))
         );
 
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jButton1, jButton2, jButton3});
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {BoutonRecherchePref, BoutonRetourMenu, BoutonTri});
 
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(10, 10, 10)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Recherche, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(110, 110, 110)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BoutonRecherchePref, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(140, 140, 140)
-                .addComponent(jButton2)
+                .addComponent(BoutonTri)
                 .addGap(140, 140, 140)
-                .addComponent(jButton3)
+                .addComponent(BoutonRetourMenu)
                 .addContainerGap(110, Short.MAX_VALUE))
         );
 
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jButton1, jButton2, jButton3});
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {BoutonRecherchePref, BoutonRetourMenu, BoutonTri});
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -117,9 +117,9 @@ public class MenuRecherche extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton BoutonRecherchePref;
+    private javax.swing.JButton BoutonRetourMenu;
+    private javax.swing.JButton BoutonTri;
+    private javax.swing.JLabel Recherche;
     // End of variables declaration//GEN-END:variables
 }

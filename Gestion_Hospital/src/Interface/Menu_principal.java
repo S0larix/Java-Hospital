@@ -14,7 +14,18 @@ public class Menu_principal extends javax.swing.JFrame {
     /**
      * Creates new form Menu_principal
      */
-    public Menu_principal() {
+    private  String ServeurBase;
+    private   String NomBase;
+    private   String Login;
+    private final String Password;
+    
+    
+    public Menu_principal(String ServeurBase, String NomBase, String Login, String Password) {
+        
+        this.ServeurBase = ServeurBase;
+        this.NomBase = NomBase;
+        this.Login= Login;
+        this.Password = Password;
         initComponents();
     }
 
@@ -27,108 +38,114 @@ public class Menu_principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        GestionHopital = new javax.swing.JLabel();
+        BoutonMaj = new javax.swing.JButton();
+        BoutonRecherche = new javax.swing.JButton();
+        BoutonReporting = new javax.swing.JButton();
+        BoutonQuitter = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1280, 720));
 
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Gestion d'un hôpital");
-        jLabel1.setPreferredSize(new java.awt.Dimension(168, 42));
+        GestionHopital.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        GestionHopital.setText("Gestion d'un hôpital");
+        GestionHopital.setPreferredSize(new java.awt.Dimension(168, 42));
 
-        jButton1.setText("Mise à jour");
-        jButton1.setActionCommand("maj");
-        jButton1.setMaximumSize(new java.awt.Dimension(168, 42));
-        jButton1.setMinimumSize(new java.awt.Dimension(168, 42));
-        jButton1.setPreferredSize(new java.awt.Dimension(168, 42));
+        BoutonMaj.setText("Mise à jour");
+        BoutonMaj.setActionCommand("maj");
+        BoutonMaj.setMaximumSize(new java.awt.Dimension(168, 42));
+        BoutonMaj.setMinimumSize(new java.awt.Dimension(168, 42));
+        BoutonMaj.setPreferredSize(new java.awt.Dimension(168, 42));
+        BoutonMaj.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BoutonMajActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Recherche dans la base");
-        jButton2.setActionCommand("recherche");
-        jButton2.setPreferredSize(new java.awt.Dimension(168, 42));
+        BoutonRecherche.setText("Recherche dans la base");
+        BoutonRecherche.setActionCommand("recherche");
+        BoutonRecherche.setPreferredSize(new java.awt.Dimension(168, 42));
+        BoutonRecherche.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BoutonRechercheActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText("Reporting");
-        jButton3.setPreferredSize(new java.awt.Dimension(168, 42));
+        BoutonReporting.setText("Reporting");
+        BoutonReporting.setPreferredSize(new java.awt.Dimension(168, 42));
+        BoutonReporting.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BoutonReportingActionPerformed(evt);
+            }
+        });
 
-        jButton4.setText("Quitter");
-        jButton4.setPreferredSize(new java.awt.Dimension(168, 42));
+        BoutonQuitter.setText("Quitter");
+        BoutonQuitter.setPreferredSize(new java.awt.Dimension(168, 42));
+        BoutonQuitter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BoutonQuitterActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(556, Short.MAX_VALUE)
+                .addGap(472, 472, 472)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(556, 556, 556))
+                    .addComponent(GestionHopital, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BoutonMaj, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BoutonRecherche, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BoutonReporting, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BoutonQuitter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(472, 472, 472))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(228, 228, 228)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(162, Short.MAX_VALUE))
+                .addGap(10, 10, 10)
+                .addComponent(GestionHopital, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
+                .addComponent(BoutonMaj, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(126, 126, 126)
+                .addComponent(BoutonRecherche, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(126, 126, 126)
+                .addComponent(BoutonReporting, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(126, 126, 126)
+                .addComponent(BoutonQuitter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Menu_principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Menu_principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Menu_principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Menu_principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void BoutonQuitterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonQuitterActionPerformed
+      this.dispose();
+        MenuConnexion connexion = new MenuConnexion();
+    connexion.setVisible(true);
+       
+        
+    }//GEN-LAST:event_BoutonQuitterActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Menu_principal().setVisible(true);
-            }
-        });
-    }
+    private void BoutonReportingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonReportingActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BoutonReportingActionPerformed
+
+    private void BoutonRechercheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonRechercheActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BoutonRechercheActionPerformed
+
+    private void BoutonMajActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonMajActionPerformed
+        // TODO add your handling code here:
+        System.out.print(this.Password);
+    }//GEN-LAST:event_BoutonMajActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton BoutonMaj;
+    private javax.swing.JButton BoutonQuitter;
+    private javax.swing.JButton BoutonRecherche;
+    private javax.swing.JButton BoutonReporting;
+    private javax.swing.JLabel GestionHopital;
     // End of variables declaration//GEN-END:variables
 }

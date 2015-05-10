@@ -30,7 +30,7 @@ public class SousMenuRequete extends javax.swing.JFrame {
         SousMenuReq = new javax.swing.JLabel();
         ListeDeroulanteRequete = new javax.swing.JComboBox();
         BoutonOk = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        ResultatRequete = new javax.swing.JScrollPane();
         ResultReq = new javax.swing.JTextArea();
         BoutonNouvelleRecherche = new javax.swing.JButton();
         BoutonRetourRecherche = new javax.swing.JButton();
@@ -51,7 +51,7 @@ public class SousMenuRequete extends javax.swing.JFrame {
         ResultReq.setColumns(20);
         ResultReq.setRows(5);
         ResultReq.setPreferredSize(new java.awt.Dimension(980, 400));
-        jScrollPane1.setViewportView(ResultReq);
+        ResultatRequete.setViewportView(ResultReq);
 
         BoutonNouvelleRecherche.setText("Nouvelle recherche");
         BoutonNouvelleRecherche.setPreferredSize(new java.awt.Dimension(168, 30));
@@ -94,7 +94,7 @@ public class SousMenuRequete extends javax.swing.JFrame {
                             .addComponent(BoutonRetourPrinc)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(150, 150, 150)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 979, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(ResultatRequete, javax.swing.GroupLayout.PREFERRED_SIZE, 979, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(151, 151, 151))
         );
 
@@ -110,7 +110,7 @@ public class SousMenuRequete extends javax.swing.JFrame {
                     .addComponent(ListeDeroulanteRequete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BoutonOk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ResultatRequete, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(75, 75, 75)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BoutonNouvelleRecherche, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -176,7 +176,7 @@ public class SousMenuRequete extends javax.swing.JFrame {
     private javax.swing.JButton BoutonRetourRecherche;
     private javax.swing.JComboBox ListeDeroulanteRequete;
     private javax.swing.JTextArea ResultReq;
+    private javax.swing.JScrollPane ResultatRequete;
     private javax.swing.JLabel SousMenuReq;
-    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

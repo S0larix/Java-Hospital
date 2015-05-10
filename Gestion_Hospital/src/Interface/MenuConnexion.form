@@ -26,13 +26,13 @@
           <Group type="102" attributes="0">
               <EmptySpace min="-2" pref="472" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="2" attributes="0">
-                  <Component id="jLabel1" alignment="2" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField1" linkSize="1" alignment="2" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField2" linkSize="1" alignment="2" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField3" linkSize="1" alignment="2" min="-2" max="-2" attributes="0"/>
-                  <Component id="jPasswordField1" linkSize="1" alignment="2" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton1" linkSize="1" alignment="2" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton2" linkSize="1" alignment="2" min="-2" max="-2" attributes="0"/>
+                  <Component id="Bienvenue" alignment="2" min="-2" max="-2" attributes="0"/>
+                  <Component id="ServeurBase" linkSize="1" alignment="2" min="-2" max="-2" attributes="0"/>
+                  <Component id="NomBase" linkSize="1" alignment="2" min="-2" max="-2" attributes="0"/>
+                  <Component id="Login" linkSize="1" alignment="2" min="-2" max="-2" attributes="0"/>
+                  <Component id="Password" linkSize="1" alignment="2" min="-2" max="-2" attributes="0"/>
+                  <Component id="BoutonConnexion" linkSize="1" alignment="2" min="-2" max="-2" attributes="0"/>
+                  <Component id="BoutonQuitter" linkSize="1" alignment="2" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="472" max="32767" attributes="0"/>
           </Group>
@@ -42,26 +42,26 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <Component id="Bienvenue" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-              <Component id="jTextField1" linkSize="2" min="-2" max="-2" attributes="0"/>
+              <Component id="ServeurBase" linkSize="2" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-              <Component id="jTextField2" linkSize="2" min="-2" max="-2" attributes="0"/>
+              <Component id="NomBase" linkSize="2" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-              <Component id="jTextField3" linkSize="2" min="-2" max="-2" attributes="0"/>
+              <Component id="Login" linkSize="2" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-              <Component id="jPasswordField1" linkSize="2" min="-2" max="-2" attributes="0"/>
+              <Component id="Password" linkSize="2" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-              <Component id="jButton1" linkSize="2" min="-2" max="-2" attributes="0"/>
+              <Component id="BoutonConnexion" linkSize="2" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-              <Component id="jButton2" linkSize="2" min="-2" max="-2" attributes="0"/>
+              <Component id="BoutonQuitter" linkSize="2" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="84" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Component class="javax.swing.JLabel" name="Bienvenue">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Bienvenue"/>
@@ -70,7 +70,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField1">
+    <Component class="javax.swing.JTextField" name="ServeurBase">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Serveur base"/>
@@ -79,36 +79,42 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ServeurBaseActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField2">
+    <Component class="javax.swing.JTextField" name="NomBase">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Nom base"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField3">
+    <Component class="javax.swing.JTextField" name="Login">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Login"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JPasswordField" name="jPasswordField1">
+    <Component class="javax.swing.JPasswordField" name="Password">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jPasswordField1"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="BoutonConnexion">
       <Properties>
         <Property name="text" type="java.lang.String" value="Connexion"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BoutonConnexionActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="BoutonQuitter">
       <Properties>
         <Property name="text" type="java.lang.String" value="Quitter"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BoutonQuitterActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

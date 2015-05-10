@@ -5,10 +5,21 @@
  */
 package Interface;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author Lisa
  */
-public class GUI {
+public class GUI extends JFrame {
+    
+    public static void main(String args[])
+{
+    MenuConnexion connexion = new MenuConnexion();
+    connexion.setVisible(true);
+    
+    
+}
+
     
 }

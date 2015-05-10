@@ -29,48 +29,31 @@ public class SousMenutri extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         MenuDeroulantClass = new javax.swing.JComboBox();
-        jButton1 = new javax.swing.JButton();
-        jComboBox2 = new javax.swing.JComboBox();
-        jLabel2 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jLabel3 = new javax.swing.JLabel();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jLabel4 = new javax.swing.JLabel();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jLabel5 = new javax.swing.JLabel();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jLabel6 = new javax.swing.JLabel();
-        jCheckBox5 = new javax.swing.JCheckBox();
-        jLabel7 = new javax.swing.JLabel();
-        jCheckBox6 = new javax.swing.JCheckBox();
-        jLabel8 = new javax.swing.JLabel();
-        jCheckBox7 = new javax.swing.JCheckBox();
-        jLabel9 = new javax.swing.JLabel();
-        jCheckBox8 = new javax.swing.JCheckBox();
-        jLabel10 = new javax.swing.JLabel();
-        jCheckBox9 = new javax.swing.JCheckBox();
-        jLabel11 = new javax.swing.JLabel();
-        jCheckBox10 = new javax.swing.JCheckBox();
-        jLabel12 = new javax.swing.JLabel();
-        jCheckBox11 = new javax.swing.JCheckBox();
-        jLabel13 = new javax.swing.JLabel();
+        BoutonValidationClasseTri = new javax.swing.JButton();
+        MenuDeroulantTri = new javax.swing.JComboBox();
+        NomCheck = new javax.swing.JCheckBox();
+        PrenomCheck = new javax.swing.JCheckBox();
+        TelephoneCheck = new javax.swing.JCheckBox();
+        AdresseCheck = new javax.swing.JCheckBox();
+        NumeroCheck = new javax.swing.JCheckBox();
+        MutuelleCheck = new javax.swing.JCheckBox();
+        CodeCheck = new javax.swing.JCheckBox();
+        NomServiceCheck = new javax.swing.JCheckBox();
+        BatimentCheck = new javax.swing.JCheckBox();
+        DirecteurCheck = new javax.swing.JCheckBox();
+        CodeServiceCheck = new javax.swing.JCheckBox();
         jCheckBox12 = new javax.swing.JCheckBox();
-        jLabel14 = new javax.swing.JLabel();
         jCheckBox13 = new javax.swing.JCheckBox();
-        jLabel15 = new javax.swing.JLabel();
         jCheckBox14 = new javax.swing.JCheckBox();
-        jLabel16 = new javax.swing.JLabel();
         jCheckBox15 = new javax.swing.JCheckBox();
-        jLabel17 = new javax.swing.JLabel();
         jCheckBox16 = new javax.swing.JCheckBox();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        ResultatRequete = new javax.swing.JTextArea();
         BoutonNouvelleRecherche = new javax.swing.JButton();
         BoutonRetourRecherche = new javax.swing.JButton();
         BoutonRetourPrinc = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1280, 720));
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("SousMenuTri");
@@ -84,179 +67,166 @@ public class SousMenutri extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("jButton1");
-
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox2.setPreferredSize(new java.awt.Dimension(414, 42));
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+        BoutonValidationClasseTri.setText("Ok");
+        BoutonValidationClasseTri.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
+                BoutonValidationClasseTriActionPerformed(evt);
             }
         });
 
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("jLabel2");
-        jLabel2.setPreferredSize(new java.awt.Dimension(84, 42));
-
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+        MenuDeroulantTri.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        MenuDeroulantTri.setPreferredSize(new java.awt.Dimension(414, 42));
+        MenuDeroulantTri.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+                MenuDeroulantTriActionPerformed(evt);
             }
         });
 
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("jLabel2");
-        jLabel3.setPreferredSize(new java.awt.Dimension(84, 42));
-
-        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
+        NomCheck.setText("Nom");
+        NomCheck.setPreferredSize(new java.awt.Dimension(112, 25));
+        NomCheck.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox2ActionPerformed(evt);
+                NomCheckActionPerformed(evt);
             }
         });
 
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("jLabel2");
-        jLabel4.setPreferredSize(new java.awt.Dimension(84, 42));
-
-        jCheckBox3.addActionListener(new java.awt.event.ActionListener() {
+        PrenomCheck.setText("Prenom");
+        PrenomCheck.setPreferredSize(new java.awt.Dimension(112, 25));
+        PrenomCheck.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox3ActionPerformed(evt);
+                PrenomCheckActionPerformed(evt);
             }
         });
 
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("jLabel2");
-        jLabel5.setPreferredSize(new java.awt.Dimension(84, 42));
-
-        jCheckBox4.addActionListener(new java.awt.event.ActionListener() {
+        TelephoneCheck.setText("Telephone");
+        TelephoneCheck.setPreferredSize(new java.awt.Dimension(112, 25));
+        TelephoneCheck.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox4ActionPerformed(evt);
+                TelephoneCheckActionPerformed(evt);
             }
         });
 
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("jLabel2");
-        jLabel6.setPreferredSize(new java.awt.Dimension(84, 42));
-
-        jCheckBox5.addActionListener(new java.awt.event.ActionListener() {
+        AdresseCheck.setText("Adresse");
+        AdresseCheck.setPreferredSize(new java.awt.Dimension(112, 25));
+        AdresseCheck.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox5ActionPerformed(evt);
+                AdresseCheckActionPerformed(evt);
             }
         });
 
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("jLabel2");
-        jLabel7.setPreferredSize(new java.awt.Dimension(84, 42));
-
-        jCheckBox6.addActionListener(new java.awt.event.ActionListener() {
+        NumeroCheck.setText("Numero");
+        NumeroCheck.setPreferredSize(new java.awt.Dimension(112, 25));
+        NumeroCheck.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox6ActionPerformed(evt);
+                NumeroCheckActionPerformed(evt);
             }
         });
 
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("jLabel2");
-        jLabel8.setPreferredSize(new java.awt.Dimension(84, 42));
-
-        jCheckBox7.addActionListener(new java.awt.event.ActionListener() {
+        MutuelleCheck.setText("Mutuelle");
+        MutuelleCheck.setPreferredSize(new java.awt.Dimension(112, 25));
+        MutuelleCheck.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox7ActionPerformed(evt);
+                MutuelleCheckActionPerformed(evt);
             }
         });
 
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("jLabel2");
-        jLabel9.setPreferredSize(new java.awt.Dimension(84, 42));
-
-        jCheckBox8.addActionListener(new java.awt.event.ActionListener() {
+        CodeCheck.setText("Code");
+        CodeCheck.setPreferredSize(new java.awt.Dimension(112, 25));
+        CodeCheck.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox8ActionPerformed(evt);
+                CodeCheckActionPerformed(evt);
             }
         });
 
-        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setText("jLabel2");
-        jLabel10.setPreferredSize(new java.awt.Dimension(84, 42));
-
-        jCheckBox9.addActionListener(new java.awt.event.ActionListener() {
+        NomServiceCheck.setText("Nom");
+        NomServiceCheck.setPreferredSize(new java.awt.Dimension(112, 25));
+        NomServiceCheck.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox9ActionPerformed(evt);
+                NomServiceCheckActionPerformed(evt);
             }
         });
 
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setText("jLabel2");
-        jLabel11.setPreferredSize(new java.awt.Dimension(84, 42));
-
-        jCheckBox10.addActionListener(new java.awt.event.ActionListener() {
+        BatimentCheck.setText("Batiment");
+        BatimentCheck.setPreferredSize(new java.awt.Dimension(112, 25));
+        BatimentCheck.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox10ActionPerformed(evt);
+                BatimentCheckActionPerformed(evt);
             }
         });
 
-        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel12.setText("jLabel2");
-        jLabel12.setPreferredSize(new java.awt.Dimension(84, 42));
-
-        jCheckBox11.addActionListener(new java.awt.event.ActionListener() {
+        DirecteurCheck.setText("Directeur");
+        DirecteurCheck.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        DirecteurCheck.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        DirecteurCheck.setPreferredSize(new java.awt.Dimension(112, 25));
+        DirecteurCheck.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox11ActionPerformed(evt);
+                DirecteurCheckActionPerformed(evt);
             }
         });
 
-        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setText("jLabel2");
-        jLabel13.setPreferredSize(new java.awt.Dimension(84, 42));
+        CodeServiceCheck.setText("Code");
+        CodeServiceCheck.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        CodeServiceCheck.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        CodeServiceCheck.setPreferredSize(new java.awt.Dimension(112, 25));
+        CodeServiceCheck.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CodeServiceCheckActionPerformed(evt);
+            }
+        });
 
+        jCheckBox12.setText("1");
+        jCheckBox12.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jCheckBox12.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        jCheckBox12.setPreferredSize(new java.awt.Dimension(112, 25));
         jCheckBox12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBox12ActionPerformed(evt);
             }
         });
 
-        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setText("jLabel2");
-        jLabel14.setPreferredSize(new java.awt.Dimension(84, 42));
-
+        jCheckBox13.setText("2");
+        jCheckBox13.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jCheckBox13.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        jCheckBox13.setPreferredSize(new java.awt.Dimension(112, 25));
         jCheckBox13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBox13ActionPerformed(evt);
             }
         });
 
-        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel15.setText("jLabel2");
-        jLabel15.setPreferredSize(new java.awt.Dimension(84, 42));
-
+        jCheckBox14.setText("3");
+        jCheckBox14.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jCheckBox14.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        jCheckBox14.setPreferredSize(new java.awt.Dimension(112, 25));
         jCheckBox14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBox14ActionPerformed(evt);
             }
         });
 
-        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel16.setText("jLabel2");
-        jLabel16.setPreferredSize(new java.awt.Dimension(84, 42));
-
+        jCheckBox15.setText("4");
+        jCheckBox15.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jCheckBox15.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        jCheckBox15.setPreferredSize(new java.awt.Dimension(112, 25));
         jCheckBox15.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBox15ActionPerformed(evt);
             }
         });
 
-        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel17.setText("jLabel2");
-        jLabel17.setPreferredSize(new java.awt.Dimension(84, 42));
-
+        jCheckBox16.setText("5");
+        jCheckBox16.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jCheckBox16.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        jCheckBox16.setPreferredSize(new java.awt.Dimension(112, 25));
         jCheckBox16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBox16ActionPerformed(evt);
             }
         });
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        ResultatRequete.setColumns(20);
+        ResultatRequete.setRows(5);
+        jScrollPane1.setViewportView(ResultatRequete);
 
         BoutonNouvelleRecherche.setText("Nouvelle recherche");
         BoutonNouvelleRecherche.setPreferredSize(new java.awt.Dimension(168, 30));
@@ -285,82 +255,50 @@ public class SousMenutri extends javax.swing.JFrame {
                         .addGap(472, 472, 472)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(137, 137, 137)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCheckBox1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCheckBox2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCheckBox3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCheckBox4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCheckBox5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCheckBox6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCheckBox7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCheckBox8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCheckBox9))
+                        .addContainerGap(114, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(MenuDeroulantClass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(49, 49, 49)
-                                .addComponent(jButton1)
+                                .addComponent(BoutonValidationClasseTri)
                                 .addGap(49, 49, 49)
-                                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(MenuDeroulantTri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1052, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(NomCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCheckBox10)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(PrenomCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCheckBox11)
+                                .addComponent(TelephoneCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(AdresseCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCheckBox12)
+                                .addComponent(NumeroCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(MutuelleCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCheckBox13)
+                                .addComponent(CodeCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(NomServiceCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCheckBox14)
+                                .addComponent(BatimentCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(DirecteurCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(CodeServiceCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCheckBox15)
+                                .addComponent(jCheckBox12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jCheckBox13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCheckBox16))
-                            .addComponent(jScrollPane1))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(jCheckBox14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jCheckBox15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jCheckBox16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(114, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 386, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(BoutonNouvelleRecherche, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(7, 7, 7)
                 .addComponent(BoutonRetourRecherche)
@@ -368,6 +306,9 @@ public class SousMenutri extends javax.swing.JFrame {
                 .addComponent(BoutonRetourPrinc)
                 .addGap(386, 386, 386))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {AdresseCheck, BatimentCheck, CodeCheck, MutuelleCheck, NomCheck, NomServiceCheck, NumeroCheck, PrenomCheck, TelephoneCheck});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -376,61 +317,41 @@ public class SousMenutri extends javax.swing.JFrame {
                 .addGap(89, 89, 89)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(MenuDeroulantClass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(51, 51, 51)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCheckBox1)
-                            .addComponent(jCheckBox2)
-                            .addComponent(jCheckBox3)
-                            .addComponent(jCheckBox4)
-                            .addComponent(jCheckBox5)
-                            .addComponent(jCheckBox6)
-                            .addComponent(jCheckBox7)
-                            .addComponent(jCheckBox8)
-                            .addComponent(jCheckBox9))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCheckBox10)
-                            .addComponent(jCheckBox11)
-                            .addComponent(jCheckBox12)
-                            .addComponent(jCheckBox13)
-                            .addComponent(jCheckBox14)
-                            .addComponent(jCheckBox15)
-                            .addComponent(jCheckBox16))))
+                    .addComponent(BoutonValidationClasseTri)
+                    .addComponent(MenuDeroulantTri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(60, 60, 60)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(NomCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PrenomCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TelephoneCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AdresseCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NumeroCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(MutuelleCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CodeCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NomServiceCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BatimentCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CodeServiceCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(DirecteurCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCheckBox12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCheckBox13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCheckBox14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCheckBox15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCheckBox16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(38, 38, 38)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BoutonNouvelleRecherche, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BoutonRetourRecherche)
                     .addComponent(BoutonRetourPrinc))
-                .addContainerGap(67, Short.MAX_VALUE))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
 
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {MenuDeroulantClass, jButton1, jComboBox2});
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {BoutonValidationClasseTri, MenuDeroulantClass, MenuDeroulantTri});
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {AdresseCheck, BatimentCheck, CodeCheck, MutuelleCheck, NomCheck, NomServiceCheck, NumeroCheck, PrenomCheck, TelephoneCheck});
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -439,53 +360,53 @@ public class SousMenutri extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_MenuDeroulantClassComponentAdded
 
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+    private void MenuDeroulantTriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuDeroulantTriActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox2ActionPerformed
+    }//GEN-LAST:event_MenuDeroulantTriActionPerformed
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    private void NomCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomCheckActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    }//GEN-LAST:event_NomCheckActionPerformed
 
-    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
+    private void PrenomCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrenomCheckActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox2ActionPerformed
+    }//GEN-LAST:event_PrenomCheckActionPerformed
 
-    private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
+    private void TelephoneCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelephoneCheckActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox3ActionPerformed
+    }//GEN-LAST:event_TelephoneCheckActionPerformed
 
-    private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox4ActionPerformed
+    private void AdresseCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdresseCheckActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox4ActionPerformed
+    }//GEN-LAST:event_AdresseCheckActionPerformed
 
-    private void jCheckBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox5ActionPerformed
+    private void NumeroCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NumeroCheckActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox5ActionPerformed
+    }//GEN-LAST:event_NumeroCheckActionPerformed
 
-    private void jCheckBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox6ActionPerformed
+    private void MutuelleCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MutuelleCheckActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox6ActionPerformed
+    }//GEN-LAST:event_MutuelleCheckActionPerformed
 
-    private void jCheckBox7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox7ActionPerformed
+    private void CodeCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CodeCheckActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox7ActionPerformed
+    }//GEN-LAST:event_CodeCheckActionPerformed
 
-    private void jCheckBox8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox8ActionPerformed
+    private void NomServiceCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomServiceCheckActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox8ActionPerformed
+    }//GEN-LAST:event_NomServiceCheckActionPerformed
 
-    private void jCheckBox9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox9ActionPerformed
+    private void BatimentCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BatimentCheckActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox9ActionPerformed
+    }//GEN-LAST:event_BatimentCheckActionPerformed
 
-    private void jCheckBox10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox10ActionPerformed
+    private void DirecteurCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DirecteurCheckActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox10ActionPerformed
+    }//GEN-LAST:event_DirecteurCheckActionPerformed
 
-    private void jCheckBox11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox11ActionPerformed
+    private void CodeServiceCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CodeServiceCheckActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox11ActionPerformed
+    }//GEN-LAST:event_CodeServiceCheckActionPerformed
 
     private void jCheckBox12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox12ActionPerformed
         // TODO add your handling code here:
@@ -514,6 +435,10 @@ public class SousMenutri extends javax.swing.JFrame {
     private void BoutonRetourPrincActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonRetourPrincActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_BoutonRetourPrincActionPerformed
+
+    private void BoutonValidationClasseTriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonValidationClasseTriActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BoutonValidationClasseTriActionPerformed
 
     /**
      * @param args the command line arguments
@@ -551,46 +476,30 @@ public class SousMenutri extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox AdresseCheck;
+    private javax.swing.JCheckBox BatimentCheck;
     private javax.swing.JButton BoutonNouvelleRecherche;
     private javax.swing.JButton BoutonRetourPrinc;
     private javax.swing.JButton BoutonRetourRecherche;
+    private javax.swing.JButton BoutonValidationClasseTri;
+    private javax.swing.JCheckBox CodeCheck;
+    private javax.swing.JCheckBox CodeServiceCheck;
+    private javax.swing.JCheckBox DirecteurCheck;
     private javax.swing.JComboBox MenuDeroulantClass;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox10;
-    private javax.swing.JCheckBox jCheckBox11;
+    private javax.swing.JComboBox MenuDeroulantTri;
+    private javax.swing.JCheckBox MutuelleCheck;
+    private javax.swing.JCheckBox NomCheck;
+    private javax.swing.JCheckBox NomServiceCheck;
+    private javax.swing.JCheckBox NumeroCheck;
+    private javax.swing.JCheckBox PrenomCheck;
+    private javax.swing.JTextArea ResultatRequete;
+    private javax.swing.JCheckBox TelephoneCheck;
     private javax.swing.JCheckBox jCheckBox12;
     private javax.swing.JCheckBox jCheckBox13;
     private javax.swing.JCheckBox jCheckBox14;
     private javax.swing.JCheckBox jCheckBox15;
     private javax.swing.JCheckBox jCheckBox16;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JCheckBox jCheckBox6;
-    private javax.swing.JCheckBox jCheckBox7;
-    private javax.swing.JCheckBox jCheckBox8;
-    private javax.swing.JCheckBox jCheckBox9;
-    private javax.swing.JComboBox jComboBox2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }
