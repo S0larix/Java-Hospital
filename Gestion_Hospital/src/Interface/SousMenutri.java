@@ -24,6 +24,7 @@ public class SousMenutri extends javax.swing.JFrame {
     private  String PasswordECE;
     private  String LoginBDD;
     private  String PasswordBDD;
+    private Connexion connect;
     ArrayList<String> liste;
     ArrayList liste_generique;
    public Connexion conn;
@@ -35,7 +36,13 @@ public class SousMenutri extends javax.swing.JFrame {
         this.LoginBDD= LoginBDD;
         this.PasswordBDD = PasswordBDD;
         initComponents();
-     
+     try {
+            connect = new Connexion(LoginECE, PasswordECE, LoginBDD, PasswordBDD);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ajouter.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(SousMenutri.class.getName()).log(Level.SEVERE, null, ex);
+        }
   
     }
 
@@ -600,10 +607,12 @@ public class SousMenutri extends javax.swing.JFrame {
           this.dispose();
         Menu_principal menu_princ = new Menu_principal(LoginECE,PasswordECE,LoginBDD,PasswordBDD);
         menu_princ.setVisible(true);
-        System.out.println(LoginECE);
-         System.out.println(PasswordECE);
-          System.out.println(LoginBDD);
-           System.out.println(PasswordBDD);
+         try {
+            connect.Disconnect();
+        } catch (Throwable ex) {
+            Logger.getLogger(ajouter.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }//GEN-LAST:event_BoutonRetourPrincActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
@@ -660,13 +669,6 @@ public class SousMenutri extends javax.swing.JFrame {
         char[] a;
         ArrayList<String> reponseBDD = null;
         requete=creer_requête();
-        try {
-            conn=new Connexion(LoginECE, PasswordECE, LoginBDD, PasswordBDD);
-        } catch (SQLException ex) {
-            Logger.getLogger(SousMenutri.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(SousMenutri.class.getName()).log(Level.SEVERE, null, ex);
-        }
         Question_reponse q_r = new Question_reponse();
         try {
             reponseBDD=conn.remplirChampsRequete(requete);
