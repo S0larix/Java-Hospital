@@ -12,13 +12,13 @@ package Classes;
 public class service {
     private int code;
     private String nom;
-    private String batiemnt;
+    private String batiment;
     private String directeur;
     
-    public service(int code,String nom, String batiemnt,String directeur){
+    public service(int code,String nom, String batiment,String directeur){
         this.code=code;
         this.nom=nom;
-        this.batiemnt=batiemnt;
+        this.batiment=batiment;
         this.directeur=directeur;
     }
 
