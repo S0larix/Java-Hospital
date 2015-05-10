@@ -24,74 +24,10 @@ public class modif {
 
     private Connexion conect;
 
-    public void modif() throws SQLException {
-        String table = null;
-        ArrayList<String> champs, resultat;
-        Scanner sc = new Scanner(System.in);
-        String requete = "UPDATE ", mot, modif;
-
-        try {
-            conect = new Connexion("ducrocq", "KlrIT05A@", "ducrocq-rw", "KlrIT05A@");
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(modif.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        System.out.println("Ajouter à quoi ?");
-        while (table == null) {
-            table = sc.nextLine();
-        }
-
-        resultat = conect.remplirChampsRequete("SELECT * FROM " + table);
-
-        for (int i = 0; i < resultat.size(); i++) {
-            System.out.println(resultat.get(i));
-        }
-
-        modif = sc.nextLine();
-
-        requete = requete + " " + table + " " + "SET ";
-
-        champs = conect.remplirChampsTable(table);
-
-        for (int i = 0; i < champs.size(); i++) {
-            System.out.println(champs.get(i));
-
-            mot = sc.nextLine();
-            requete = requete + champs.get(i) + "=";
-
-                requete = requete + "'" + mot + "'";
-
-
-            if (i != (champs.size() - 1)) {
-                requete = requete + ",";
-            }
-        }
-
-        requete = requete + " WHERE ";
-
-        System.out.println("Saisir l'id de la saisie a modifier");
-
-        for (int i = 0; i < champs.size(); i++) {
-            System.out.println(champs.get(i));
-
-            mot = sc.nextLine();
-            requete = requete + champs.get(i) + "=";
-
-            requete = requete + "'" + mot + "'";
-
-            if (i != (champs.size() - 1)) {
-                requete = requete + " AND ";
-            }
-        }
-        requete = requete + ";";
-        System.out.println(requete);
+    public void modif(String table, String requete, Connexion conect) throws SQLException {
 
         conect.executeUpdate(requete);
 
-        resultat = conect.remplirChampsRequete("SELECT * FROM " + table);
-        for (int i = 0; i < resultat.size(); i++) {
-            System.out.println(resultat.get(i));
-        }
     }
 
 }
