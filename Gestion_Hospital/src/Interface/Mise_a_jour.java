@@ -4,19 +4,29 @@
  * and open the template in the editor.
  */
 package Interface;
-
+import Interface.ajouter;
+import Interface.supprimer;
+import Interface.modifier;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.*;
+import java.awt.event.*;
 /**
  *
  * @author Lisa
  */
-public class Mise_a_jour extends javax.swing.JFrame {
+public class Mise_a_jour extends javax.swing.JFrame implements ActionListener{
 
     /**
      * Creates new form Mise_a_jour
      */
     public Mise_a_jour() {
         initComponents();
+        this.ajouter.addActionListener(this);
+        this.supprimer.addActionListener(this);
+        this.modifier.addActionListener(this);
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -28,32 +38,35 @@ public class Mise_a_jour extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        ajouter = new javax.swing.JButton();
+        supprimer = new javax.swing.JButton();
+        modifier = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1280, 720));
         setMinimumSize(new java.awt.Dimension(1280, 720));
-        setPreferredSize(new java.awt.Dimension(1280, 720));
         setResizable(false);
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Gestion d'un hopital");
         jLabel1.setPreferredSize(new java.awt.Dimension(168, 72));
 
-        jButton1.setText("Ajouter une entrée");
-        jButton1.setActionCommand("Ajouter");
-        jButton1.setPreferredSize(new java.awt.Dimension(168, 42));
+        ajouter.setText("Ajouter une entrée");
+        ajouter.setActionCommand("Ajouter");
+        ajouter.setPreferredSize(new java.awt.Dimension(168, 42));
 
-        jButton2.setText("Supprimer une entrée");
-        jButton2.setActionCommand("Supprimer");
-        jButton2.setPreferredSize(new java.awt.Dimension(168, 42));
+        supprimer.setText("Supprimer une entrée");
+        supprimer.setActionCommand("Supprimer");
+        supprimer.setPreferredSize(new java.awt.Dimension(168, 42));
 
-        jButton3.setText("Modifier une entiée existante");
-        jButton3.setActionCommand("Modifier");
-        jButton3.setMinimumSize(new java.awt.Dimension(168, 23));
-        jButton3.setPreferredSize(new java.awt.Dimension(168, 42));
+        modifier.setText("Modifier une entiée existante");
+        modifier.setActionCommand("Modifier");
+        modifier.setMinimumSize(new java.awt.Dimension(168, 23));
+        modifier.setPreferredSize(new java.awt.Dimension(168, 42));
+        modifier.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modifierActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -62,11 +75,11 @@ public class Mise_a_jour extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(556, 556, 556)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ajouter, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(556, Short.MAX_VALUE))
+                    .addComponent(supprimer, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(modifier, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(544, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -74,16 +87,20 @@ public class Mise_a_jour extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ajouter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(394, Short.MAX_VALUE))
+                .addComponent(supprimer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
+                .addComponent(modifier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(405, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void modifierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifierActionPerformed
+        
+    }//GEN-LAST:event_modifierActionPerformed
 
     /**
      * @param args the command line arguments
@@ -119,11 +136,30 @@ public class Mise_a_jour extends javax.swing.JFrame {
             }
         });
     }
-
+    private ajouter ajout;
+    private supprimer suppr;
+    private modifier modif;
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton ajouter;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton modifier;
+    private javax.swing.JButton supprimer;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if(e.getSource()==ajouter)
+        {
+            ajout=new ajouter();
+            
+        }else if(e.getSource()==supprimer)
+        {
+            suppr= new supprimer();
+        }else if(e.getSource()==modifier)
+        {
+            modif=new modifier();
+        }
+    }
+
+
 }

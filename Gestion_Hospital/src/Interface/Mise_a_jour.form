@@ -3,13 +3,7 @@
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
-    <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[1280, 720]"/>
-    </Property>
     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[1280, 720]"/>
-    </Property>
-    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
       <Dimension value="[1280, 720]"/>
     </Property>
     <Property name="resizable" type="boolean" value="false"/>
@@ -36,12 +30,12 @@
           <Group type="102" attributes="0">
               <EmptySpace min="-2" pref="556" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="2" attributes="0">
-                  <Component id="jButton1" alignment="2" min="-2" max="-2" attributes="0"/>
+                  <Component id="ajouter" alignment="2" min="-2" pref="180" max="-2" attributes="0"/>
                   <Component id="jLabel1" alignment="2" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton2" alignment="2" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton3" alignment="2" min="-2" max="-2" attributes="0"/>
+                  <Component id="supprimer" alignment="2" min="-2" pref="176" max="-2" attributes="0"/>
+                  <Component id="modifier" alignment="2" min="-2" pref="178" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="556" max="32767" attributes="0"/>
+              <EmptySpace pref="544" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -51,12 +45,12 @@
               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+              <Component id="ajouter" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-              <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-              <Component id="jButton3" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="394" max="32767" attributes="0"/>
+              <Component id="supprimer" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+              <Component id="modifier" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="405" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -71,7 +65,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="ajouter">
       <Properties>
         <Property name="text" type="java.lang.String" value="Ajouter une entr&#xe9;e"/>
         <Property name="actionCommand" type="java.lang.String" value="Ajouter"/>
@@ -80,7 +74,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="supprimer">
       <Properties>
         <Property name="text" type="java.lang.String" value="Supprimer une entr&#xe9;e"/>
         <Property name="actionCommand" type="java.lang.String" value="Supprimer"/>
@@ -89,7 +83,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton3">
+    <Component class="javax.swing.JButton" name="modifier">
       <Properties>
         <Property name="text" type="java.lang.String" value="Modifier une enti&#xe9;e existante"/>
         <Property name="actionCommand" type="java.lang.String" value="Modifier"/>
@@ -100,6 +94,9 @@
           <Dimension value="[168, 42]"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="modifierActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
