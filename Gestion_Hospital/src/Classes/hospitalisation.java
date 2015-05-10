@@ -13,4 +13,5 @@ public class hospitalisation {
     private int num_lit;
     private String code_service;
     private int num_malade;
+    private int num_chambre;
 }
