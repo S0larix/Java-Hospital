@@ -30,10 +30,10 @@ public class SousMenuRequete extends javax.swing.JFrame {
     private  String LoginBDD;
     private  String PasswordBDD;*/
     
-   String LoginECE="ducrocq";
-   String PasswordECE="KlrIT05A@";
-   String LoginBDD="ducrocq-rw";
-   String PasswordBDD="KlrIT05A@";
+   private String LoginECE="ducrocq";
+   private String PasswordECE="KlrIT05A@";
+   private String LoginBDD="ducrocq-rw";
+   private String PasswordBDD="KlrIT05A@";
     
     public SousMenuRequete(String LoginECE, String PasswordECE, String LoginBDD, String PasswordBDD) {
         
@@ -172,7 +172,8 @@ public class SousMenuRequete extends javax.swing.JFrame {
         if(ListeDeroulanteRequete.getSelectedIndex()==0){
             intitule_requete=ListeDeroulanteRequete.getSelectedItem().toString();
             //requête sur la BD
-            reponse = trf.methodechiante("ducrocq","KlrIT05A@","ducrocq-rw","KlrIT05A@",
+            System.out.println(LoginECE+" "+PasswordECE+" "+LoginBDD+" "+ PasswordECE+" ");
+            reponse = trf.methodechiante(LoginECE,PasswordECE,LoginBDD,PasswordECE,
                     "select mutuelle from malade ");
             
 
@@ -279,7 +280,7 @@ public class SousMenuRequete extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SousMenuRequete("tu","es","un","boulet").setVisible(true);
+                new SousMenuRequete("ducrocq","KlrIT05A@","ducrocq-rw","KlrIT05A@").setVisible(true);
             }
         });
     }

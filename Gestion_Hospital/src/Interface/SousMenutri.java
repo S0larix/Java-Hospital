@@ -9,6 +9,8 @@ import Classes.*;
 import Connexion_Transformation.Question_reponse;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import jdbc2014.Connexion;
 
@@ -650,11 +652,44 @@ public class SousMenutri extends javax.swing.JFrame {
 
     private void BoutonNouvelleRechercheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonNouvelleRechercheActionPerformed
         // TODO add your handling code here:
-        String requete;
-        ArrayList<String> reponseBDD;
+        String requete, mot;
+        char[] a;
+        ArrayList<String> reponseBDD = null;
         requete=creer_requête();
-        //System.out.println(requete);
+        try {
+            conn=new Connexion(LoginECE, PasswordECE, LoginBDD, PasswordBDD);
+        } catch (SQLException ex) {
+            Logger.getLogger(SousMenutri.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(SousMenutri.class.getName()).log(Level.SEVERE, null, ex);
+        }
         Question_reponse q_r = new Question_reponse();
+        try {
+            reponseBDD=conn.remplirChampsRequete(requete);
+        } catch (SQLException ex) {
+            Logger.getLogger(SousMenutri.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+                    mot="Vérification:\n";
+            
+            for(int i=0; i<reponseBDD.size(); i++)
+            {
+                mot=mot+reponseBDD.toString()+"\n";
+            }
+            
+            a=mot.toCharArray();
+            mot="Vérification:\n";
+            
+            for(int i=0; i<a.length; i++)
+            {
+                if(a[i]==',' || a[i]=='[' || a[i]==']' || a[i]==';')
+                {
+                    a[i]=' ';
+                }
+                mot=mot+a[i];
+            }
+        ResultatRequete.setText(mot);
         reponseBDD = q_r.methodechiante(LoginECE,PasswordECE,LoginBDD,PasswordBDD,requete);
     }//GEN-LAST:event_BoutonNouvelleRechercheActionPerformed
 
@@ -688,7 +723,7 @@ public class SousMenutri extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SousMenutri("tu","est","un","boulet").setVisible(true);
+                new SousMenutri("ducrocq","KlrIT05A@","ducrocq-rw","KlrIT05A@").setVisible(true);
             }
         });
     }
@@ -1096,7 +1131,7 @@ public class SousMenutri extends javax.swing.JFrame {
        }
        if(IndexCb==2){
            from_text="employe e, infirmier i, service s";
-           where_text="i.numero=e.numero AND s.code=i.code";
+           where_text="i.numero=e.numero AND s.code LIKE i.code_service";
        }
        if(IndexCb==4) 
            from_text="chambre c";
@@ -1104,7 +1139,7 @@ public class SousMenutri extends javax.swing.JFrame {
            from_text="service s";
        if(IndexCb==5){
            from_text="service s, malade m, chambre c, hospitalisation h";
-           where_text="h.numero=m.numero AND h.numero=c.numero AND h.numero=s.numero";
+           where_text="h.no_malade=m.numero AND h.no_chambre=c.no_chambre AND h.code_service LIKE s.code";
            compteur++;
        }
        //selection des attributs
@@ -1164,11 +1199,24 @@ public class SousMenutri extends javax.swing.JFrame {
            select_text=select_text+"nb_lits,";
            compteur++;
        }
+       if(MutuelleCheck.isSelected()){
+           select_text=select_text+"mutuelle";
+           compteur++;
+       }
+       if(SpecialiteCheck.isSelected()){
+           select_text=select_text+"specialite";
+           compteur++;
+       }
        if(compteur!=0){
-            //enlever la dernière virgule à la partie SELECT
+           System.out.println("compteur="+compteur);
+           //enlever la dernière virgule à la partie SELECT
             select_text=select_text.substring(0,select_text.length()-1);
             //ajouter les from
-             requete=requete+select_text+" from "+from_text+" where "+where_text;
+            
+             requete=requete+select_text+" from "+from_text;
+             if(where_text!=""){
+                 requete=requete+" where "+where_text;
+             }
         }
        //afficher un message d'alerte
        else JOptionPane.showMessageDialog(null, "Sélectionnez au moins un attribut!");
