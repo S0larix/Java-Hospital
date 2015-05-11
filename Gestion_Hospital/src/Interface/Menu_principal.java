@@ -7,7 +7,7 @@ package Interface;
 
 /**
  *
- * @author Lisa&Clément&Florian&Jérôme
+ * @author Clement et Lisa et Florian et Jerome
  */
 public class Menu_principal extends javax.swing.JFrame {
 

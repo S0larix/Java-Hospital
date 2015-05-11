@@ -16,7 +16,7 @@ import jdbc2014.Connexion;
 
 /**
  *
- * @author Lisa&Clément&Florian&Jérôme
+ * @author Clement et Lisa et Florian et Jerome
  */
 public class modifier extends javax.swing.JFrame implements ActionListener {
 

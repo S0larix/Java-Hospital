@@ -9,7 +9,7 @@ import javax.swing.JFrame;
 
 /**
  *
- * @author Lisa&Florian&Clément&Jérôme
+ * @author Clement et Lisa et Florian et Jerome
  */
 public class GUI extends JFrame {
     

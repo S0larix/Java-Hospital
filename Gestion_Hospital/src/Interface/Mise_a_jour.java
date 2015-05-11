@@ -18,7 +18,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author Lisa&Clément&Florian&Jérôme
+ * @author Clement et Lisa et Florian et Jerome
  */
 public class Mise_a_jour extends javax.swing.JFrame implements ActionListener{
 

@@ -19,7 +19,7 @@ import  java.lang.Object;
 
 /**
  *
- * @author Lisa&Clément&Florian&Jérôme
+ * @author Clement et Lisa et Florian et Jerome
  */
 public class ajouter extends javax.swing.JFrame implements ActionListener {
 

@@ -16,7 +16,7 @@ import jdbc2014.Connexion;
 
 /**
  *
- * @author Florian&Lisa&Clément&Jérôme
+ * @author Clement et Lisa et Florian et Jerome
  */
 public class SousMenutri extends javax.swing.JFrame {
     //déclaration des variables
@@ -678,7 +678,7 @@ public class SousMenutri extends javax.swing.JFrame {
             
         ResultatRequete.setText(mot);
         
-        reponseBDD = q_r.methodechiante(connect,requete);
+        reponseBDD = q_r.methode_connexion(connect,requete);
     }//GEN-LAST:event_BoutonNouvelleRechercheActionPerformed
 
     /**

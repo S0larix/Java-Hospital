@@ -15,7 +15,7 @@ import jdbc2014.Connexion;
 
 /**
  *
- * @author Lisa
+ * @author Clement et Lisa et Florian et Jerome
  */
 public class ajout {
     public void ajout(String table, String requete, Connexion connect) throws SQLException

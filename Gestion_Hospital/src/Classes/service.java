@@ -7,7 +7,7 @@ package Classes;
 
 /**
  *
- * @author Clément&Lisa&FLorian&Jérôme
+ * @author Clement et Lisa et Florian et Jerome
  */
 public class service {
     //déclaration des variables

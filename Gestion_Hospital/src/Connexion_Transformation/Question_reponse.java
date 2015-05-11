@@ -14,7 +14,7 @@ import jdbc2014.Connexion;
 
 /**
  *
- * @author Jérôme&Lisa&Florian&Clément
+ * @author Clement et Lisa et Florian et Jerome
  * 
  */
 public class Question_reponse {
@@ -23,7 +23,7 @@ public class Question_reponse {
    public Connexion conn;
    
 
-   public ArrayList<String> methodechiante(Connexion conn,String requete){
+   public ArrayList<String> methode_connexion(Connexion conn,String requete){
       
        ArrayList<String> liste = new ArrayList<String>();
        try {

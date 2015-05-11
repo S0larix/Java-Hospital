@@ -23,7 +23,7 @@ import org.jfree.data.general.DefaultPieDataset;
 
 /**
  *
- * @author Florian&Lisa&CLément&Florian
+ * @author Clement et Lisa et Florian et Jerome
  */
 public class SousMenuRequete extends javax.swing.JFrame {
 
@@ -178,7 +178,7 @@ public class SousMenuRequete extends javax.swing.JFrame {
         if(ListeDeroulanteRequete.getSelectedIndex()==0){
             intitule_requete=ListeDeroulanteRequete.getSelectedItem().toString();
             //requête sur la BDD
-            reponse = trf.methodechiante(connect,"select mutuelle from malade ");
+            reponse = trf.methode_connexion(connect,"select mutuelle from malade ");
      
             ArrayList<String> dif_mutuelle = new ArrayList<String>();
             //on trie la liste des mutuells 
@@ -216,7 +216,7 @@ public class SousMenuRequete extends javax.swing.JFrame {
         else
         {
             //requête sur la BDD
-            reponse = trf.methodechiante(connect,"select specialite from docteur");
+            reponse = trf.methode_connexion(connect,"select specialite from docteur");
             intitule_requete=ListeDeroulanteRequete.getSelectedItem().toString();
      
             ArrayList<String> dif_spe = new ArrayList<String>();

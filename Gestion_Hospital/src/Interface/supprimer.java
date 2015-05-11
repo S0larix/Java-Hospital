@@ -16,7 +16,7 @@ import Mise_a_jour.*;
 
 /**
  *
- * @author Lisa
+ * @author Clement et Lisa et Florian et Jerome
  */
 public class supprimer extends javax.swing.JFrame implements ActionListener {
 

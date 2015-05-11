@@ -7,7 +7,7 @@ package Classes;
 
 /**
  *
- * @author Clément&Lisa&Jérôme&Florian
+ * @author Clement Lisa et Jerome et Florian
  */
 public class docteur extends personne{
     //déclaration des variables

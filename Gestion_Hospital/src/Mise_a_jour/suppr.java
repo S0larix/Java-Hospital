@@ -14,7 +14,7 @@ import jdbc2014.*;
 
 /**
  *
- * @author Lisa
+ * @author Clement et Lisa et Florian et Jerome
  */
 /**
  *

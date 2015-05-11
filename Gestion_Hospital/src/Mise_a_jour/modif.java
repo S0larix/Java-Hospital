@@ -14,14 +14,14 @@ import jdbc2014.*;
 
 /**
  *
- * @author Lisa
+ * @author Clement et Lisa et Florian et Jerome
  */
 /**
  *
  * @author Lisa
  */
 public class modif {
-
+    
     private Connexion conect;
 
     public void modif(String table, String requete, Connexion conect) throws SQLException {

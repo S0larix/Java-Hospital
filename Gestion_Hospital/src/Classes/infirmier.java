@@ -7,7 +7,7 @@ package Classes;
 
 /**
  *
- * @author Clément&Lisa&Florian&Jérôme
+ * @author Clement et Lisa et Florian et Jerome
  */
 public class infirmier extends personne{
     //déclaration des variables

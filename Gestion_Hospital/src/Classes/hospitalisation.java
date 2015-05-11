@@ -7,7 +7,7 @@ package Classes;
 
 /**
  *
- * @author Jérôme&Lisa&Clément&Florian
+ * @author Jerome et Lisa et Clement et Florian
  */
 public class hospitalisation {
     private int num_lit;
