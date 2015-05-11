@@ -57,7 +57,6 @@ public class SousMenutri extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         MenuDeroulantClass = new javax.swing.JComboBox();
-        BoutonValidationClasseTri = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         ResultatRequete = new javax.swing.JTextArea();
         BoutonNouvelleRecherche = new javax.swing.JButton();
@@ -103,13 +102,6 @@ public class SousMenutri extends javax.swing.JFrame {
         MenuDeroulantClass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MenuDeroulantClassActionPerformed(evt);
-            }
-        });
-
-        BoutonValidationClasseTri.setText("Ok");
-        BoutonValidationClasseTri.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BoutonValidationClasseTriActionPerformed(evt);
             }
         });
 
@@ -407,10 +399,7 @@ public class SousMenutri extends javax.swing.JFrame {
                         .addGap(114, 114, 114)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1052, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(MenuDeroulantClass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(90, 90, 90)
-                                .addComponent(BoutonValidationClasseTri)))))
+                            .addComponent(MenuDeroulantClass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(114, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -423,9 +412,7 @@ public class SousMenutri extends javax.swing.JFrame {
                 .addGap(10, 10, 10)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(87, 87, 87)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(MenuDeroulantClass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BoutonValidationClasseTri))
+                .addComponent(MenuDeroulantClass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
                 .addComponent(jLayeredPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
                 .addGap(43, 43, 43)
@@ -436,8 +423,6 @@ public class SousMenutri extends javax.swing.JFrame {
                     .addComponent(BoutonRetourPrinc))
                 .addContainerGap(70, Short.MAX_VALUE))
         );
-
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {BoutonValidationClasseTri, MenuDeroulantClass});
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -505,11 +490,6 @@ public class SousMenutri extends javax.swing.JFrame {
     private void SurveillantCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SurveillantCheckActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_SurveillantCheckActionPerformed
-
-    private void BoutonValidationClasseTriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonValidationClasseTriActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_BoutonValidationClasseTriActionPerformed
 
     private void MenuDeroulantClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuDeroulantClassActionPerformed
         
@@ -740,7 +720,6 @@ public class SousMenutri extends javax.swing.JFrame {
     private javax.swing.JCheckBox BatimentCheck;
     private javax.swing.JButton BoutonNouvelleRecherche;
     private javax.swing.JButton BoutonRetourPrinc;
-    private javax.swing.JButton BoutonValidationClasseTri;
     private javax.swing.JCheckBox CodeCheck;
     private javax.swing.JCheckBox CodeServiceCheck;
     private javax.swing.JCheckBox DirecteurCheck;
