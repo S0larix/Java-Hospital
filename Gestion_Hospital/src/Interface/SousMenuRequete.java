@@ -10,6 +10,7 @@ import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JDialog;
@@ -67,7 +68,6 @@ public class SousMenuRequete extends javax.swing.JFrame {
 
         SousMenuReq = new javax.swing.JLabel();
         ListeDeroulanteRequete = new javax.swing.JComboBox();
-        BoutonOk = new javax.swing.JButton();
         BoutonNouvelleRecherche = new javax.swing.JButton();
         BoutonRetourPrinc = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
@@ -80,9 +80,6 @@ public class SousMenuRequete extends javax.swing.JFrame {
 
         ListeDeroulanteRequete.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mutuelles des malades", "Spécialisation des médecins" }));
         ListeDeroulanteRequete.setPreferredSize(new java.awt.Dimension(420, 42));
-
-        BoutonOk.setText("OK");
-        BoutonOk.setPreferredSize(new java.awt.Dimension(49, 42));
 
         BoutonNouvelleRecherche.setText("Créer Chart");
         BoutonNouvelleRecherche.setPreferredSize(new java.awt.Dimension(168, 30));
@@ -123,10 +120,8 @@ public class SousMenuRequete extends javax.swing.JFrame {
                             .addGap(381, 381, 381)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                                 .addComponent(SousMenuReq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(ListeDeroulanteRequete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(49, 49, 49)
-                                    .addComponent(BoutonOk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(ListeDeroulanteRequete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(98, 98, 98))
                         .addGroup(layout.createSequentialGroup()
                             .addContainerGap()
                             .addComponent(BoutonNouvelleRecherche, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -146,9 +141,7 @@ public class SousMenuRequete extends javax.swing.JFrame {
                 .addGap(10, 10, 10)
                 .addComponent(SousMenuReq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(71, 71, 71)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ListeDeroulanteRequete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BoutonOk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(ListeDeroulanteRequete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -157,8 +150,6 @@ public class SousMenuRequete extends javax.swing.JFrame {
                     .addComponent(BoutonRetourPrinc))
                 .addContainerGap(50, Short.MAX_VALUE))
         );
-
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {BoutonOk, ListeDeroulanteRequete});
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {BoutonNouvelleRecherche, BoutonRetourPrinc});
 
@@ -190,69 +181,81 @@ public class SousMenuRequete extends javax.swing.JFrame {
         //pour la requête 1
         if(ListeDeroulanteRequete.getSelectedIndex()==0){
             intitule_requete=ListeDeroulanteRequete.getSelectedItem().toString();
-            //requête sur la BD
-            System.out.println(LoginECE+" "+PasswordECE+" "+LoginBDD+" "+ PasswordECE+" ");
+            //requête sur la BDD
             reponse = trf.methodechiante(LoginECE,PasswordECE,LoginBDD,PasswordECE,
                     "select mutuelle from malade ");
-            
-
+     
             ArrayList<String> dif_mutuelle = new ArrayList<String>();
-         
-            //on trouve les différentes mutuelles
-           
-            for(String s:reponse){
-                    for(int i=0;i<dif_mutuelle.size();i++)
-                    {
-                        if(s.equals(dif_mutuelle.get(i)))System.out.println(s);
-                        else
-                            dif_mutuelle.add(s);
+            //on trie la liste des mutuells 
+            Collections.sort(reponse);
+            //on veut savoir combien de mutuelles il y a et combien d'adhérent.
+            ArrayList<Integer> mut= new ArrayList<Integer>();
+            mut.add(0);
+            int nbmut =0;
+            int i=0;
+            while(i<reponse.size()){
+                if(i < reponse.size()-1){
+                    if(reponse.get(i).equals(reponse.get(i+1)))
+                        mut.set(nbmut, mut.get(nbmut)+1);
+                    else{
+                        mut.add(0);
+                        nbmut++;
                     }
-            }
-            //on associe le nombre de personne à chaque mutuelle
-            resultat = new int[dif_mutuelle.size()];
-            for(String s:reponse){
-                for(int i=0;i<dif_mutuelle.size();i++){
-                    if(s.equals(dif_mutuelle.get(i)))
-                        resultat[i]++;
                 }
+                i++;
             }
-            
+            //System.out.println(mut);
+            //on obtient le nom de chaque mutuelle
+            int pos=0;
+            for(i=0;i<nbmut;i++){
+                dif_mutuelle.add(reponse.get(pos));
+                pos=pos+mut.get(i);
+            }
             //création de la base du graph
-            for(int i=0;i<dif_mutuelle.size();i++){
-                pieDataset.setValue(dif_mutuelle.get(i), new Integer(resultat[i]));
+            for(i=0;i<dif_mutuelle.size();i++){
+                pieDataset.setValue(dif_mutuelle.get(i), new Integer(mut.get(i)));
             }
 
         }
         //pour la requête 2
         else
         {
+            //requête sur la BDD
             reponse = trf.methodechiante(LoginECE,PasswordECE,LoginBDD,PasswordBDD,
                     "select specialite from docteur");
             intitule_requete=ListeDeroulanteRequete.getSelectedItem().toString();
-            ArrayList<String> dif_spe = null;
-            dif_spe.add(reponse.get(0));
-            //on trouve les différentes mutuelles
-            for(String s:reponse){
-                    for(int i=1;i<dif_spe.size();i++)
-                    {
-                        if(s.equals(dif_spe.get(i)));
-                        else
-                            dif_spe.add(s);
+     
+            ArrayList<String> dif_spe = new ArrayList<String>();
+            //on trie la liste des spécialités 
+            Collections.sort(reponse);
+            //on veut savoir combien de spécialités il y a et combien d'adhérent.
+            ArrayList<Integer> spe= new ArrayList<Integer>();
+            spe.add(0);
+            int nbspe =0;
+            int i=0;
+            while(i<reponse.size()){
+                if(i < reponse.size()-1){
+                    if(reponse.get(i).equals(reponse.get(i+1)))
+                        spe.set(nbspe, spe.get(nbspe)+1);
+                    else{
+                        spe.add(0);
+                        nbspe++;
                     }
-            }
-            //on associe le nombre de personne à chaque mutuelle
-            resultat = new int[dif_spe.size()];
-            for(String s:reponse){
-                for(int i=0;i<dif_spe.size();i++){
-                    if(s.equals(dif_spe.get(i)))
-                        resultat[i]++;
                 }
+                i++;
             }
-            
+            //System.out.println(mut);
+            //on obtient le nom de chaque mutuelle
+            int pos=0;
+            for(i=0;i<nbspe;i++){
+                dif_spe.add(reponse.get(pos));
+                pos=pos+spe.get(i);
+            }
             //création de la base du graph
-            for(int i=0;i<dif_spe.size();i++){
-                pieDataset.setValue(dif_spe.get(i), new Integer(resultat[i]));
+            for(i=0;i<dif_spe.size();i++){
+                pieDataset.setValue(dif_spe.get(i), new Integer(spe.get(i)));
             }
+
         }
 
         /* pieDataset.setValue("Valeur1", new Integer(27));
@@ -306,7 +309,6 @@ public class SousMenuRequete extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BoutonNouvelleRecherche;
-    private javax.swing.JButton BoutonOk;
     private javax.swing.JButton BoutonRetourPrinc;
     private javax.swing.JComboBox ListeDeroulanteRequete;
     private javax.swing.JLabel SousMenuReq;
