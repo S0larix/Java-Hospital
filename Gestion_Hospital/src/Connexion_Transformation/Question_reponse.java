@@ -26,21 +26,10 @@ public class Question_reponse {
    public Connexion conn;
    
 
-   public ArrayList<String> methodechiante(String loginECE,String mdpECE,String loginBDD,String mdpBDD,String requete){
+   public ArrayList<String> methodechiante(Connexion conn,String requete){
       
        ArrayList<String> liste = new ArrayList<String>();
-       try {
-                try {
-                    // tentative de connexion si les 4 attributs sont remplis
-                    conn = new Connexion(loginECE, mdpECE, loginBDD,mdpBDD);
-                } catch (ClassNotFoundException cnfe) {
-                    System.out.println("Connexion echouee : probleme de classe");
-                    cnfe.printStackTrace();
-                }
-            } catch (SQLException e) {
-                System.out.println("Connexion echouee : probleme SQL");
-                e.printStackTrace();
-            }
+     
        
        try {
                 

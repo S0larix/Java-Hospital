@@ -182,8 +182,7 @@ public class SousMenuRequete extends javax.swing.JFrame {
         if(ListeDeroulanteRequete.getSelectedIndex()==0){
             intitule_requete=ListeDeroulanteRequete.getSelectedItem().toString();
             //requête sur la BDD
-            reponse = trf.methodechiante(LoginECE,PasswordECE,LoginBDD,PasswordECE,
-                    "select mutuelle from malade ");
+            reponse = trf.methodechiante(connect,"select mutuelle from malade ");
      
             ArrayList<String> dif_mutuelle = new ArrayList<String>();
             //on trie la liste des mutuells 
@@ -221,8 +220,7 @@ public class SousMenuRequete extends javax.swing.JFrame {
         else
         {
             //requête sur la BDD
-            reponse = trf.methodechiante(LoginECE,PasswordECE,LoginBDD,PasswordBDD,
-                    "select specialite from docteur");
+            reponse = trf.methodechiante(connect,"select specialite from docteur");
             intitule_requete=ListeDeroulanteRequete.getSelectedItem().toString();
      
             ArrayList<String> dif_spe = new ArrayList<String>();
@@ -267,6 +265,7 @@ public class SousMenuRequete extends javax.swing.JFrame {
         ChartPanel cPanel = new ChartPanel(pieChart);
         cPanel.setSize(jPanel1.getWidth(), jPanel1.getHeight());
         cPanel.setVisible(true);
+        jPanel1.removeAll();
         jPanel1.add(cPanel);
         jPanel1.repaint();
 
