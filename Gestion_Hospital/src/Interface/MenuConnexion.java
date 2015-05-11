@@ -7,7 +7,7 @@ package Interface;
 
 /**
  *
- * @author Florian
+ * @author Florian&Lisa&Jérôme&Clément
  */
 public class MenuConnexion extends javax.swing.JFrame {
 

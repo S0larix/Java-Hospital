@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package Interface;
-
+//déclaration des imports
 import Classes.*;
 import Connexion_Transformation.Question_reponse;
 import java.sql.SQLException;
@@ -16,10 +16,10 @@ import jdbc2014.Connexion;
 
 /**
  *
- * @author Florian
+ * @author Florian&Lisa&Clément&Jérôme
  */
 public class SousMenutri extends javax.swing.JFrame {
-
+    //déclaration des variables
     private  String LoginECE;
     private  String PasswordECE;
     private  String LoginBDD;
@@ -29,6 +29,7 @@ public class SousMenutri extends javax.swing.JFrame {
     ArrayList liste_generique;
    public Connexion conn;
    
+   //déclaration du constructeur
     public SousMenutri(String LoginECE, String PasswordECE, String LoginBDD, String PasswordBDD) {
        
         this.LoginECE = LoginECE;
@@ -1194,17 +1195,16 @@ public class SousMenutri extends javax.swing.JFrame {
            compteur++;
        }
        if(compteur!=0){
-           System.out.println("compteur="+compteur);
+           
            //enlever la dernière virgule à la partie SELECT
             select_text=select_text.substring(0,select_text.length()-1);
             //ajouter les from
-            
              requete=requete+select_text+" from "+from_text;
              if(where_text!=""){
                  requete=requete+" where "+where_text;
              }
         }
-       //afficher un message d'alerte
+       //afficher un message d'erreur si aucun attribut n'est sélectionné
        else JOptionPane.showMessageDialog(null, "Sélectionnez au moins un attribut!");
       
        //rendre la requete 

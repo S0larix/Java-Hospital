@@ -7,11 +7,12 @@ package Classes;
 
 /**
  *
- * @author Clément
+ * @author Clément&Lisa&Jérôme&Florian
  */
 public class docteur extends personne{
+    //déclaration des variables
     private String specialite;
-    
+    //déclaration du constructeur
     public docteur(int numero,String specialite,String nom, String prenom,String tel,String adresse){
         super();
         this.setNumero(numero);

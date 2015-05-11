@@ -9,7 +9,7 @@ import javax.swing.JFrame;
 
 /**
  *
- * @author Lisa
+ * @author Lisa&Florian&Clément&Jérôme
  */
 public class GUI extends JFrame {
     
@@ -17,9 +17,5 @@ public class GUI extends JFrame {
 {
     MenuConnexion connexion = new MenuConnexion();
     connexion.setVisible(true);
-    
-    
 }
-
-    
 }

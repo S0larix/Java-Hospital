@@ -7,13 +7,14 @@ package Classes;
 
 /**
  *
- * @author Clément
+ * @author Clément&Lisa&Florian&Jérôme
  */
 public class infirmier extends personne{
+    //déclaration des variables
     private String code_service;
     private boolean rotation;//jour: vrai nuit:false
     private int salaire;
-    
+    //déclaration du constructeur
     public infirmier(int numero,String code_service,boolean rotation,int salaire,String nom, String prenom,String tel,String adresse){
         this.setNumero(numero);
         this.setCode_service(code_service);

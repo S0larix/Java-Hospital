@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+//déclaration des importations
 package Interface;
 import Interface.ajouter;
 import Interface.supprimer;
@@ -17,7 +18,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author Lisa
+ * @author Lisa&Clément&Florian&Jérôme
  */
 public class Mise_a_jour extends javax.swing.JFrame implements ActionListener{
 

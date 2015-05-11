@@ -7,12 +7,12 @@ package Classes;
 
 /**
  *
- * @author Clément
+ * @author Clément&Lisa&Florian&Jérôme
  */
 public class malade extends personne{
-    
+    //déclaration des variables
     private String mutuelle;
-    
+    //déclaration du constructeur
     public malade(int numero,String nom, String prenom,String tel,String adresse,String mutuelle){
         this.setNumero(numero);
         this.setNom(nom);

@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package Connexion_Transformation;
-
+//déclaration des importations
 import Classes.*;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -14,23 +14,18 @@ import jdbc2014.Connexion;
 
 /**
  *
- * @author Jérôme
+ * @author Jérôme&Lisa&Florian&Clément
  * 
  */
 public class Question_reponse {
    
-   /*String loginECE="ducrocq";
-   String mdpECE="KlrIT05A@";
-   String loginBDD="ducrocq-rw";
-   String mdpBDD="KlrIT05A@";*/
+ 
    public Connexion conn;
    
 
    public ArrayList<String> methodechiante(Connexion conn,String requete){
       
        ArrayList<String> liste = new ArrayList<String>();
-     
-       
        try {
                 
                 // recuperer la liste des champs de la table

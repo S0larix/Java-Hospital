@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package Interface;
-
+//déclaration des importations
 import Connexion_Transformation.Question_reponse;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
@@ -23,24 +23,20 @@ import org.jfree.data.general.DefaultPieDataset;
 
 /**
  *
- * @author Florian
+ * @author Florian&Lisa&CLément&Florian
  */
 public class SousMenuRequete extends javax.swing.JFrame {
 
     /**
      * Creates new form SousMenuRequete
      */
-    /*private  String LoginECE;
-    private  String PasswordECE;
-    private  String LoginBDD;
-    private  String PasswordBDD;*/
-    
+    //déclaration des variables
    private String LoginECE;
    private String PasswordECE;
    private String LoginBDD;
    private String PasswordBDD;
    private Connexion connect;
-    
+   //déclaration du constructeur
     public SousMenuRequete(String LoginECE, String PasswordECE, String LoginBDD, String PasswordBDD)  {
         
         this.LoginECE = LoginECE;

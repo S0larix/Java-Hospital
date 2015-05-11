@@ -7,21 +7,21 @@ package Classes;
 
 /**
  *
- * @author Clément
+ * @author Clément&Lisa&Jérôme&Florian
  */
 public class chambre {
+    //déclaration des variables
     private int no_chambre;
     private String code_service;
     private int surveillant;
     private int nb_lits;
-    
+    //déclaration du constructeur de chambre
     public chambre(String service,int chambre,int surveil,int lits){
         this.no_chambre=chambre;
         this.code_service =service;
         this.surveillant=surveil;
         this.nb_lits=lits;
     }
-
     /**
      * @return the no_chambre
      */

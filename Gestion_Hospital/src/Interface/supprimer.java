@@ -11,10 +11,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import jdbc2014.*;
 import jdbc2014.Connexion;
 import Mise_a_jour.*;
-import javax.swing.JTable;
 
 /**
  *

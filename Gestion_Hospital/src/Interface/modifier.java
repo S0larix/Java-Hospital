@@ -4,27 +4,26 @@
  * and open the template in the editor.
  */
 package Interface;
-
+//déclaration des importations
 import Mise_a_jour.modif;
-import Mise_a_jour.suppr;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import jdbc2014.*;
 import jdbc2014.Connexion;
 
 /**
  *
- * @author Lisa
+ * @author Lisa&Clément&Florian&Jérôme
  */
 public class modifier extends javax.swing.JFrame implements ActionListener {
 
     /**
      * Creates new form ajouter
      */
+    //déclaration des variables
     private  String LoginECE;
     private  String PasswordECE;
     private  String LoginBDD;

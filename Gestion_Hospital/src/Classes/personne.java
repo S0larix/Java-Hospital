@@ -7,9 +7,10 @@ package Classes;
 
 /**
  *
- * @author Jérôme
+ * @author Jérôme&Lisa&Clément&Florian
  */
 public class personne {
+    //déclaration des variables
     private String nom;
     private String prenom;
     private String tel;

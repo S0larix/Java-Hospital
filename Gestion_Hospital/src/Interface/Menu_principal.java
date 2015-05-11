@@ -7,19 +7,20 @@ package Interface;
 
 /**
  *
- * @author Lisa
+ * @author Lisa&Clément&Florian&Jérôme
  */
 public class Menu_principal extends javax.swing.JFrame {
 
     /**
      * Creates new form Menu_principal
      */
+    //déclaration des variables
     private  String LoginECE;
     private  String PasswordECE;
     private  String LoginBDD;
     private  String PasswordBDD;
     
-    
+    //déclaration du constructeur
     public Menu_principal(String LoginECE, String PasswordECE, String LoginBDD, String PasswordBDD) {
         
         this.LoginECE = LoginECE;

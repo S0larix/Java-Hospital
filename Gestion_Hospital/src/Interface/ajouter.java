@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package Interface;
-
+//déclaration des importations
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
@@ -19,19 +19,19 @@ import  java.lang.Object;
 
 /**
  *
- * @author Lisa
+ * @author Lisa&Clément&Florian&Jérôme
  */
 public class ajouter extends javax.swing.JFrame implements ActionListener {
 
     /**
      * Creates new form ajouter
      */
-    
+    //déclaration des variables
     private  String LoginECE;
     private  String PasswordECE;
     private  String LoginBDD;
     private  String PasswordBDD;
-    
+    //déclaration du constructeur
     public ajouter(String nomECE, String mdpECE, String nomBDD, String mdpBDD) throws SQLException {
         initComponents();
         this.LoginECE = nomECE;
@@ -52,13 +52,12 @@ public class ajouter extends javax.swing.JFrame implements ActionListener {
         this.p4.setVisible(false);
         this.p5.setVisible(false);
         this.p6.setVisible(false);
-
+        //essayer de se connecter à la BDD
         try {
             connect = new Connexion(nomECE, mdpECE, nomBDD, mdpBDD);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ajouter.class.getName()).log(Level.SEVERE, null, ex);
         }
-
         this.setVisible(true);
     }
 
@@ -456,6 +455,7 @@ public class ajouter extends javax.swing.JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        //Si on souhaite ajouter une instance dans les tables
         String requete = "INSERT INTO ", mot = null, mots;
         ArrayList<String> champs = null, resultat = null;
         String[] tab;
@@ -494,7 +494,7 @@ public class ajouter extends javax.swing.JFrame implements ActionListener {
                 this.p6.setVisible(true);
             }
         }
-
+        
         requete = requete + " " + (String) table.getSelectedItem() + " " + "(";
 
         for (int i = 0; i < champs.size(); i++) {
@@ -503,9 +503,9 @@ public class ajouter extends javax.swing.JFrame implements ActionListener {
                 requete = requete + ",";
             }
         }
-
+        //on ajoute les valeurs
         requete = requete + ") VALUES (";
-
+        
         for (int i = 0; i < champs.size(); i++) {
             if (i == 0) {
                 mot = p1.getText();

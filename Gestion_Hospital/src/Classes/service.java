@@ -7,14 +7,15 @@ package Classes;
 
 /**
  *
- * @author Clément
+ * @author Clément&Lisa&FLorian&Jérôme
  */
 public class service {
+    //déclaration des variables
     private String code;
     private String nom;
     private String batiment;
     private int directeur;
-    
+    //déclaration du constructeur
     public service(String code,String nom, String batiment,int directeur){
         this.code=code;
         this.nom=nom;
