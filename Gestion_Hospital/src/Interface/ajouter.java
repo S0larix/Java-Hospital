@@ -105,7 +105,7 @@ public class ajouter extends javax.swing.JFrame implements ActionListener {
         jLabel1.setAutoscrolls(true);
         jLabel1.setPreferredSize(new java.awt.Dimension(168, 42));
 
-        table.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "chambre", "docteur", "employe", "generique", "infirmier", "malade", "service" }));
+        table.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "chambre", "docteur", "employe", "infirmier", "malade", "service" }));
         table.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tableActionPerformed(evt);
