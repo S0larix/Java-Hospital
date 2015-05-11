@@ -191,6 +191,7 @@ public class Mise_a_jour extends javax.swing.JFrame implements ActionListener{
         if(e.getSource()==ajouter)
         {
             try {
+                this.dispose();
                 ajout=new ajouter("ducrocq", "KlrIT05A@", "ducrocq-rw", "KlrIT05A@");
             } catch (SQLException ex) {
                 Logger.getLogger(Mise_a_jour.class.getName()).log(Level.SEVERE, null, ex);
@@ -200,6 +201,7 @@ public class Mise_a_jour extends javax.swing.JFrame implements ActionListener{
         {
             
             try {
+                this.dispose();
                 suppr= new supprimer("ducrocq", "KlrIT05A@", "ducrocq-rw", "KlrIT05A@");
             } catch (SQLException ex) {
                 Logger.getLogger(Mise_a_jour.class.getName()).log(Level.SEVERE, null, ex);
@@ -207,6 +209,7 @@ public class Mise_a_jour extends javax.swing.JFrame implements ActionListener{
         }else if(e.getSource()==modifier)
         {
             try {
+                this.dispose();
                 modif=new modifier("ducrocq", "KlrIT05A@", "ducrocq-rw", "KlrIT05A@");
             } catch (SQLException ex) {
                 Logger.getLogger(Mise_a_jour.class.getName()).log(Level.SEVERE, null, ex);
