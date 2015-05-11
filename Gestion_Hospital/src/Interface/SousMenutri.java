@@ -677,7 +677,7 @@ public class SousMenutri extends javax.swing.JFrame {
             
         ResultatRequete.setText(mot);
         
-        reponseBDD = q_r.methodechiante(LoginECE,PasswordECE,LoginBDD,PasswordBDD,requete);
+        reponseBDD = q_r.methodechiante(connect,requete);
     }//GEN-LAST:event_BoutonNouvelleRechercheActionPerformed
 
     /**
