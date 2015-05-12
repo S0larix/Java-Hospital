@@ -16,7 +16,7 @@ import jdbc2014.Connexion;
 
 /**
  *
- * @author Clement et Lisa et Florian et Jerome
+ * @author Florian et Lisa et Clement et Jerome
  */
 public class SousMenutri extends javax.swing.JFrame {
     //déclaration des variables
@@ -36,14 +36,14 @@ public class SousMenutri extends javax.swing.JFrame {
         this.PasswordECE = PasswordECE;
         this.LoginBDD= LoginBDD;
         this.PasswordBDD = PasswordBDD;
-        initComponents();
-     try {
-            connect = new Connexion(LoginECE, PasswordECE, LoginBDD, PasswordBDD);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ajouter.class.getName()).log(Level.SEVERE, null, ex);
+        try {
+            conn=new Connexion(LoginECE, PasswordECE, LoginBDD, PasswordBDD);
         } catch (SQLException ex) {
             Logger.getLogger(SousMenutri.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(SousMenutri.class.getName()).log(Level.SEVERE, null, ex);
         }
+        initComponents();
   
     }
 
@@ -70,17 +70,35 @@ public class SousMenutri extends javax.swing.JFrame {
         AdresseCheck = new javax.swing.JCheckBox();
         MutuelleCheck = new javax.swing.JCheckBox();
         TelephoneCheck = new javax.swing.JCheckBox();
-        NomServiceCheck = new javax.swing.JCheckBox();
         CodeServiceCheck = new javax.swing.JCheckBox();
         BatimentCheck = new javax.swing.JCheckBox();
         DirecteurCheck = new javax.swing.JCheckBox();
         SurveillantCheck = new javax.swing.JCheckBox();
-        SpecialiteCheck = new javax.swing.JCheckBox();
         SalaireCheck = new javax.swing.JCheckBox();
-        RotationCheck = new javax.swing.JCheckBox();
+        SpecialiteCheck = new javax.swing.JCheckBox();
         NombreLitCheck = new javax.swing.JCheckBox();
         NumeroLitCheck = new javax.swing.JCheckBox();
         NumeroChambreCheck = new javax.swing.JCheckBox();
+        RotationCheck = new javax.swing.JCheckBox();
+        tcode = new javax.swing.JTextField();
+        tprenom = new javax.swing.JTextField();
+        tnom = new javax.swing.JTextField();
+        tnumero = new javax.swing.JTextField();
+        tadresse = new javax.swing.JTextField();
+        tmutuelle = new javax.swing.JTextField();
+        ttel = new javax.swing.JTextField();
+        tcodeserv = new javax.swing.JTextField();
+        tbat = new javax.swing.JTextField();
+        tsal = new javax.swing.JTextField();
+        tspe = new javax.swing.JTextField();
+        tnumlit = new javax.swing.JTextField();
+        tnumchambre = new javax.swing.JTextField();
+        tnblit = new javax.swing.JTextField();
+        tsurveillant = new javax.swing.JTextField();
+        trot = new javax.swing.JTextField();
+        tdir = new javax.swing.JTextField();
+        nomServiceCheck = new javax.swing.JCheckBox();
+        tnoms = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -139,7 +157,6 @@ public class SousMenutri extends javax.swing.JFrame {
                 NomCheckActionPerformed(evt);
             }
         });
-        jLayeredPane1.add(NomCheck);
 
         PrenomCheck.setText("Prenom");
         PrenomCheck.setAutoscrolls(true);
@@ -152,7 +169,6 @@ public class SousMenutri extends javax.swing.JFrame {
                 PrenomCheckActionPerformed(evt);
             }
         });
-        jLayeredPane1.add(PrenomCheck);
 
         CodeCheck.setText("Code");
         CodeCheck.setAutoscrolls(true);
@@ -165,7 +181,6 @@ public class SousMenutri extends javax.swing.JFrame {
                 CodeCheckActionPerformed(evt);
             }
         });
-        jLayeredPane1.add(CodeCheck);
 
         NumeroCheck.setText("Numero");
         NumeroCheck.setAutoscrolls(true);
@@ -178,7 +193,6 @@ public class SousMenutri extends javax.swing.JFrame {
                 NumeroCheckActionPerformed(evt);
             }
         });
-        jLayeredPane1.add(NumeroCheck);
 
         AdresseCheck.setText("Adresse");
         AdresseCheck.setAutoscrolls(true);
@@ -191,7 +205,6 @@ public class SousMenutri extends javax.swing.JFrame {
                 AdresseCheckActionPerformed(evt);
             }
         });
-        jLayeredPane1.add(AdresseCheck);
 
         MutuelleCheck.setText("Mutuelle");
         MutuelleCheck.setAutoscrolls(true);
@@ -204,7 +217,6 @@ public class SousMenutri extends javax.swing.JFrame {
                 MutuelleCheckActionPerformed(evt);
             }
         });
-        jLayeredPane1.add(MutuelleCheck);
 
         TelephoneCheck.setText("Telephone");
         TelephoneCheck.setAutoscrolls(true);
@@ -217,20 +229,6 @@ public class SousMenutri extends javax.swing.JFrame {
                 TelephoneCheckActionPerformed(evt);
             }
         });
-        jLayeredPane1.add(TelephoneCheck);
-
-        NomServiceCheck.setText("Nom Service");
-        NomServiceCheck.setAutoscrolls(true);
-        NomServiceCheck.setFocusable(false);
-        NomServiceCheck.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        NomServiceCheck.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        NomServiceCheck.setPreferredSize(new java.awt.Dimension(109, 25));
-        NomServiceCheck.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NomServiceCheckActionPerformed(evt);
-            }
-        });
-        jLayeredPane1.add(NomServiceCheck);
 
         CodeServiceCheck.setText("Code Service");
         CodeServiceCheck.setAutoscrolls(true);
@@ -245,7 +243,6 @@ public class SousMenutri extends javax.swing.JFrame {
                 CodeServiceCheckActionPerformed(evt);
             }
         });
-        jLayeredPane1.add(CodeServiceCheck);
 
         BatimentCheck.setText("Batiment");
         BatimentCheck.setAutoscrolls(true);
@@ -260,7 +257,6 @@ public class SousMenutri extends javax.swing.JFrame {
                 BatimentCheckActionPerformed(evt);
             }
         });
-        jLayeredPane1.add(BatimentCheck);
 
         DirecteurCheck.setText("Directeur");
         DirecteurCheck.setAutoscrolls(true);
@@ -275,7 +271,6 @@ public class SousMenutri extends javax.swing.JFrame {
                 DirecteurCheckActionPerformed(evt);
             }
         });
-        jLayeredPane1.add(DirecteurCheck);
 
         SurveillantCheck.setText("Surveillant");
         SurveillantCheck.setAutoscrolls(true);
@@ -290,22 +285,6 @@ public class SousMenutri extends javax.swing.JFrame {
                 SurveillantCheckActionPerformed(evt);
             }
         });
-        jLayeredPane1.add(SurveillantCheck);
-
-        SpecialiteCheck.setText("Specialite");
-        SpecialiteCheck.setAutoscrolls(true);
-        SpecialiteCheck.setFocusable(false);
-        SpecialiteCheck.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        SpecialiteCheck.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        SpecialiteCheck.setMaximumSize(new java.awt.Dimension(109, 25));
-        SpecialiteCheck.setMinimumSize(new java.awt.Dimension(109, 25));
-        SpecialiteCheck.setPreferredSize(new java.awt.Dimension(109, 25));
-        SpecialiteCheck.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SpecialiteCheckActionPerformed(evt);
-            }
-        });
-        jLayeredPane1.add(SpecialiteCheck);
 
         SalaireCheck.setText("Salaire");
         SalaireCheck.setAutoscrolls(true);
@@ -320,22 +299,20 @@ public class SousMenutri extends javax.swing.JFrame {
                 SalaireCheckActionPerformed(evt);
             }
         });
-        jLayeredPane1.add(SalaireCheck);
 
-        RotationCheck.setText("Rotation");
-        RotationCheck.setAutoscrolls(true);
-        RotationCheck.setFocusable(false);
-        RotationCheck.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        RotationCheck.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        RotationCheck.setMaximumSize(new java.awt.Dimension(109, 25));
-        RotationCheck.setMinimumSize(new java.awt.Dimension(109, 25));
-        RotationCheck.setPreferredSize(new java.awt.Dimension(109, 25));
-        RotationCheck.addActionListener(new java.awt.event.ActionListener() {
+        SpecialiteCheck.setText("Specialite");
+        SpecialiteCheck.setAutoscrolls(true);
+        SpecialiteCheck.setFocusable(false);
+        SpecialiteCheck.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        SpecialiteCheck.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        SpecialiteCheck.setMaximumSize(new java.awt.Dimension(109, 25));
+        SpecialiteCheck.setMinimumSize(new java.awt.Dimension(109, 25));
+        SpecialiteCheck.setPreferredSize(new java.awt.Dimension(109, 25));
+        SpecialiteCheck.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RotationCheckActionPerformed(evt);
+                SpecialiteCheckActionPerformed(evt);
             }
         });
-        jLayeredPane1.add(RotationCheck);
 
         NombreLitCheck.setText("Nombre Lit");
         NombreLitCheck.setAutoscrolls(true);
@@ -350,7 +327,6 @@ public class SousMenutri extends javax.swing.JFrame {
                 NombreLitCheckActionPerformed(evt);
             }
         });
-        jLayeredPane1.add(NombreLitCheck);
 
         NumeroLitCheck.setText("Numero Lit");
         NumeroLitCheck.setAutoscrolls(true);
@@ -365,7 +341,6 @@ public class SousMenutri extends javax.swing.JFrame {
                 NumeroLitCheckActionPerformed(evt);
             }
         });
-        jLayeredPane1.add(NumeroLitCheck);
 
         NumeroChambreCheck.setText("Numero Chambre");
         NumeroChambreCheck.setAutoscrolls(true);
@@ -380,7 +355,154 @@ public class SousMenutri extends javax.swing.JFrame {
                 NumeroChambreCheckActionPerformed(evt);
             }
         });
-        jLayeredPane1.add(NumeroChambreCheck);
+
+        RotationCheck.setText("Rotation");
+        RotationCheck.setAutoscrolls(true);
+        RotationCheck.setFocusable(false);
+        RotationCheck.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        RotationCheck.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        RotationCheck.setMaximumSize(new java.awt.Dimension(109, 25));
+        RotationCheck.setMinimumSize(new java.awt.Dimension(109, 25));
+        RotationCheck.setPreferredSize(new java.awt.Dimension(109, 25));
+        RotationCheck.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RotationCheckActionPerformed(evt);
+            }
+        });
+
+        tcode.setText("code");
+        tcode.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tcodeActionPerformed(evt);
+            }
+        });
+
+        tprenom.setText("prenom");
+        tprenom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tprenomActionPerformed(evt);
+            }
+        });
+
+        tnom.setText("nom");
+        tnom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tnomActionPerformed(evt);
+            }
+        });
+
+        tnumero.setText("numero");
+        tnumero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tnumeroActionPerformed(evt);
+            }
+        });
+
+        tadresse.setText("adresse");
+        tadresse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tadresseActionPerformed(evt);
+            }
+        });
+
+        tmutuelle.setText("mutuelle");
+        tmutuelle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tmutuelleActionPerformed(evt);
+            }
+        });
+
+        ttel.setText("telephone");
+        ttel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ttelActionPerformed(evt);
+            }
+        });
+
+        tcodeserv.setText("code_service");
+        tcodeserv.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tcodeservActionPerformed(evt);
+            }
+        });
+
+        tbat.setText("batiment");
+        tbat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbatActionPerformed(evt);
+            }
+        });
+
+        tsal.setEditable(false);
+        tsal.setText("salaire");
+        tsal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tsalActionPerformed(evt);
+            }
+        });
+
+        tspe.setText("specialite");
+        tspe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tspeActionPerformed(evt);
+            }
+        });
+
+        tnumlit.setText("num_lit");
+        tnumlit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tnumlitActionPerformed(evt);
+            }
+        });
+
+        tnumchambre.setText("num_chambre");
+        tnumchambre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tnumchambreActionPerformed(evt);
+            }
+        });
+
+        tnblit.setText("nb_lits");
+        tnblit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tnblitActionPerformed(evt);
+            }
+        });
+
+        tsurveillant.setText("surveillant");
+        tsurveillant.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tsurveillantActionPerformed(evt);
+            }
+        });
+
+        trot.setText("rotation");
+        trot.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                trotActionPerformed(evt);
+            }
+        });
+
+        tdir.setText("directeur");
+        tdir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tdirActionPerformed(evt);
+            }
+        });
+
+        nomServiceCheck.setText("nom service");
+        nomServiceCheck.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nomServiceCheckActionPerformed(evt);
+            }
+        });
+
+        tnoms.setText("nom_service");
+        tnoms.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tnomsActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -392,37 +514,208 @@ public class SousMenutri extends javax.swing.JFrame {
                         .addGap(472, 472, 472)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(380, 380, 380)
-                        .addComponent(BoutonNouvelleRecherche, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(181, 181, 181)
-                        .addComponent(BoutonRetourPrinc))
+                        .addGap(25, 25, 25)
+                        .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1060, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(114, 114, 114)
+                        .addGap(21, 21, 21)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1052, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(MenuDeroulantClass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(114, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1060, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(tspe)
+                                        .addComponent(tsal)
+                                        .addComponent(tnumlit, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                            .addGroup(layout.createSequentialGroup()
+                                                                .addComponent(BatimentCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addComponent(tbat, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                            .addGroup(layout.createSequentialGroup()
+                                                                .addComponent(CodeServiceCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addComponent(tcodeserv, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                                                        .addComponent(AdresseCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                        .addComponent(tadresse, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                                                        .addComponent(MutuelleCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                        .addComponent(tmutuelle, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                                                        .addComponent(TelephoneCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                        .addComponent(ttel, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                                .addGap(22, 22, 22)))
+                                                        .addGap(137, 137, 137)
+                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                            .addComponent(DirecteurCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                            .addComponent(RotationCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                            .addComponent(NombreLitCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                            .addComponent(SurveillantCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                            .addComponent(nomServiceCheck)))
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addGap(77, 77, 77)
+                                                        .addComponent(BoutonNouvelleRecherche, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addGap(126, 126, 126)
+                                                        .addComponent(BoutonRetourPrinc)))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                                .addComponent(NomCheck, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addGroup(layout.createSequentialGroup()
+                                                                    .addComponent(CodeCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                    .addGap(2, 2, 2)))
+                                                            .addGroup(layout.createSequentialGroup()
+                                                                .addGap(2, 2, 2)
+                                                                .addComponent(PrenomCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addComponent(NumeroCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                                .addGap(18, 18, 18)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                    .addComponent(tnumero, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                        .addComponent(tcode, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addGroup(layout.createSequentialGroup()
+                                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                                .addComponent(tprenom, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addComponent(tnom, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                            .addGap(4, 4, 4))))
+                                                .addGap(144, 144, 144)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                        .addComponent(NumeroLitCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(SpecialiteCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(SalaireCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addComponent(NumeroChambreCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGap(46, 46, 46)))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(tnumchambre)
+                                            .addComponent(tsurveillant)
+                                            .addComponent(trot)
+                                            .addComponent(tdir)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                .addGap(1, 1, 1)
+                                                .addComponent(tnoms, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(tnblit))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 909, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(MenuDeroulantClass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(10, 10, 10)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(87, 87, 87)
+                .addGap(3, 3, 3)
                 .addComponent(MenuDeroulantClass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addComponent(jLayeredPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
-                .addGap(43, 43, 43)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BoutonNouvelleRecherche, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BoutonRetourPrinc))
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(NomCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(10, 10, 10)
+                                .addComponent(PrenomCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(CodeCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(NumeroCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(tnom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(10, 10, 10)
+                                        .addComponent(tprenom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(tcode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(tnumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(18, 18, 18)
+                                                .addComponent(tsal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(15, 15, 15)
+                                                .addComponent(tspe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(0, 0, 0)
+                                                .addComponent(tnumlit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(SalaireCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(10, 10, 10)
+                                                .addComponent(SpecialiteCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(0, 0, 0)
+                                                .addComponent(NumeroLitCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(6, 6, 6)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(tnumchambre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(NumeroChambreCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(AdresseCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(NombreLitCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tadresse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tnblit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(1, 1, 1)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(MutuelleCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(SurveillantCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tmutuelle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tsurveillant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(RotationCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(TelephoneCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(ttel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(trot, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(CodeServiceCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(tcodeserv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(BatimentCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(DirecteurCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(tdir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(nomServiceCheck)
+                                            .addComponent(tnoms, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(36, 36, 36)
+                                .addComponent(tbat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(54, 54, 54)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(BoutonNouvelleRecherche, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BoutonRetourPrinc)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(68, 68, 68)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLayeredPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+                .addContainerGap(219, Short.MAX_VALUE))
         );
 
         pack();
@@ -455,10 +748,6 @@ public class SousMenutri extends javax.swing.JFrame {
     private void CodeCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CodeCheckActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CodeCheckActionPerformed
-
-    private void NomServiceCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomServiceCheckActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_NomServiceCheckActionPerformed
 
     private void BatimentCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BatimentCheckActionPerformed
         // TODO add your handling code here:
@@ -493,89 +782,116 @@ public class SousMenutri extends javax.swing.JFrame {
     }//GEN-LAST:event_SurveillantCheckActionPerformed
 
     private void MenuDeroulantClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuDeroulantClassActionPerformed
-        
-// TODO add your handling code here:
-        int IndexCb = MenuDeroulantClass.getSelectedIndex();
+           int IndexCb = MenuDeroulantClass.getSelectedIndex();
         System.out.print(IndexCb);
-        switch(IndexCb)
-        {
-            case 0 : //service
-                NomServiceCheck.setVisible(true);
+            
+        switch (IndexCb) {
+            case 0: //service
+                nomServiceCheck.setVisible(true);
                 CodeServiceCheck.setVisible(true);
                 BatimentCheck.setVisible(true);
                 DirecteurCheck.setVisible(true);
+
+                tbat.setVisible(true);
+                tcodeserv.setVisible(true);
+                tdir.setVisible(true);
+                tnoms.setVisible(true);
+
+                break;
+            case 1: //malade
+                NumeroCheck.setVisible(true);
+                NomCheck.setVisible(true);
+                PrenomCheck.setVisible(true);
+                TelephoneCheck.setVisible(true);
+                AdresseCheck.setVisible(true);
+
+                tadresse.setVisible(true);
+                tnom.setVisible(true);
+                tnumero.setVisible(true);
+                tprenom.setVisible(true);
+                ttel.setVisible(true);
+
+                break;
+            case 2: // infirmier
+                NumeroCheck.setVisible(true);
+                CodeServiceCheck.setVisible(true);
+                RotationCheck.setVisible(true);
+                SalaireCheck.setVisible(true);
+                NomCheck.setVisible(true);
+                PrenomCheck.setVisible(true);
+                TelephoneCheck.setVisible(true);
+                AdresseCheck.setVisible(true);
                 
-            break;
-            case 1 : //malade
-                    NumeroCheck.setVisible(true);
-                    NomCheck.setVisible(true);
-                    PrenomCheck.setVisible(true);
-                    TelephoneCheck.setVisible(true);
-                    AdresseCheck.setVisible(true);
-                    
-                    
-            break;
-            case 2 : // infirmier
-                    NumeroCheck.setVisible(true);
-                    CodeServiceCheck.setVisible(true);
-                    RotationCheck.setVisible(true);
-                    SalaireCheck.setVisible(true);
-                    NomCheck.setVisible(true);
-                    PrenomCheck.setVisible(true);
-                    TelephoneCheck.setVisible(true);
-                    AdresseCheck.setVisible(true);
-            break;
-            case 3 : // Docteur
-                    NumeroCheck.setVisible(true);
-                    SpecialiteCheck.setVisible(true);
-                    NomCheck.setVisible(true);
-                    PrenomCheck.setVisible(true);
-                    TelephoneCheck.setVisible(true);
-                    AdresseCheck.setVisible(true);
-        
-            break;
-            case 4 : // Chambre
-                    
-                    NumeroChambreCheck.setVisible(true);
-                    CodeServiceCheck.setVisible(true);
-                    SurveillantCheck.setVisible(true);
-                    NombreLitCheck.setVisible(true);
-                    
-            break;
-            case 5 : //hospitalisation
-                    NumeroCheck.setVisible(true);
-                    NomCheck.setVisible(true);
-                    PrenomCheck.setVisible(true);
-                    TelephoneCheck.setVisible(true);
-                    AdresseCheck.setVisible(true);
-                    NumeroChambreCheck.setVisible(true);
-                    CodeServiceCheck.setVisible(true);
-                    SurveillantCheck.setVisible(true);
-                    NombreLitCheck.setVisible(true);
-                    NumeroLitCheck.setVisible(true);
-                    
-        
-            break;
+                tadresse.setVisible(true);
+                tcodeserv.setVisible(true);
+                tnom.setVisible(true);
+                tnumero.setVisible(true);
+                tprenom.setVisible(true);
+                trot.setVisible(true);
+                tsal.setVisible(true);
+                ttel.setVisible(true);
+                break;
+            case 3: // Docteur
+                NumeroCheck.setVisible(true);
+                SpecialiteCheck.setVisible(true);
+                NomCheck.setVisible(true);
+                PrenomCheck.setVisible(true);
+                TelephoneCheck.setVisible(true);
+                AdresseCheck.setVisible(true);
+                
+                tadresse.setVisible(true);
+              tnom.setVisible(true);
+                tnumero.setVisible(true);
+                tprenom.setVisible(true);
+               tspe.setVisible(true);
+                ttel.setVisible(true);
+
+                break;
+            case 4: // Chambre
+
+                NumeroChambreCheck.setVisible(true);
+                CodeServiceCheck.setVisible(true);
+                SurveillantCheck.setVisible(true);
+                NombreLitCheck.setVisible(true);
+                
+                tcodeserv.setVisible(true);
+                tnblit.setVisible(true);
+                tnumchambre.setVisible(true);
+                tnumlit.setVisible(true);
+                break;
+            case 5: //hospitalisation
+                NumeroCheck.setVisible(true);
+                NomCheck.setVisible(true);
+                PrenomCheck.setVisible(true);
+                TelephoneCheck.setVisible(true);
+                AdresseCheck.setVisible(true);
+                NumeroChambreCheck.setVisible(true);
+                CodeServiceCheck.setVisible(true);
+                SurveillantCheck.setVisible(true);
+                NombreLitCheck.setVisible(true);
+                NumeroLitCheck.setVisible(true);
+                
+           
+
+                tadresse.setVisible(true);
+                tmutuelle.setVisible(true);
+                tnblit.setVisible(true);
+                tnom.setVisible(true);
+                tnumchambre.setVisible(true);
+                tnumero.setVisible(true);
+                tnumlit.setVisible(true);
+                tprenom.setVisible(true);
+                tsurveillant.setVisible(true);
+                ttel.setVisible(true);
+
+                break;
         }
-        //décocher les checkbox
+        //decocher les checkbox
         PrenomCheck.setSelected(false);
-        NombreLitCheck.setSelected(false);
-        CodeCheck.setSelected(false);
-        CodeServiceCheck.setSelected(false);
-        NumeroCheck.setSelected(false);
-        BatimentCheck.setSelected(false);
-        NomCheck.setSelected(false);
-        TelephoneCheck.setSelected(false);
-        DirecteurCheck.setSelected(false);
-        SurveillantCheck.setSelected(false);
-        SpecialiteCheck.setSelected(false);
-        NomServiceCheck.setSelected(false);
-        AdresseCheck.setSelected(false);
-        MutuelleCheck.setSelected(false);
-        RotationCheck.setSelected(false);
         SalaireCheck.setSelected(false);
         NumeroLitCheck.setSelected(false);
         NumeroChambreCheck.setSelected(false);
+        
         
     }//GEN-LAST:event_MenuDeroulantClassActionPerformed
 
@@ -586,58 +902,62 @@ public class SousMenutri extends javax.swing.JFrame {
     private void BoutonRetourPrincActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonRetourPrincActionPerformed
         // TODO add your handling code here:
           this.dispose();
-        Menu_principal menu_princ = new Menu_principal(LoginECE,PasswordECE,LoginBDD,PasswordBDD);
+        Menu_principal menu_princ = new Menu_principal(LoginECE, PasswordECE, LoginBDD, PasswordBDD);
         menu_princ.setVisible(true);
-         try {
-            connect.Disconnect();
-        } catch (Throwable ex) {
-            Logger.getLogger(ajouter.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        System.out.println(LoginECE);
+        System.out.println(PasswordECE);
+        System.out.println(LoginBDD);
+        System.out.println(PasswordBDD);
         
     }//GEN-LAST:event_BoutonRetourPrincActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
-        // TODO add your handling code here:
-        PrenomCheck.setVisible(false);
-        NombreLitCheck.setVisible(false);
-        CodeCheck.setVisible(false);
-        CodeServiceCheck.setVisible(false);
-        NumeroCheck.setVisible(false);
-        BatimentCheck.setVisible(false);
-        NomCheck.setVisible(false);
-        TelephoneCheck.setVisible(false);
-        DirecteurCheck.setVisible(false);
-        SurveillantCheck.setVisible(false);
-        SpecialiteCheck.setVisible(false);
-        NomServiceCheck.setVisible(false);
-        AdresseCheck.setVisible(false);
-        MutuelleCheck.setVisible(false);
-        RotationCheck.setVisible(false);
+       
         SalaireCheck.setVisible(false);
         NumeroLitCheck.setVisible(false);
         NumeroChambreCheck.setVisible(false);
+        tadresse.setVisible(false);
+        tbat.setVisible(false);
+        tcode.setVisible(false);
+        tcodeserv.setVisible(false);
+        tdir.setVisible(false);
+        tmutuelle.setVisible(false);
+        tnblit.setVisible(false);
+        tnom.setVisible(false);
+        tnumchambre.setVisible(false);
+        tnumero.setVisible(false);
+        tnumlit.setVisible(false);
+        tprenom.setVisible(false);
+        trot.setVisible(false);
+        tsal.setVisible(false);
+        tnoms.setVisible(false);
+        tspe.setVisible(false);
+        tsurveillant.setVisible(false);
+        ttel.setVisible(false);
     }//GEN-LAST:event_formWindowActivated
 
     private void MenuDeroulantClassMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuDeroulantClassMouseClicked
         // TODO add your handling code here:
-        PrenomCheck.setVisible(false);
-        NombreLitCheck.setVisible(false);
-        CodeCheck.setVisible(false);
-        CodeServiceCheck.setVisible(false);
-        NumeroCheck.setVisible(false);
-        BatimentCheck.setVisible(false);
-        NomCheck.setVisible(false);
-        TelephoneCheck.setVisible(false);
-        DirecteurCheck.setVisible(false);
-        SurveillantCheck.setVisible(false);
-        SpecialiteCheck.setVisible(false);
-        NomServiceCheck.setVisible(false);
-        AdresseCheck.setVisible(false);
-        MutuelleCheck.setVisible(false);
-        RotationCheck.setVisible(false);
         SalaireCheck.setVisible(false);
         NumeroLitCheck.setVisible(false);
         NumeroChambreCheck.setVisible(false);
+        tbat.setVisible(false);
+        tcode.setVisible(false);
+        tcodeserv.setVisible(false);
+        tdir.setVisible(false);
+        tmutuelle.setVisible(false);
+        tnblit.setVisible(false);
+        tnom.setVisible(false);
+        tnumchambre.setVisible(false);
+        tnumero.setVisible(false);
+        tnumlit.setVisible(false);
+        tprenom.setVisible(false);
+        trot.setVisible(false);
+        tsal.setVisible(false);
+        tnoms.setVisible(false);
+        tspe.setVisible(false);
+        tsurveillant.setVisible(false);
+        ttel.setVisible(false);
     }//GEN-LAST:event_MenuDeroulantClassMouseClicked
 
     private void NumeroChambreCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NumeroChambreCheckActionPerformed
@@ -645,41 +965,121 @@ public class SousMenutri extends javax.swing.JFrame {
     }//GEN-LAST:event_NumeroChambreCheckActionPerformed
 
     private void BoutonNouvelleRechercheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonNouvelleRechercheActionPerformed
-        // TODO add your handling code here:
         String requete, mot = null, mots;
         char[] a;
         ArrayList<String> reponseBDD = null;
-        requete=creer_requête();
-        Question_reponse q_r = new Question_reponse();
+        
+        requete = creer_requête();
+        
         try {
-            reponseBDD=conn.remplirChampsRequete(requete);
+           
+            reponseBDD = conn.remplirChampsRequete(requete);
         } catch (SQLException ex) {
             Logger.getLogger(SousMenutri.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        
-                    mots="Vérification:\n";
-            
-           
-                mots=mots+reponseBDD.toString()+"\n";
-            
-            
-            a=mots.toCharArray();
-            
-            for(int i=0; i<a.length; i++)
-            {
-                if(a[i]==',' || a[i]=='[' || a[i]==']' || a[i]==';')
-                {
-                     mot=mots+a[i];
-                     mot=mot.substring(0, mot.length()-1);
-                     mot=mot+" ";
-                }else mot=mots+a[i];
+       
+        mots = "Vérification:\n";
+
+        mots = mots + reponseBDD.toString() + "\n";
+
+        a = mots.toCharArray();
+
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] == ',' || a[i] == '[' || a[i] == ']' || a[i] == ';') {
+                mot = mots + a[i];
+                mot = mot.substring(0, mot.length() - 1);
+                mot = mot + " ";
+            } else {
+                mot = mots + a[i];
             }
             
+        }
+
         ResultatRequete.setText(mot);
         
-        reponseBDD = q_r.methode_connexion(connect,requete);
+       
+
+       
+        
+        
     }//GEN-LAST:event_BoutonNouvelleRechercheActionPerformed
+
+    private void tprenomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tprenomActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tprenomActionPerformed
+
+    private void tnumlitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tnumlitActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tnumlitActionPerformed
+
+    private void tnomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tnomActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tnomActionPerformed
+
+    private void tsalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tsalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tsalActionPerformed
+
+    private void tnomsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tnomsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tnomsActionPerformed
+
+    private void nomServiceCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomServiceCheckActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nomServiceCheckActionPerformed
+
+    private void tcodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tcodeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tcodeActionPerformed
+
+    private void tnumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tnumeroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tnumeroActionPerformed
+
+    private void tadresseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tadresseActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tadresseActionPerformed
+
+    private void tmutuelleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tmutuelleActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tmutuelleActionPerformed
+
+    private void ttelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ttelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ttelActionPerformed
+
+    private void tcodeservActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tcodeservActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tcodeservActionPerformed
+
+    private void tbatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbatActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tbatActionPerformed
+
+    private void tspeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tspeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tspeActionPerformed
+
+    private void tnumchambreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tnumchambreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tnumchambreActionPerformed
+
+    private void tnblitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tnblitActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tnblitActionPerformed
+
+    private void tsurveillantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tsurveillantActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tsurveillantActionPerformed
+
+    private void trotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_trotActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_trotActionPerformed
+
+    private void tdirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tdirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tdirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -727,7 +1127,6 @@ public class SousMenutri extends javax.swing.JFrame {
     private javax.swing.JComboBox MenuDeroulantClass;
     private javax.swing.JCheckBox MutuelleCheck;
     private javax.swing.JCheckBox NomCheck;
-    private javax.swing.JCheckBox NomServiceCheck;
     private javax.swing.JCheckBox NombreLitCheck;
     private javax.swing.JCheckBox NumeroChambreCheck;
     private javax.swing.JCheckBox NumeroCheck;
@@ -742,6 +1141,25 @@ public class SousMenutri extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JCheckBox nomServiceCheck;
+    private javax.swing.JTextField tadresse;
+    private javax.swing.JTextField tbat;
+    private javax.swing.JTextField tcode;
+    private javax.swing.JTextField tcodeserv;
+    private javax.swing.JTextField tdir;
+    private javax.swing.JTextField tmutuelle;
+    private javax.swing.JTextField tnblit;
+    private javax.swing.JTextField tnom;
+    private javax.swing.JTextField tnoms;
+    private javax.swing.JTextField tnumchambre;
+    private javax.swing.JTextField tnumero;
+    private javax.swing.JTextField tnumlit;
+    private javax.swing.JTextField tprenom;
+    private javax.swing.JTextField trot;
+    private javax.swing.JTextField tsal;
+    private javax.swing.JTextField tspe;
+    private javax.swing.JTextField tsurveillant;
+    private javax.swing.JTextField ttel;
     // End of variables declaration//GEN-END:variables
 
    
@@ -1099,116 +1517,236 @@ public class SousMenutri extends javax.swing.JFrame {
         }
    }
    
-   public String creer_requête(){
-       String requete="select ";
-       String select_text="";
-       int compteur=0;
-       String from_text="";
-       String where_text="";
-       int IndexCb = MenuDeroulantClass.getSelectedIndex();
-       //créer la requête à partir de la GUI
-       //si on a selectionné une table, on ajoute son nom au FROM de la requête
-       //selection de la table
-       if(IndexCb==3){
-           from_text="employe e,doctor d";
-           where_text="d.numero=e.numero";
-       }
-       if(IndexCb==1){
-           from_text="malade m";
-       }
-       if(IndexCb==2){
-           from_text="employe e, infirmier i, service s";
-           where_text="i.numero=e.numero AND s.code LIKE i.code_service";
-       }
-       if(IndexCb==4) 
-           from_text="chambre c";
-       if(IndexCb==0) 
-           from_text="service s";
-       if(IndexCb==5){
-           from_text="service s, malade m, chambre c, hospitalisation h";
-           where_text="h.no_malade=m.numero AND h.no_chambre=c.no_chambre AND h.code_service LIKE s.code";
-           compteur++;
-       }
-       //selection des attributs
-       if(NomCheck.isSelected()){
-           select_text=select_text+"nom,";
-           compteur++;
-       }
-       if(PrenomCheck.isSelected()){
-           select_text=select_text+"prenom,";
-           compteur++;
-       }
-       if(TelephoneCheck.isSelected()){
-           select_text=select_text+"tel,";
-           compteur++;
-       }
-       if(AdresseCheck.isSelected()){
-           select_text=select_text+"adresse,";
-           compteur++;
-       }
-       if(NumeroCheck.isSelected()){
-           select_text=select_text+"numero,";
-           compteur++;
-       }
-       if(MutuelleCheck.isSelected()){
-           select_text=select_text+"mutuelle,";
-           compteur++;
-       }
-       if(CodeCheck.isSelected()){
-           select_text=select_text+"code,";
-           compteur++;
-       }
-       if(NomServiceCheck.isSelected()){
-           select_text=select_text+"nom,";
-           compteur++;
-       }
-       if(BatimentCheck.isSelected()){
-           select_text=select_text+"batiment,";
-           compteur++;
-       }
-       if(DirecteurCheck.isSelected()){
-           select_text=select_text+"directeur,";
-           compteur++;
-       }
-       if(CodeServiceCheck.isSelected()){
-           select_text=select_text+"code,";
-           compteur++;
-       }
-       if(NumeroChambreCheck.isSelected()){
-           select_text=select_text+"no_chambre,";
-           compteur++;  
-       }
-       if(SurveillantCheck.isSelected()){
-           select_text=select_text+"surveillant,";
-           compteur++;
-       }
-       if(NombreLitCheck.isSelected()){
-           select_text=select_text+"nb_lits,";
-           compteur++;
-       }
-       if(MutuelleCheck.isSelected()){
-           select_text=select_text+"mutuelle";
-           compteur++;
-       }
-       if(SpecialiteCheck.isSelected()){
-           select_text=select_text+"specialite";
-           compteur++;
-       }
-       if(compteur!=0){
-           
-           //enlever la dernière virgule à la partie SELECT
-            select_text=select_text.substring(0,select_text.length()-1);
-            //ajouter les from
-             requete=requete+select_text+" from "+from_text;
-             if(where_text!=""){
-                 requete=requete+" where "+where_text;
-             }
+public String creer_requête(){
+String requete = "SELECT ";
+        String select_text = "";
+        String l1, l2, l3, l4;
+        int compteur = 0;
+        String from_text = "";
+        String where_text = "";
+        int IndexCb = MenuDeroulantClass.getSelectedIndex();
+        //cr�er la requ�te � partir de la GUI
+        //si on a selectionn� une table, on ajoute son nom au FROM de la requ�te
+        //selection de la table
+        if (IndexCb == 3) {
+            from_text = "employe e,doctor d";
+            where_text = "d.numero=e.numero AND ";
         }
-       //afficher un message d'erreur si aucun attribut n'est sélectionné
-       else JOptionPane.showMessageDialog(null, "Sélectionnez au moins un attribut!");
-      
-       //rendre la requete 
-       return requete;
-   }
+        if (IndexCb == 1) {
+            from_text = "malade m";
+ 
+        }
+        if (IndexCb == 2) {
+            from_text = "employe e, infirmier i, service s";
+            where_text = "i.numero=e.numero AND s.code LIKE i.code_service AND ";
+
+            
+        }
+        if (IndexCb == 4) {
+            from_text = "chambre c";
+        }
+        if (IndexCb == 0) {
+            from_text = "service s";
+        }
+        if (IndexCb == 5) {
+            from_text = "service s, malade m, chambre c, hospitalisation h";
+            where_text = "h.no_malade=m.numero AND h.no_chambre=c.no_chambre AND h.code_service LIKE s.code AND ";
+            compteur++;
+        }
+        //selection des attributs
+        if (NomCheck.isSelected()) {
+            select_text = select_text + "nom,";
+            
+            
+            if(!tnom.getText().equals("nom"))
+            {
+                if(IndexCb==3 || IndexCb==2 )
+                {
+                    where_text= where_text + "e.";
+                }else if(IndexCb == 5 || IndexCb==1)
+                {
+                    where_text=where_text+ "m.";
+                }
+            where_text= where_text+ "nom= '" + tnom.getText() + "' AND";
+            }
+            compteur++;
+        }
+        if (PrenomCheck.isSelected()) {
+            select_text = select_text + "prenom,";
+            if(!tprenom.getText().equals("prenom"))
+            {
+                if(IndexCb==3 || IndexCb==2 )
+                {
+                    where_text= where_text + "e.";
+                }else if(IndexCb == 5 || IndexCb==1)
+                {
+                    where_text=where_text+ "m.";
+                }
+            where_text=where_text+"prenom= '" + tprenom.getText() + "' AND";
+            }
+            compteur++;
+        }
+        if (TelephoneCheck.isSelected()) {
+            select_text = select_text + "tel,";
+            if(!ttel.getText().equals("telephone"))
+            {
+                if(IndexCb==3 || IndexCb==2 )
+                {
+                    where_text= where_text + "e.";
+                }else if(IndexCb == 5 || IndexCb==1)
+                {
+                    where_text=where_text+ "m.";
+                }
+            where_text=where_text + "tel= '" + ttel.getText() + "' AND";
+            }
+            compteur++;
+        }
+        if (AdresseCheck.isSelected()) {
+            select_text = select_text + "adresse,";
+            if(!tadresse.getText().equals("adresse"))
+            {
+                if(IndexCb==3 || IndexCb==2 )
+                {
+                    where_text= where_text + "e.";
+                }else if(IndexCb == 5 || IndexCb==1)
+                {
+                    where_text=where_text+ "m.";
+                }
+            where_text=where_text + "adresse= '" + tadresse.getText() + "' AND";
+            }
+            compteur++;
+        }
+        if (NumeroCheck.isSelected()) {
+            select_text = select_text + "numero,";
+            if(!tnumero.getText().equals("numero"))
+            {
+                if(IndexCb==3 || IndexCb==2 )
+                {
+                    where_text= where_text + "e.";
+                }else if(IndexCb == 5 || IndexCb==1)
+                {
+                    where_text=where_text+ "m.";
+                }
+            where_text=where_text+ "numero= '" + tnumero.getText() + "' AND";
+            }
+            compteur++;
+        }
+        if (MutuelleCheck.isSelected()) {
+            select_text = select_text + "mutuelle,";
+            if(!tmutuelle.getText().equals("mutuelle"))
+            {
+            where_text="m.mutuelle= '" + tmutuelle.getText() + "' AND";
+            }
+            compteur++;
+        }
+        if (CodeCheck.isSelected()) {
+            select_text = select_text + "code,";
+            if(!tcode.getText().equals("code"))
+            {
+            where_text="s.code= '" + tcode.getText() + "' AND";
+            }
+            compteur++;
+        }
+        if (nomServiceCheck.isSelected()) {
+            select_text = select_text + "nom,";
+ 
+                    where_text= where_text + "s.nom='" + tnoms.getText() + "' AND";
+            compteur++;
+        }
    
+        if (BatimentCheck.isSelected()) {
+            select_text = select_text + "batiment,";
+            if(!tbat.getText().equals("batiment"))
+            {
+            where_text="s.batiment= '" + tbat.getText() + "' AND";
+            }
+            compteur++;
+        }
+        if (DirecteurCheck.isSelected()) {
+            select_text = select_text + "directeur,";
+            if(!tdir.getText().equals("directeur"))
+            {
+            where_text="s.directeur= '" + tdir.getText() + "' AND";
+            }
+            compteur++;
+        }
+        if (CodeServiceCheck.isSelected()) {
+            select_text = select_text + "code,";
+             if(IndexCb==0)
+                {
+                    where_text= where_text + "s.code='" + tcode.getText() + "' AND";
+                }else if(IndexCb == 4)
+                {
+                    where_text=where_text+ "c.code='" + tcode.getText() + "' AND";
+                }
+            compteur++;
+        }
+        if (NumeroChambreCheck.isSelected()) {
+            select_text = select_text + "no_chambre,";
+            if(!tnumchambre.getText().equals("num_chambre"))
+            {
+            where_text="c.no_chambre= '" + tnumchambre.getText() + "' AND";
+            }
+            compteur++;
+        }
+        if (SurveillantCheck.isSelected()) {
+            select_text = select_text + "surveillant,";
+            if(!tsurveillant.getText().equals("nom"))
+            {
+            where_text="c.surveillant= '" + tsurveillant.getText() + "' AND";
+            }
+            compteur++;
+        }
+        if (NombreLitCheck.isSelected()) {
+            select_text = select_text + "nb_lits,";
+            if(!tnumlit.getText().equals("nb_lits"))
+            {
+            where_text="c.nb_lits= '" + tnumlit.getText() + "' AND";
+            }
+            compteur++;
+        }
+        if (MutuelleCheck.isSelected()) {
+            select_text = select_text + "mutuelle";
+            if(!tmutuelle.getText().equals("mutuelle"))
+            {
+            where_text="m.mutuelle= '" + tmutuelle.getText() + "' AND";
+            }
+            compteur++;
+        }
+        if (SpecialiteCheck.isSelected()) {
+            select_text = select_text + "specialite";
+            if(!tspe.getText().equals("specialite"))
+            {
+            where_text="d.specialite= '" + tspe.getText() + "' AND";
+            }
+            compteur++;
+        }
+        if (compteur != 0) {
+           
+            //enlever la derni�re virgule � la partie SELECT
+            select_text = select_text.substring(0, select_text.length() - 1);
+            for(int i=0; i<4; i++)
+            {
+                if(where_text!="")
+                {
+                where_text = where_text.substring(0, where_text.length() - 1);
+                }
+            }
+            //ajouter les from
+
+            requete = requete + select_text + " FROM " + from_text;
+            if (where_text != "") {
+                requete = requete + " WHERE " + where_text;
+            }
+            requete=requete+";";
+        } //afficher un message d'alerte
+        else {
+            JOptionPane.showMessageDialog(null, "Selectionnez au moins un attribut!");
+        }
+        System.out.println(requete);
+        //rendre la requete 
+        return requete;
+
+    }
+
 }

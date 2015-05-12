@@ -190,7 +190,6 @@
             <Component class="javax.swing.JTextField" name="p1">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="jTextField2"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -230,7 +229,6 @@
             <Component class="javax.swing.JTextField" name="p2">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="jTextField2"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="a2">
@@ -278,7 +276,6 @@
             <Component class="javax.swing.JTextField" name="p3">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="jTextField2"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -319,7 +316,6 @@
             <Component class="javax.swing.JTextField" name="p4">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="jTextField2"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="a4">
@@ -372,7 +368,6 @@
             <Component class="javax.swing.JTextField" name="p5">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="jTextField2"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="p5ActionPerformed"/>
@@ -392,9 +387,9 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="p6" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="a6" min="-2" pref="168" max="-2" attributes="0"/>
+                          <Component id="p6" alignment="1" min="-2" pref="168" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -416,7 +411,6 @@
             <Component class="javax.swing.JTextField" name="p6">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="jTextField2"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="a6">

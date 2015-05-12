@@ -37,7 +37,6 @@ public class MenuConnexion extends javax.swing.JFrame {
         PasswordECE = new javax.swing.JPasswordField();
         BoutonConnexion = new javax.swing.JButton();
         BoutonQuitter = new javax.swing.JButton();
-        BoutonCheat = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1280, 720));
@@ -86,13 +85,6 @@ public class MenuConnexion extends javax.swing.JFrame {
         });
         jPanel1.add(BoutonQuitter);
 
-        BoutonCheat.setText("Cheat");
-        BoutonCheat.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BoutonCheatActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -102,18 +94,14 @@ public class MenuConnexion extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(Bienvenue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 372, Short.MAX_VALUE)
-                .addComponent(BoutonCheat, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(472, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(Bienvenue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(BoutonCheat, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(49, 49, 49)
+                .addGap(10, 10, 10)
+                .addComponent(Bienvenue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(55, 55, 55)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(80, Short.MAX_VALUE))
         );
@@ -157,13 +145,6 @@ public class MenuConnexion extends javax.swing.JFrame {
          
     }//GEN-LAST:event_BoutonQuitterActionPerformed
 
-    private void BoutonCheatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonCheatActionPerformed
-        // TODO add your handling code here:
-          this.dispose();
-        Menu_principal menu_princ = new Menu_principal("ducrocq","KlrIT05A@","ducrocq-rw","KlrIT05A@");
-        menu_princ.setVisible(true);
-    }//GEN-LAST:event_BoutonCheatActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -201,7 +182,6 @@ public class MenuConnexion extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Bienvenue;
-    private javax.swing.JButton BoutonCheat;
     private javax.swing.JButton BoutonConnexion;
     private javax.swing.JButton BoutonQuitter;
     private javax.swing.JTextField LoginBDD;

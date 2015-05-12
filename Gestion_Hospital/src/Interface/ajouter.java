@@ -145,7 +145,6 @@ public class ajouter extends javax.swing.JFrame implements ActionListener {
         a1.setText("Champ1");
 
         p1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        p1.setText("jTextField2");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -171,7 +170,6 @@ public class ajouter extends javax.swing.JFrame implements ActionListener {
         jPanel7.add(jPanel1);
 
         p2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        p2.setText("jTextField2");
 
         a2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         a2.setText("Champ 2");
@@ -205,7 +203,6 @@ public class ajouter extends javax.swing.JFrame implements ActionListener {
         a3.setText("Champ 3");
 
         p3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        p3.setText("jTextField2");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -233,7 +230,6 @@ public class ajouter extends javax.swing.JFrame implements ActionListener {
         jPanel4.setPreferredSize(new java.awt.Dimension(200, 84));
 
         p4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        p4.setText("jTextField2");
 
         a4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         a4.setText("Champ 4");
@@ -267,7 +263,6 @@ public class ajouter extends javax.swing.JFrame implements ActionListener {
         a5.setText("Champ 5");
 
         p5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        p5.setText("jTextField2");
         p5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 p5ActionPerformed(evt);
@@ -300,7 +295,6 @@ public class ajouter extends javax.swing.JFrame implements ActionListener {
         jPanel6.setPreferredSize(new java.awt.Dimension(200, 84));
 
         p6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        p6.setText("jTextField2");
 
         a6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         a6.setText("Champ 6");
@@ -311,9 +305,9 @@ public class ajouter extends javax.swing.JFrame implements ActionListener {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(p6)
-                    .addComponent(a6, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(a6, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(p6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
